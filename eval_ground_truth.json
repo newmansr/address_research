@@ -1,0 +1,23 @@
+{
+  "building": {
+    "street": "800 New Jersey Ave SE",
+    "city": "Washington",
+    "state": "DC",
+    "zip": "20003"
+  },
+  "cases": [
+    {
+      "unit": "637",
+      "expect": "current",
+      "name": "Kathryn Tenkhoff",
+      "note": "Confirmed by multiple independent sources - the flagship happy path (expect High)."
+    },
+    {
+      "unit": "837",
+      "expect": "possible",
+      "name": "Samantha Karlin",
+      "note": "Real resident the free DBs can't confirm (recent move-in); should surface as a lead."
+    }
+  ],
+  "_howto": "Add a row per unit you can verify. expect: 'current' (expected name is the TOP confirmed resident), 'possible' (expected name is surfaced as current OR an unconfirmed lead), or 'none' (no confirmed current). Run: python eval_accuracy.py"
+}

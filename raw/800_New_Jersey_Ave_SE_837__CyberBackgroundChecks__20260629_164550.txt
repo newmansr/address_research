@@ -1,0 +1,843 @@
+var pageType = null;
+
+         
+                    pageType = 'addressResults'
+                 
+        if (pageType != null) {
+            var dataLayer = dataLayer || [];
+
+            dataLayer.push({ 'page_type': pageType });
+        }
+     
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        $("#collapsed-search-inputs").click(function () {
+            $("#collapsed-search-inputs").toggleClass("show");
+            $("#search-inputs").toggleClass("show");
+        });
+
+    });
+
+ 800 New Jersey Ave Se Apt 837 Washington, DC 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        $("#collapse-search-inputs").click(function () {
+            $("#collapsed-search-inputs").toggleClass("show");
+            $("#search-inputs").toggleClass("show");
+        });
+
+    });
+
+ 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        $(".phone").inputmask({
+            mask: '(999) 999-9999',
+            placeholder: ' ',
+            showMaskOnHover: false,
+            showMaskOnFocus: false
+        });
+
+        $("#button-clear-search-by-name").click(function() {
+            clearSearchByNameInputs();
+        });
+
+        $("#button-clear-search-by-address").click(function() {
+            clearSearchByAddressInputs();
+        });
+
+        $("#button-clear-search-by-phone").click(function() {
+            clearSearchByPhoneInputs();
+        });
+
+        $("#button-clear-search-by-email").click(function() {
+            clearSearchByEmailInputs();
+        });
+
+        $("#button-search-by-name").click(function () {
+            search('SearchByName');
+        });
+
+        $("#button-search-by-address").click(function () {
+            search('SearchByAddress');
+        });
+
+        $("#button-search-by-phone").click(function () {
+            search('SearchByPhone');
+        });
+
+        $("#button-search-by-email").click(function () {
+            search('SearchByEmail');
+        });
+
+        //Set default button
+
+        // Execute a function when the user releases a key on the keyboard
+        document.addEventListener("keyup",
+            function(event) {
+
+                // Cancel the default action, if needed
+                event.preventDefault();
+                // Number 13 is the "Enter" key on the keyboard
+                if (event.keyCode === 13) {
+
+                    // Trigger the button element with a click
+                    var selectedTab = $('#pills-tab').find('a.active:first').attr('href');
+
+                    switch (selectedTab) {
+                    case '/name':
+                        $("#button-search-by-name").click();
+                        break;
+                    case '/address':
+                        $("#button-search-by-address").click();
+                        break;
+                    case '/phone':
+                        $("#button-search-by-phone").click();
+                        break;
+                    case '/email':
+                        $("#button-search-by-email").click();
+                        break;
+                    }
+                }
+            });
+
+
+    });
+
+    function search(criteriaType) {
+
+        $(".loader").addClass("is-active");
+
+        var isValid = true;
+        var action = "";
+        var addressLine2 = "";
+        var criteriaString = "";
+        var city = "";
+        var state = "";
+
+        switch (criteriaType) {
+        case "SearchByName":
+        case "SearchByNameAndState":
+        case "SearchByNameCityAndState":
+
+                var firstName = $("#SearchCriteriaViewModel_FirstName").val().trim();
+                var middleName = $("#SearchCriteriaViewModel_MiddleName").val().trim();
+                var lastName = $("#SearchCriteriaViewModel_LastName").val().trim();
+                addressLine2 = $("#SearchByName_AddressLine2").val().trim();
+
+                if (lastName.length == 0) {
+
+                    $(".alert").fadeIn();
+                    $(".alert").html(
+                        "Please supply at least a last name. For the best results, include a first name, last name along with the city and state");
+
+                    $(".loader").removeClass("is-active");
+
+                    return false;
+                }
+
+           if (middleName.length > 0 && firstName.length == 0) {
+
+               $(".alert").fadeIn();
+               $(".alert").html(
+                   "Please supply a first and last name when including a middle initial");
+
+               $(".loader").removeClass("is-active");
+
+               return false;
+           }
+
+            if (firstName.length > 0 && lastName.length == 0) {
+
+                $(".alert").fadeIn();
+                $(".alert").html(
+                    "Please supply a last name when including a first name");
+
+                $(".loader").removeClass("is-active");
+
+                return false;
+                }
+
+            criteriaString = firstName + "-" + middleName + "-" + lastName;
+            criteriaString = criteriaString.replace(/ /g, "-").replace(/--/, "-").replace(/'/, "").replace(/,/, "")
+                .trim();
+
+            if (addressLine2.length > 0) {
+
+                //Do we have a city/state
+                city = addressLine2.substring(0, addressLine2.indexOf(",")).trim();
+                state = addressLine2.substring(addressLine2.indexOf(",") + 1).trim();
+
+                if (state.length > 0) {
+                    criteriaString = criteriaString + "/" + state;
+                }
+
+                if (city.length > 0) {
+                    criteriaString = criteriaString + "/" + city;
+                }
+
+                criteriaString = criteriaString.replace(/ /g, "-").replace(/--/, "-").replace(/'/, "")
+                    .replace(/,/, "")
+                    .replace(/,/, "-").trim();
+
+                if ((city.length > 0 || state.length > 0) && lastName.length == 0) {
+
+                    $(".alert").fadeIn();
+                    $(".alert").html(
+                        "Please supply a last name when including a state or city/state");
+
+                    $(".loader").removeClass("is-active");
+
+                    return false;
+                }
+            }
+
+            criteriaString = trimStart("-", criteriaString);
+                action = "/people/" + criteriaString.toLowerCase();
+
+            break;
+        case "SearchByAddress":
+
+            try {
+
+                var addressLine1 = $("#SearchCriteriaViewModel_AddressLine1").val().trim();
+                addressLine2 = $("#SearchByAddress_AddressLine2").val().trim();
+
+                if (addressLine1.length == 0 || addressLine2.length == 0) {
+                    isValid = false;
+                }
+
+                criteriaString = addressLine1.replace(/--/, "-").replace(/-/g, "~").replace(/ /g, "-").replace(/'/, "")
+                    .replace(/,/g, "").replace(/\./g, "")
+                    .trim();
+
+                //Do we have a city/state
+                city = addressLine2.substring(0, addressLine2.indexOf(",")).trim();
+                state = addressLine2.substring(addressLine2.indexOf(",") + 1).trim();
+
+                if (city.length > 0) {
+                    criteriaString = criteriaString + "/" + city;
+                } else {
+                    isValid = false;
+                }
+
+                if (state.length > 0) {
+                    criteriaString = criteriaString + "/" + state;
+                } else {
+                    isValid = false;
+                }
+
+                criteriaString = criteriaString.replace(/ /g, "-").replace(/--/, "-").replace(/'/, "")
+                    .replace(/,/, "")
+                    .replace(/,/, "-").trim();
+
+                criteriaString = trimStart("-", criteriaString);
+                action = "/address/" + criteriaString.toLowerCase();
+
+                if (!isValid) {
+
+                    $(".alert").fadeIn();
+                    $(".alert").html(
+                        "Please supply a valid address");
+
+                    $(".loader").removeClass("is-active");
+
+                    return false;
+                }
+
+            } catch (exception) {
+
+                $(".alert").fadeIn();
+                $(".alert").html(
+                    "Unsupported inputs entered");
+
+                $(".loader").removeClass("is-active");
+
+                return false;
+            }
+
+            break;
+        case "SearchByPhone":
+
+                var phone = $("#SearchCriteriaViewModel_Phone").val().replace(/ /g, "-").replace("(", "").replace(")", "")
+                    .trim();
+
+                if (phone.length < 10) {
+                    isValid = false;
+                }
+
+            if (!isValid) {
+
+                $(".alert").fadeIn();
+                $(".alert").html(
+                    "Please supply a valid 10 digit phone number");
+
+                $(".loader").removeClass("is-active");
+
+                return false;
+            }
+
+            action = "/phone/" + phone;
+
+            break;
+        case "SearchByEmail":
+
+                var email = $("#Email").val().trim();
+
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+            {
+                isValid = false;
+            }
+
+            if (!isValid) {
+
+                $(".alert").fadeIn();
+                $(".alert").html(
+                    "Please supply a valid email address");
+
+                $(".loader").removeClass("is-active");
+
+                return false;
+            }
+
+                action = "/email/" + email.replace("@", "_.");
+
+            break;
+            default:
+
+                $(".loader").removeClass("is-active");
+
+                return false;
+        }
+
+        window.location.href = action;
+
+        return true;
+    }
+
+    function trimStart(character, string) {
+        var startIndex = 0;
+
+        while (string[startIndex] === character) {
+            startIndex++;
+        }
+
+        return string.substr(startIndex);
+    }
+
+    function clearSearchByNameInputs() {
+        $("#SearchCriteriaViewModel_FirstName").val("");
+        $("#SearchCriteriaViewModel_MiddleName").val("");
+        $("#SearchCriteriaViewModel_LastName").val("");
+        $("#SearchByName_AddressLine2").val("");
+    }
+
+    function clearSearchByAddressInputs() {
+        $("#SearchCriteriaViewModel_AddressLine1").val("");
+        $("#SearchByAddress_AddressLine2").val("");
+    }
+
+    function clearSearchByPhoneInputs() {
+        $("#SearchCriteriaViewModel_Phone").val("");
+    }
+
+    function clearSearchByEmailInputs() {
+        $("#Email").val("");
+    }
+
+ Name Address Phone Email First Name MI Last Name City & State Clear Street Address, Apt/Unit 800 New Jersey Ave Se Apt 837 City & State Washington, DC Clear (999) 999-9999 Clear john@gmail.com Clear 
+        document.addEventListener('DOMContentLoaded', function () {
+            $(".alert").fadeOut();
+        });
+     
+    function showMore() {
+        $(".show-more").hide();
+        $(".more").fadeIn();
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        $(".list-group-item").hover(
+            function () {
+                $(this).addClass('bg-light');
+            },
+            function () {
+                $(this).removeClass('bg-light');
+            }
+        );
+
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(getWidgetItems, { timeout: 4000 });
+        } else {
+            setTimeout(getWidgetItems, 2000);
+        }
+    });
+ 4  results for  800 New Jersey Ave Se Apt 837 Washington, DC Address Search  >
+                         800 New Jersey Ave Se Apt 837 Washington, DC 
+                            Brent R Maheux
+                         Age:  41 
+                                Lives at
+                             1321 Upland Dr, Houston, TX 77043 4718 [Harris County] Used to live 1215 1st St APT 8G NE, Washington, DC 20002 7945 [District Of Columbia County] 800 New Jersey Ave SE, Washington, DC 20003 3391 [District Of Columbia County] 1215 1st St NE, Washington, DC 20002 7935 [District Of Columbia County] 
+                                    [2] more...
+                                 Other observed names | Brent Richard Maheux | Brent Maheux Phones | (202) 842-8690 | (202) 488-0220 | (202) 289-7376 Related to | Carrie A Maheux Associated with | Katharine E Smith | Christopher B Smith | Hamza A Bawa | 
+
+                                        [4] more...
+                                    
+                                 This is me...Remove My Record 
+                    VIEW DETAILS
+                 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        if (optOutCookieExists()) {
+            $('#opt-out-enabled-pidmpzylggpmbgyympapzg').show();
+            $('#opt-out-disabled-pidmpzylggpmbgyympapzg').hide();
+        } else {
+            $('#opt-out-enabled-pidmpzylggpmbgyympapzg').hide();
+            $('#opt-out-disabled-pidmpzylggpmbgyympapzg').show();
+        }
+
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function optOutCookieExists() {
+        var cookie = getCookie("OptOutCookie");
+        if (cookie != "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+ 
+                            Edmond I Leber
+                         Age:  39 
+                                Lives at
+                             55 M St APT 1000 NE, Washington, DC 20002 5190 [District Of Columbia County] Used to live 9303 Meadow Crossing Way, Fairfax Station, VA 22039 3348 [Fairfax County] 208 Wharton St APT C SE, Blacksburg, VA 24060 4881 [Montgomery County] 7917 Treeside Ct, Springfield, VA 22152 3441 [Fairfax County] 
+                                    [3] more...
+                                 Other observed names | Edmond Leber | Edmond I Le Ber | Edmond I Ber | 
+                                    [1] more...
+                                 Phones | (703) 200-8166 | (703) 690-3288 | (571) 278-9503 Related to | Jean Rle Leber | Suiling Leber Associated with | Ryan T Mckeown | Shu Y Liulin This is me...Remove My Record 
+                    VIEW DETAILS
+                 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        if (optOutCookieExists()) {
+            $('#opt-out-enabled-pidnqqmaglybyxbxgqlgglq').show();
+            $('#opt-out-disabled-pidnqqmaglybyxbxgqlgglq').hide();
+        } else {
+            $('#opt-out-enabled-pidnqqmaglybyxbxgqlgglq').hide();
+            $('#opt-out-disabled-pidnqqmaglybyxbxgqlgglq').show();
+        }
+
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function optOutCookieExists() {
+        var cookie = getCookie("OptOutCookie");
+        if (cookie != "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+ 
+                            Ryan T Mckeown
+                         Age:  36 
+                                Lives at
+                             44600 Nolani Way, California, MD 20619 7066 [Saint Marys County] Used to live 800 New Jersey Ave APT 837 SE, Washington, DC 20003 3997 [District Of Columbia County] 55 M St APT 1000 NE, Washington, DC 20002 5190 [District Of Columbia County] 1221 N Pierce St APT 308, Arlington, VA 22209 3458 [Arlington County] 
+                                    [4] more...
+                                 Other observed names | Ryan Mckeawn | Ryan Mckeown Phones | (610) 639-2117 | (610) 279-4732 | (801) 756-9562 Related to | Beatrice A Mckeown | Gloria J Mckeown | Janelle L Mckeown | 
+
+                                        [5] more...
+                                 
+                                 Associated with | Adres R Vargas | Alexandra F Rudnitskas | Anthony S Romanello | 
+
+                                        [7] more...
+                                    
+                                 This is me...Remove My Record 
+                    VIEW DETAILS
+                 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        if (optOutCookieExists()) {
+            $('#opt-out-enabled-pidpxapxllylxqbxbppqyp').show();
+            $('#opt-out-disabled-pidpxapxllylxqbxbppqyp').hide();
+        } else {
+            $('#opt-out-enabled-pidpxapxllylxqbxbppqyp').hide();
+            $('#opt-out-disabled-pidpxapxllylxqbxbppqyp').show();
+        }
+
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function optOutCookieExists() {
+        var cookie = getCookie("OptOutCookie");
+        if (cookie != "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+ 
+                            Samantha Karlin
+                         Age:  40 
+                                Lives at
+                             800 4th St APT N414 SW, Washington, DC 20024 3016 [District Of Columbia County] Used to live 15 Alpine Rd, New Fairfield, CT 06812 3322 [Western Ct County] 1151 4th St APT 502 SW, Washington, DC 20024 2360 [District Of Columbia County] 10 Upland Rd, Somerville, MA 02144 1231 [Middlesex County] 
+                                    [6] more...
+                                 Other observed names | Samantha B Karlin Phones | (203) 240-2326 | (203) 746-7259 | (203) 746-2436 | 
+                                    [5] more...
+                                 Related to | Helene R Karlin | Jolie P Karlin | Lindsay F Karlin | 
+
+                                        [7] more...
+                                 
+                                 Associated with | Kevin Vincent Cunningham This is me...Remove My Record 
+                    VIEW DETAILS
+                 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        if (optOutCookieExists()) {
+            $('#opt-out-enabled-pidnppzgqqyxmmlqblazxbp').show();
+            $('#opt-out-disabled-pidnppzgqqyxmmlqblazxbp').hide();
+        } else {
+            $('#opt-out-enabled-pidnppzgqqyxmmlqblazxbp').hide();
+            $('#opt-out-disabled-pidnppzgqqyxmmlqblazxbp').show();
+        }
+
+    });
+
+    function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+                return c.substring(name.length, c.length);
+            }
+        }
+        return "";
+    }
+
+    function optOutCookieExists() {
+        var cookie = getCookie("OptOutCookie");
+        if (cookie != "") {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+ 
+
+    function getWidgetItems() {
+        var searchCriteria = JSON.parse('{"NameStates":[{"Disabled":false,"Group":null,"Selected":false,"Text":"Alabama","Value":"AL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Alaska","Value":"AK"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Arizona","Value":"AZ"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Arkansas","Value":"AR"},{"Disabled":false,"Group":null,"Selected":false,"Text":"California","Value":"CA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Colorado","Value":"CO"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Connecticut","Value":"CT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"District of Columbia","Value":"DC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Delaware","Value":"DE"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Florida","Value":"FL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Georgia","Value":"GA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Hawaii","Value":"HI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Idaho","Value":"ID"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Illinois","Value":"IL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Indiana","Value":"IN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Iowa","Value":"IA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Kansas","Value":"KS"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Kentucky","Value":"KY"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Louisiana","Value":"LA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Maine","Value":"ME"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Maryland","Value":"MD"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Massachusetts","Value":"MA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Michigan","Value":"MI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Minnesota","Value":"MN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Mississippi","Value":"MS"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Missouri","Value":"MO"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Montana","Value":"MT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Nebraska","Value":"NE"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Nevada","Value":"NV"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Hampshire","Value":"NH"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Jersey","Value":"NJ"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Mexico","Value":"NM"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New York","Value":"NY"},{"Disabled":false,"Group":null,"Selected":false,"Text":"North Carolina","Value":"NC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"North Dakota","Value":"ND"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Ohio","Value":"OH"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Oklahoma","Value":"OK"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Oregon","Value":"OR"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Pennsylvania","Value":"PA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Rhode Island","Value":"RI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"South Carolina","Value":"SC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"South Dakota","Value":"SD"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Tennessee","Value":"TN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Texas","Value":"TX"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Utah","Value":"UT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Vermont","Value":"VT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Virginia","Value":"VA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Washington","Value":"WA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"West Virginia","Value":"WV"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Wisconsin","Value":"WI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Wyoming","Value":"WY"}],"AddressStates":[{"Disabled":false,"Group":null,"Selected":false,"Text":"Alabama","Value":"AL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Alaska","Value":"AK"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Arizona","Value":"AZ"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Arkansas","Value":"AR"},{"Disabled":false,"Group":null,"Selected":false,"Text":"California","Value":"CA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Colorado","Value":"CO"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Connecticut","Value":"CT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"District of Columbia","Value":"DC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Delaware","Value":"DE"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Florida","Value":"FL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Georgia","Value":"GA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Hawaii","Value":"HI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Idaho","Value":"ID"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Illinois","Value":"IL"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Indiana","Value":"IN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Iowa","Value":"IA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Kansas","Value":"KS"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Kentucky","Value":"KY"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Louisiana","Value":"LA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Maine","Value":"ME"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Maryland","Value":"MD"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Massachusetts","Value":"MA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Michigan","Value":"MI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Minnesota","Value":"MN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Mississippi","Value":"MS"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Missouri","Value":"MO"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Montana","Value":"MT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Nebraska","Value":"NE"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Nevada","Value":"NV"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Hampshire","Value":"NH"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Jersey","Value":"NJ"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New Mexico","Value":"NM"},{"Disabled":false,"Group":null,"Selected":false,"Text":"New York","Value":"NY"},{"Disabled":false,"Group":null,"Selected":false,"Text":"North Carolina","Value":"NC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"North Dakota","Value":"ND"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Ohio","Value":"OH"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Oklahoma","Value":"OK"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Oregon","Value":"OR"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Pennsylvania","Value":"PA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Rhode Island","Value":"RI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"South Carolina","Value":"SC"},{"Disabled":false,"Group":null,"Selected":false,"Text":"South Dakota","Value":"SD"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Tennessee","Value":"TN"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Texas","Value":"TX"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Utah","Value":"UT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Vermont","Value":"VT"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Virginia","Value":"VA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Washington","Value":"WA"},{"Disabled":false,"Group":null,"Selected":false,"Text":"West Virginia","Value":"WV"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Wisconsin","Value":"WI"},{"Disabled":false,"Group":null,"Selected":false,"Text":"Wyoming","Value":"WY"}],"WamResultCount":4,"IsValidSearch":true,"ValidationMessage":"","SearchType":2,"CriteriaType":4,"TahoeId":null,"AddressId":null,"RangeId":null,"Range":null,"FirstName":"","MiddleName":"","LastName":"","Age":null,"AddressLine1":"800 New Jersey Ave Se Apt 837","Phone":"","Email":"","TotalRecords":4,"CurrentPage":1,"PageSize":10,"TotalPages":1,"City":"Washington","State":"DC","SearchByNameParameters":"~~/dc/washington","SearchByAddressParameters":"dc/washington/800~new~jersey~ave~se~apt~837","SearchByTahoeIdParameters":"~~/","SearchByPhoneBaseParameters":"","SearchByEmailBaseParameters":"","ToHash":"B2BB90D8BCE0C64A625909681860831B"}');
+        var noResults = 4 == 0 ? "No Results " : "";
+        var slotsRequestData = {};
+
+        slotsRequestData['PageName'] = noResults + 'Address';
+        slotsRequestData['FirstName'] = '';
+        slotsRequestData['LastName'] = '';
+        slotsRequestData['City'] = 'Washington';
+        slotsRequestData['State'] = 'DC';
+        slotsRequestData['Email'] = '';
+        slotsRequestData['Phone'] = '';
+
+        $.when(
+             $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                dataType: 'json',
+                url: "/GetItems",
+                data: JSON.stringify(searchCriteria)
+            }),
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                dataType: 'json',
+                url: "/GetSlots",
+                data: JSON.stringify(slotsRequestData)
+            })
+        ).done(function(itemsResult, slotsResult) {
+            var items = itemsResult[0];
+            var slots = slot… 
+            Directory: 
+             A  
+                 B  
+                 C  
+                 D  
+                 E  
+                 F  
+                 G  
+                 H  
+                 I  
+                 J  
+                 K  
+                 L  
+                 M  
+                 N  
+                 O  
+                 P  
+                 Q  
+                 R  
+                 S  
+                 T  
+                 U  
+                 V  
+                 W  
+                 X  
+                 Y  
+                 Z  
+             | 
+               Terms 
+               |    Privacy Notice     |     Do Not Sell or Share My Personal Information 
+               |    Developer API 
+               |    Notice at Collection 
+               |    Contact 
+               |    FAQ's 
+               |    About Us 
+               |    Cookie Management 
+               |    Accessibility 
+
+
+               | 
+            © 2026 CyberBackgroundChecks, Inc. All rights reserved.
+         
+            Version GalaxyTi
+         
+                    NEED BETTER  SKIP TRACE  DATA?
+                 
+                    Get access to Skip Sherpa's  instant developer API  for Contact Enrichment, Property Looks and Owner Intelligence.
+                 
+                        Create Free Account
+                     
+            CyberBackgroundChecks.com is not a Consumer Reporting Agency (CRA) as defined by the Fair Credit Reporting Act ( FCRA ). This site can't be used for employment, credit or tenant screening, or any related purpose.
+         
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.cyberbackgroundchecks.com/#organization",
+      "name": "Cyber Background Checks",
+      "legalName": "CyberBackgroundCheck, Inc.",
+      "url": "https://www.cyberbackgroundchecks.com/",
+      "description": "Get the background information you need on nearly every adult in the U.S. at Cyber Background Checks. Start a lookup by name, address, phone or email.",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.cyberbackgroundchecks.com/images/logo/cbc-color-svg.svg",
+        "width": 310,
+        "height": 108
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-773-666-4759",
+        "email": "support@cyberbackgroundchecks.com",
+        "contactType": "customer support",
+        "areaServed": "US",
+        "availableLanguage": "English"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "PO Box 803338, PMB 29296",
+        "addressLocality": "Chicago",
+        "addressRegion": "IL",
+        "postalCode": "60680",
+        "addressCountry": "US"
+      },
+      "areaServed": "US",
+      "sameAs": [
+        "https://www.instagram.com/cyber.background.checks/",
+        "https://www.pinterest.com/cyberbackgroundchecks/"
+      ],
+      "foundingDate": "2019"
+    }
+ 
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://www.cyberbackgroundchecks.com/name",
+          "name": "People Search by Name",
+          "description": "Search for people using their first name, last name, and optional city or state.",
+          "url": "https://www.cyberbackgroundchecks.com/name"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://www.cyberbackgroundchecks.com/address",
+          "name": "Reverse Address Lookup",
+          "description": "Find out who lives at a specific street address using our reverse address lookup.",
+          "url": "https://www.cyberbackgroundchecks.com/address"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://www.cyberbackgroundchecks.com/phone",
+          "name": "Reverse Phone Lookup",
+          "description": "Identify unknown callers by searching any U.S. phone number.",
+          "url": "https://www.cyberbackgroundchecks.com/phone"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "@id": "https://www.cyberbackgroundchecks.com/email",
+          "name": "Email Lookup",
+          "description": "Find information associated with any email address.",
+          "url": "https://www.cyberbackgroundchecks.com/email"
+        }
+      ]
+    }
+ 
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+        var loaderEl = document.querySelector('.loader');
+        if (loaderEl) loaderEl.classList.remove('is-active');
+
+        function yieldThen(fn) {
+            if (typeof window.scheduler !== 'undefined' && typeof window.scheduler.postTask === 'function') {
+                window.scheduler.postTask(fn, { priority: 'background' });
+            } else {
+                setTimeout(fn, 0);
+            }
+        }
+
+        function initTooltips() {
+            if (typeof $ !== 'undefined' && $.fn && $.fn.tooltip) {
+                $('[data-toggle="tooltip"]').tooltip();
+            }
+        }
+
+        function initCardHover() {
+            if (typeof $ !== 'undefined') {
+                $(".card-hover").hover(
+                    function () { $(this).addClass('border-warning'); },
+                    function () { $(this).removeClass('border-warning'); }
+                );
+            }
+        }
+
+        function initAutocomplete() {
+            if (typeof $ === 'undefined' || typeof $.fn.autoComplete === 'undefined') return;
+
+            var autocompleteConfig = {
+                minLength: 2,
+                delay: 500,
+                autoSelect: true,
+                resolver: 'city_state_resolver',
+                noResultText: 'No suggestions',
+                events: {
+                    search: function (text, callback) {
+                        if (text != null && text.length > 1) {
+                            $.ajax({
+                                method: "POST",
+                                url: "/api/Data/GetCityStateSuggestions",
+                                data: { input: text }
+                            })
+                            .done(function (result) { callback(result); })
+                            .fail(function () {});
+                        }
+                    }
+                },
+                formatResult: function (suggestion) { return suggestion.suggestText; }
+            };
+
+            var nameInput = document.getElementById('SearchByName_AddressLine2');
+            var addrInput = document.getElementById('SearchByAddress_AddressLine2');
+
+            if (nameInput) {
+                $('#SearchByName_AddressLine2').autoComplete(autocompleteConfig);
+                $('#SearchByName_AddressLine2').on('autocomplete.select', function (evt, item) {
+                    $(this).val(item.selectText);
+                });
+            }
+
+            if (addrInput) {
+                $('#SearchByAddress_AddressLine2').autoComplete(autocompleteConfig);
+                $('#SearchByAddress_AddressLine2').on('autocomplete.select', function (evt, item) {
+                    $(this).val(item.selectText);
+                });
+            }
+        }
+
+        var nameInput = document.getElementById('SearchByName_AddressLine2');
+        var addrInput = document.getElementById('SearchByAddress_AddressLine2');
+
+        if (nameInput || addrInput) {
+            var acScript = document.createElement('script');
+            acScript.src = '/node_modules/bootstrap-autocomplete/bootstrap-autocomplete.min.js';
+            acScript.onload = function () { initAutocomplete(); };
+            document.head.appendChild(acScript);
+        }
+
+        yieldThen(initTooltips);
+        yieldThen(initCardHover);
+    });
+
+ 
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+
+            var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NNNPHXW');
+     
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NNNPHXW"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+     (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a137c6f24aa3d321',t:'MTc4Mjc2NTk0OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();

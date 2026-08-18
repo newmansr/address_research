@@ -1,0 +1,1142 @@
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W43M8PV" height="0" width="0" style="display:none;visibility:hidden"></iframe> var Global={appUrl:'https://www.fastpeoplesearch.com',ip:'172.69.135.194'} 
+          NAME
+         
+          PHONE
+         
+          ADDRESS
+         
+          NEAR ME
+         e.g John Doe City & State, or Zip  Close  Free Search e.g (818)444-3214  Close  Free Search e.g 321 Main St City & State, or Zip  Close  Free Search Search Properties Near Me Searching Your Location... In order to search properties nearby, you must first allow FastPeopleSearch.com to see your location. Geolocation is not available for this browser  Close Search Near Me 
+
+window.addEventListener('DOMContentLoaded',function(){
+$(document).ready(function() {
+
+  $('a[data-toggle="tab"]#search-nav-link-map').on('show.bs.tab', function (e) {
+    geolocate.getLocation();
+  });
+  $('a[data-toggle="tab"]#search-nav-link-map').on('geolocate-tab-activated', function (e) {
+    geolocate.getLocation();
+  });
+
+  var geolocate = {
+    lat:'',
+    lon:'',
+    hasLocation:false,
+    init:function(){
+      $('.location-message').hide();
+      $('#search-map-submit').hide();
+      $('#search-map').hide();
+    },
+
+    getLocation: function(){
+      this.init();
+		  if ("geolocation" in navigator) {
+  		  /* geolocation is available */
+        console.log('geolocation is available');
+        navigator.permissions.query({ name: "geolocation" }).then((result) => {
+          if (result.state !== "granted") {
+            console.log('geolocation is NOT allowed');
+            $('#allow-location-sharing').show();
+          }else{
+            $('#location-loading').show();
+          }
+          navigator.geolocation.getCurrentPosition(this.showPosition,this.showError);
+        });
+      } else {
+        console.log('geolocation is NOT available');
+        /* geolocation IS NOT available */
+        $('#geolocation-not-available').show();
+      }
+    },
+
+    showPosition: function(position){
+      console.log('--- POSITION FOUND ---');
+      console.log(position);
+      var that = this;
+      $('.location-message').hide();
+      $('#search-map-submit').show();
+      that.lat = position.coords.latitude;
+      that.lon = position.coords.longitude;
+      that.hasLocation = true;
+      var latlon = that.lat+','+that.lon;
+      $('#search-map').html('<iframe title="Google Map of the your current location" height="150" style="width:100%;border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBIi5biIVTLMW3whqQBNGW83pVTZxlRxF8&center='+latlon+'&q='+latlon+'&maptype=roadmap&attribution_source=FastPeopleSearch&attribution_web_url=https://www.fastpeoplesearch.com/logan-ramsey_id_G4504960884750094867&zoom=15"></iframe>');
+      $('#search-map').show();
+
+      $('#search-map-submit').off('click').click(function(){
+        window.location.href = 'https://www.fastpeoplesearch.com/near-me/'+that.lat+'_'+that.lon; 
+      });
+
+    },
+
+		showError:function(error) {
+      console.log('--- geolocation error ---');
+      console.log(error);
+      this.init();
+			switch(error.code) {
+        case error.PERMISSION_DENIED:
+          $('#allow-location-sharing').show();
+          console.log('PERMISSION_DENIED');
+					break;
+				case error.POSITION_UNAVAILABLE:
+          $('#geolocation-error').html('GEOLOCATION ERROR: Location information is unavailable. Try refreshing the page.');
+					break;
+				case error.TIMEOUT:
+          $('#geolocation-error').html('GEOLOCATION ERROR: The request to get user location timed out. Try refreshing the page.');
+					break;
+				case error.UNKNOWN_ERROR:
+          $('#geolocation-error').html('GEOLOCATION ERROR: An unknown error occurred. Try refreshing the page.');
+					break;
+			}
+		}
+  }//end geolocate object
+
+});
+});
+ Fast PeopleSearch Search for... googletag.cmd.push(function() { googletag.display('div-gpt-ad-1597774508223-0'); }); Search 
+         /      People 
+         /      R 
+         /      Ramsey 
+         /      Logan Ramsey 
+         /      DC 
+         /      Washington Logan Ramsey
+       in Washington, DC  (District of Columbia) Age 36, Born November 1989 Lives in Washington, DC (512) 577-4718 Full Background Report   (Sponsored) Arrests & Criminal Records Warrants & Police Records Felonies & Misdemeanors Nationwide Court Records Registered Sex Offender Check Bankruptcies, Judgements, Liens Marriage & Divorce Records Evictions & Foreclosures Properties & Assets Business Records Professional Licenses Social Media Records 
+            View Full Background Report  Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status Current Employment Work Experience FREE Background Report FAQ 
+      Current Address
+             (Since March 2021) 
+            1250 Half ST SE, Unit 739 
+      Washington DC 20003
+       
+            District Of Columbia County Full Name: Logan Ramsey Phone Numbers for  Logan Ramsey  in  Washington, DC (512) 577-4718 Wireless T-Mobile USA Inc First reported  April 2014 (512) 250-0175 Landline Southwestern Bell Telephone Company First reported  August 2010 (202) 230-2253 Wireless New Cingular Wireless PCS LLC - DC First reported  March 2026 Full Background Report   (Sponsored) Arrest Records Police Records Search Warrants Court Records Criminal Records Bankruptcies, Liens, Judgements Birth & Death Records Marriage & Divorce Records Current & Past Contact Info Addresses & Phone Numbers Family Members Neighbors & Associates Property Ownership Businesses Public Records Background Check 
+            View Full Background Report
+         Email Addresses for  Logan Ramsey  in  Washington, DC logan.ramsey.lr@gmail.com Also Known As Logan R Tucker Logan Tucker Ramsey Tucker Logan Tucker Logan Sponsored Link Logan Ramsey Washington, DC Age 36             View Details       Sponsored By TruthFinder.com  Logan Ramsey Washington, DC Age 36             View Details       Sponsored By BeenVerified.com  Dorothy L Ramsey Washington, DC Age 68             View Details       Sponsored By InstantCheckMate.com  Logan Ramsey Washington, DC Age 36             View Details       Sponsored By Spokeo.com  Ad  Advertise with us Birth, Death, and Divorce Records for  Logan Ramsey in Washington DC Sponsored by Ancestry.com Logan Ramsey Washington DC View Birth Records Logan Ramsey Washington DC View Death Records Logan Ramsey Washington DC View Divorce Records 
+function updateLinkHrefs(container) {
+  const links = container.querySelectorAll('a');
+
+  links.forEach(link => {
+    if (!link.href) return;
+
+    try {
+      const url = new URL(link.href);
+      const u1 = url.searchParams.get('u1');
+
+      if (u1 && u1.includes('mobile')) {
+        url.searchParams.set('u1', u1.replace('mobile', 'desktop'));
+        link.href = url.toString();
+      }
+    } catch (e) {
+      // skip malformed URLs
+    }
+  });
+}
+
+if(screenFormat=='desktop'){
+    const container = document.querySelector('#ancestry-ad');
+    updateLinkHrefs(container);
+}
+
+ Previous Addresses used by  Logan Ramsey 
+                    1255 25th St NW, Unit 1028 
+          Washington DC 20037
+            District Of Columbia County Recorded September 2023 
+                    800 New Jersey Ave SE, Unit 938 
+          Washington DC 20003
+            District Of Columbia County Recorded August 2018 
+                    110 D St SE, Unit 510 
+          Washington DC 20003
+            District Of Columbia County Recorded August 2008 
+                    2518 Moray Ln 
+          Cedar Park TX 78613
+            Travis County Recorded August 2008 
+                    1819 E Capitol ST SE, Unit 201 
+          Washington DC 20003
+            District Of Columbia County Recorded October 2015 
+                    2518 20th St 
+          Lubbock TX 79410
+            Lubbock County Recorded July 2012 Relatives  of  Logan Ramsey  in  Washington, DC           Cody Tucker
+           Age 39 (Jun 1987)           James Tiner
+           Age 53 (Jul 1973)           John Ramsey
+           Age 66 (Apr 1960)           Carrie Moore
+           Age 72 (Nov 1953)           Dillon Tucker
+           Age 42 (Jul 1984)           Emilee Tiner
+           Age 26 (Mar 2000)           Jess Ramsey
+           Age 72 (Mar 1954)           Jesse Ramsey
+           Age 103 (May 1923)           John Ramsey
+           Age 65 (Aug 1960)           Kaci Tiner
+           Age 51 (Jun 1975)           Kim Royster
+           Age 68 (Mar 1958)           Lisa Ramsey
+           Age 58 (Aug 1967)           Lucia Ramsey
+           Age 98 (Dec 1927)           Matthew Tucker
+           Age 48 (May 1978)           Pearl Leclair
+           Age 44 (Jan 1982)           Priscilla Garcia
+           Age 45 (Apr 1981)           Riley Tiner
+           Age 19 (Feb 2007)           Ruby Barnes
+           Age 102 (Feb 1924)           Taylor Tucker
+           Age 29 (Oct 1996)           Thomas Tucker
+           Age 72 (Jan 1954)           Alfredo Bruzzese
+           Age 89 (Nov 1936) Show More...           Douglas Leclair
+           Age 45 (Jan 1981)           Ida Moore
+           Age 103 (Oct 1922)           Jerry Kelley
+           Age 80 (Feb 1946)           Jill Moore
+           Age 57 (Feb 1969)           Joseph Shanley
+           Age 86 (May 1940)           Kaye Scoggin
+           Age 73 (Aug 1953)           Kevin Bjerregaard
+           Age 67 (Jun 1959)           Lewis Leclair
+           Age 75 (May 1951)           Lucas Kline
+           Age 47 (Jun 1979)           Lydia Mcintosh
+           Age 71 (Feb 1955)           Mark Leclair
+           Age 47 (Jun 1979)           Marla Ramsey
+           Age 68 (Jun 1958)           Matt Moore
+           Age 53 (Jun 1973)           Misty Coit
+           Age 50 (Dec 1975)           Rachel Tucker
+           Age 42 (Mar 1984)           Richard Lauer
+           Age 64 (Oct 1961)           Staci Lauer
+           Age 55 (Dec 1970)           Susan Moore
+           Age 79 (Apr 1947)           Susan Underwood
+           Age 75 (Feb 1951)           Thomas Moore
+           Age 80 (Mar 1946)           Thomas Moore
+           Age 54 (Dec 1971)           Tim Brooks
+           Age 51 (Mar 1975)           Venita Lawson
+           Age 70 (May 1956) Associates of  Logan Ramsey  in  Washington, DC           Bobby Turner
+           Age 38(Aug 1987)           Liam Carolan
+           Age 36(Oct 1989)           Liberty Pertiwi
+           Age 35(Dec 1990)           Molly Grady
+           Age 37(Mar 1989)           Natasha Webb
+           Age 43(Jul 1983)           Terell Campbell
+           Age 37(Aug 1988) Is Logan Ramsey Currently Married? We can not find any public records stating that Logan Ramsey is currently Married.  It is not likely. Sponsored Link Current Employment for Logan Ramsey 
+          CHPA  
+         Sarasota, FL Title: SENIOR DIRECTOR, PUBLIC AFFAIRS AND MEDIA RELATIONS Work Experience for Logan Ramsey 
+          CHPA
+         SENIOR DIRECTOR, PUBLIC AFFAIRS AND MEDIA RELATIONS FREE Background Report for Logan Ramsey in Washington, DC (District of Columbia) Logan Ramsey  is 36 years old and was born in November of 1989. Currently Logan lives at the address  1250 Half ST SE, Unit 739, Washington DC 20003 . Logan has lived at this  Washington, DC    address for about 5 years, after moving in around March of 2021. Logan previously lived at  1255 25th St NW, Unit 1028, Washington DC 20037  for 1 year, starting in September of 2023. Going further back, starting in August of 2018, Logan lived at  800 New Jersey Ave SE, Unit 938, Washington DC 20003  for 6 years.  Public records do not indicate that Logan Ramsey is currently married.  The following people are relatives or close associates of Logan:  Cody Tucker (39),  James Tiner (53),  John Ramsey (66),  Carrie Moore (72),  Dillon Tucker (42),  Emilee Tiner (26),  Jess Ramsey (72),  Jesse Ramsey (103),  John Ramsey (65),  Kaci Tiner (51) and  Kim Royster (68).  Logan's current phone number is  (512) 577-4718 . This Wireless number was issued by 'T-Mobile USA Inc', first reported in public records on April of 2014. Past phone numbers for Logan include  (512) 250-0175  and  (202) 230-2253 . The primary email address for Logan is  logan.ramsey.lr@gmail.com .  Frequently Asked Questions How old is Logan Ramsey? + Logan Ramsey  is 36 years old, and was born in November of 1989. Where does Logan Ramsey live currently? + Logan Ramsey 's current address is  1250 Half ST SE, Unit 739, Washington DC 20003 . Logan has lived there for about 5.4 years, since March of 2021.  Who is related to Logan Ramsey? + Logan Ramsey  is likely related to the following people:  Cody Tucker ,  James Tiner ,  John Ramsey ,  Carrie Moore ,  Dillon Tucker ,  Emilee Tiner ,  Jess Ramsey ,  Jesse Ramsey ,  John Ramsey ,  Kaci Tiner ,  Kim Royster What is the best phone number for Logan Ramsey? + Logan Ramsey 's latest phone number is a wireless number at  (512) 577-4718 . What is the best email for Logan Ramsey? + logan.ramsey.lr@gmail.com  is the most current email on record for  Logan Ramsey . Is Logan Ramsey alive today? + Yes!  Logan Ramsey  is living today. Does Logan Ramsey go by any other names or aliases? + Logan Ramsey  may also go by the following names or aliases: Logan R Tucker, Logan Tucker, Ramsey Tucker Logan, Tucker Logan Who does Logan Ramsey associate with? + The following people are friends, co-workers, partners, roomates, or otherwise associated with  Logan Ramsey :  Bobby Turner ,  Liam Carolan ,  Liberty Pertiwi ,  Molly Grady ,  Natasha Webb ,  Terell Campbell Where did Logan Ramsey live previously? + Logan Ramsey  was registered, and likely lived at the following addresses in the past:  |  1255 25th St NW, Unit 1028, Washington DC 20037  |  800 New Jersey Ave SE, Unit 938, Washington DC 20003  |  110 D St SE, Unit 510, Washington DC 20003  |  2518 Moray Ln, Cedar Park TX 78613  |  1819 E Capitol ST SE, Unit 201, Washington DC 20003  |  2518 20th St, Lubbock TX 79410 What email addresses have been used by Logan Ramsey? + There is one email account for  Logan Ramsey , and that is  logan.ramsey.lr@gmail.com What phone numbers have been used by Logan Ramsey? + Logan Ramsey  has been registered with the following phone numbers:  (512) 577-4718 ,  (512) 250-0175 ,  (202) 230-2253 Is Logan Ramsey associated with any businesses? + We do not show Logan Ramsey associated with any business records googletag.cmd.push(function() { googletag.display('div-gpt-ad-1552072718699-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1554751771828-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1557266427886-0'); }); Public Records for  Logan Ramsey Paid Results Sponsored by  PeopleFinders.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  TruthFinder.com Dorothy L Ramsey Washington, DC Age 68                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  TruthFinder.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  BeenVerified.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  PeopleFinders.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  TruthFinder.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  BeenVerified.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  BeenVerified.com Family Tree Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  Spokeo.com Logan Ramsey Washington, DC Age 36                 View Details          Public Records for  Logan Ramsey Paid Results Sponsored by  FamFinder.com Logan Ramsey Washington, DC Age 36                 View Details          Ad  Advertise with us Logan Ramsey Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status Current Employment Work Experience FREE Background Report FAQ NEED MORE DATA IN REAL-TIME? Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence. Try Our API 
+        Name Directory: A   
+ B   
+ C   
+ D   
+ E   
+ F   
+ G   
+ H   
+ I   
+ J   
+ K   
+ L   
+ M   
+ N   
+ O   
+ P   
+ Q   
+ R   
+ S   
+ T   
+ U   
+ V   
+ W   
+ X   
+ Y   
+ Z   
+ 
+        Phone Directory:  
+           1   
+                   2   
+                   3   
+                   4   
+                   5   
+                   6   
+                   7   
+                   8   
+                   9   
+                 FREE People Search  | 
+         FREE Reverse Phone Lookup  |  
+         FREE Address Lookup Best People Finder Sites  | 
+         Advertise With Us  | 
+         About Us  | 
+         Contact  
+
+        |  Cookie Management 
+        |  Accessibility FastPeopleSearch API  | 
+         Real Estate API  | 
+         Skip Trace API Do Not Sell or Share My Personal Information  | 
+         Terms  | 
+         Privacy Notice  |  
+         Notice at Collection FastPeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA). This site can't be used for employment, credit or tenant screening, or any related purpose. © Copyright 2026. All Right Reserved. FastPeopleSearch.com 
+        googletag.cmd.push(() => { 
+            //console.log('--------------- refresh gam slots --------------');
+            googletag.pubads().refresh(googletag.pubads().getSlots()); 
+        });
+     $("#teaserWidgets").html("<div style=\"display:none\" id=\"slot-c601f389-dd6f-45a1-8645-c1508506257f\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeButton\" data-partner-id=\"21\" data-slot-id=\"1672\" data-slot-unique-guid=\"c601f389-dd6f-45a1-8645-c1508506257f\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Logan Ramsey</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Logan Ramsey</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Washington, DC</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 36        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-bc97c691-3e5b-4d7e-94a9-6f67ed16ed41\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-TruthFindercom\" id=\"ad-widget-TruthFindercom-BannerTypeTeaser\" data-partner-id=\"5\" data-slot-id=\"2126\" data-slot-unique-guid=\"bc97c691-3e5b-4d7e-94a9-6f67ed16ed41\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeTeaser\" data-partner-name=\"TruthFinder.com\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Logan Ramsey</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>TruthFinder.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"https%3A%2F%2Ftracking.truthfinder.com%2F%3Fa%3D938%26oc%3D27%26c%3D288%26subtheme%3D%26s1%3DCM-FastPeopleSearch%26s2%3DAG-Details%26s3%3DCRE-%2B%26s4%3DLP-288%26s5%3D%26firstName%3DDorothy%26lastName%3DRamsey%26city%3DWashington%26state%3DDC\" onClick=\"window.open(\'https://tracking.truthfinder.com/?a=938&oc=27&c=288&subtheme=&s1=CM-FastPeopleSearch&s2=AG-Details&s3=CRE-+&s4=LP-288&s5=&firstName=Dorothy&lastName=Ramsey&city=Washington&state=DC\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Dorothy L Ramsey</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Washington, DC</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 68        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1d251858-52ae-4bd7-8009-f4e296437378\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-TruthFinderSkipApi\" id=\"ad-widget-TruthFinderSkipApi-BannerTypeButton\" data-partner-id=\"9\" data-slot-id=\"2265\" data-slot-unique-guid=\"1d251858-52ae-4bd7-8009-f4e296437378\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"TruthFinderSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Logan Ramsey</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>TruthFinder.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Logan Ramsey</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Washington, DC</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 36        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-BeenVerifiedSkipApi\" id=\"ad-widget-BeenVerifiedSkipApi-BannerTypeButton\" data-partner-id=\"7\" data-slot-id=\"2267\" data-slot-unique-guid=\"1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"BeenVerifiedSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Logan Ramsey</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>BeenVerified.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Logan Ramsey</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Washington, DC</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 36        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-45e12cab-252b-40cb-9e71-deb19c2bc815\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PublicRecordsUSSkipAPI\" id=\"ad-widget-PublicRecordsUSSkipAPI-BannerTypeButton\" data-partner-id=\"37\" data-slot-id=\"2296\" data-slot-unique-guid=\"45e12cab-252b-40cb-9e71-deb19c2bc815\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PublicRecordsUSSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Logan Ramsey</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b></b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Logan Ramsey</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Washington, DC</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 36        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2… 
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.fastpeoplesearch.com/#organization",
+  "url": "https://www.fastpeoplesearch.com/",
+  "logo": "https://www.fastpeoplesearch.com/images/fastPeopleSearchLogo.png",
+  "name":"FastPeopleSearch",
+  "address":{
+    "@type": "PostalAddress",
+    "addressLocality": "Boston",
+    "addressRegion": "MA",
+    "postalCode": "02111-1929",
+    "streetAddress":"68 Harrison Ave Ste 605, PMB 29296"
+  },
+	"contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://www.fastpeoplesearch.com/contact",
+    "email": "support@fastpeoplesearch.com",
+    "contactType": "customer support",
+    "availableLanguage": [
+      "English"
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/Fast-People-Search-1763384900620802",
+    "https://twitter.com/fastpplsearch"
+  ]
+}
+ 
+{
+    "@context": "https://schema.org/",
+	"@graph": [ 
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com",
+    "url" : "https://www.fastpeoplesearch.com",
+    "name":"Fast People Search Home Page"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/address",
+    "url" : "https://www.fastpeoplesearch.com/address",
+    "name":"Find People by Address Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "url" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "name":"Reverse Phone Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/terms",
+    "url" : "https://www.fastpeoplesearch.com/terms",
+    "name":"Terms and Conditions"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/privacy",
+    "url" : "https://www.fastpeoplesearch.com/privacy",
+    "name":"Privacy Policy"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/contact",
+    "url" : "https://www.fastpeoplesearch.com/contact",
+    "name":"Contact"
+	},
+
+    {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/phone-directory",
+      "url" : "https://www.fastpeoplesearch.com/phone-directory",
+      "name": "Directory of United States Phone Numbers"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 2"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 3"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 4"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 5"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 6"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 7"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 8"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 9"
+  },
+  
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/a",
+      "url" : "https://www.fastpeoplesearch.com/names/a",
+      "name":"Name directory for last name starting with a"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/b",
+      "url" : "https://www.fastpeoplesearch.com/names/b",
+      "name":"Name directory for last name starting with b"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/c",
+      "url" : "https://www.fastpeoplesearch.com/names/c",
+      "name":"Name directory for last name starting with c"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/d",
+      "url" : "https://www.fastpeoplesearch.com/names/d",
+      "name":"Name directory for last name starting with d"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/e",
+      "url" : "https://www.fastpeoplesearch.com/names/e",
+      "name":"Name directory for last name starting with e"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/f",
+      "url" : "https://www.fastpeoplesearch.com/names/f",
+      "name":"Name directory for last name starting with f"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/g",
+      "url" : "https://www.fastpeoplesearch.com/names/g",
+      "name":"Name directory for last name starting with g"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/h",
+      "url" : "https://www.fastpeoplesearch.com/names/h",
+      "name":"Name directory for last name starting with h"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/i",
+      "url" : "https://www.fastpeoplesearch.com/names/i",
+      "name":"Name directory for last name starting with i"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/j",
+      "url" : "https://www.fastpeoplesearch.com/names/j",
+      "name":"Name directory for last name starting with j"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/k",
+      "url" : "https://www.fastpeoplesearch.com/names/k",
+      "name":"Name directory for last name starting with k"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/l",
+      "url" : "https://www.fastpeoplesearch.com/names/l",
+      "name":"Name directory for last name starting with l"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/m",
+      "url" : "https://www.fastpeoplesearch.com/names/m",
+      "name":"Name directory for last name starting with m"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/n",
+      "url" : "https://www.fastpeoplesearch.com/names/n",
+      "name":"Name directory for last name starting with n"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/o",
+      "url" : "https://www.fastpeoplesearch.com/names/o",
+      "name":"Name directory for last name starting with o"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/p",
+      "url" : "https://www.fastpeoplesearch.com/names/p",
+      "name":"Name directory for last name starting with p"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/q",
+      "url" : "https://www.fastpeoplesearch.com/names/q",
+      "name":"Name directory for last name starting with q"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/r",
+      "url" : "https://www.fastpeoplesearch.com/names/r",
+      "name":"Name directory for last name starting with r"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/s",
+      "url" : "https://www.fastpeoplesearch.com/names/s",
+      "name":"Name directory for last name starting with s"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/t",
+      "url" : "https://www.fastpeoplesearch.com/names/t",
+      "name":"Name directory for last name starting with t"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/u",
+      "url" : "https://www.fastpeoplesearch.com/names/u",
+      "name":"Name directory for last name starting with u"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/v",
+      "url" : "https://www.fastpeoplesearch.com/names/v",
+      "name":"Name directory for last name starting with v"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/w",
+      "url" : "https://www.fastpeoplesearch.com/names/w",
+      "name":"Name directory for last name starting with w"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/x",
+      "url" : "https://www.fastpeoplesearch.com/names/x",
+      "name":"Name directory for last name starting with x"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/y",
+      "url" : "https://www.fastpeoplesearch.com/names/y",
+      "name":"Name directory for last name starting with y"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/z",
+      "url" : "https://www.fastpeoplesearch.com/names/z",
+      "name":"Name directory for last name starting with z"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names",
+      "url" : "https://www.fastpeoplesearch.com/names",
+      "name":"Name Directory"
+  }
+
+]
+}
+ 
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "@id": "https://www.fastpeoplesearch.com/logan-ramsey_id_G4504960884750094867",
+  "url": "https://www.fastpeoplesearch.com/logan-ramsey_id_G4504960884750094867",
+  "name": "Logan Ramsey",
+  "honorificPrefix": "",
+  "givenName":"Logan",
+  "familyName":"Ramsey",
+  
+	
+    "homeLocation":{
+    "@type": "Place",
+        "@id":"https://www.fastpeoplesearch.com/address/1250-half-st-se-unit-739_washington-dc-20003",
+    "url":"https://www.fastpeoplesearch.com/address/1250-half-st-se-unit-739_washington-dc-20003",
+        "description": "Current home address",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
+      "postalCode": "20003",
+      "streetAddress": "1250 Half ST SE, Unit 739"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "38.875309",
+      "longitude": "-77.007066"
+    }
+      },
+  
+			"additionalName": [
+				"Logan R Tucker",
+				"Logan Tucker",
+				"Ramsey Tucker Logan",
+				"Tucker Logan"
+		 ],
+		"telephone": [
+      "(512) 577-4718",
+	    "(512) 250-0175",
+	    "(202) 230-2253"
+	  ],
+	"relatedTo": [
+		{
+		"@type": "Person",
+    
+    
+		"name": "Cody E Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "James Elvis Tiner"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "John Albert Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Carrie L Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Dillon T Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Emilee A Tiner"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jess Lucia Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jesse Rumsey Ramsey Sr"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "John Stephen Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kaci Leanne Tiner"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kim Marie Royster"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Lisa A Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Lucia J Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Matthew D Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Pearl Louise Leclair"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Priscilla M Garcia"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Riley J Tiner"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Ruby E Barnes"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Taylor Marie Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas Donald Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Alfredo V Bruzzese"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Douglas Robinson Leclair"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Ida P Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jerry R Kelley"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jill Eileen Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Joseph R Shanley"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kaye Wombacker Scoggin"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kevin Paul Bjerregaard"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Lewis T Leclair"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Lucas Allen Kline"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Lydia Grozdich Mcintosh"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Mark Elliott Leclair"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Marla Olsvig Ramsey"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Matt Scott Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Misty D Coit"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Rachel A Tucker"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Richard Charles Lauer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Staci Marie Lauer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Susan Obrien Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Susan Elliott Underwood"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas Duval Moore"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas Duval Moore Jr"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Tim Stephen Brooks"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Venita Darlynn Lawson"
+	}
+		]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+       {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/",
+      "url": "https://www.fastpeoplesearch.com/",
+      "name": "FastPeopleSearch Homepage"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names",
+      "url": "https://www.fastpeoplesearch.com/names",
+      "name": "People Search Directory of names"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names/r",
+      "url": "https://www.fastpeoplesearch.com/names/r",
+      "name": "People Search Directory of Last Names Starting with R"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/ramsey",
+      "url": "https://www.fastpeoplesearch.com/name/ramsey",
+      "name": "Search people with last name Ramsey"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 5,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/logan-ramsey",
+      "url": "https://www.fastpeoplesearch.com/name/logan-ramsey",
+      "name": "Search people named Logan Ramsey"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 6,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/logan-ramsey_dc",
+      "url": "https://www.fastpeoplesearch.com/name/logan-ramsey_dc",
+      "name": "Search people named Logan Ramsey in DC"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 7,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/logan-ramsey_washington-dc",
+      "url": "https://www.fastpeoplesearch.com/name/logan-ramsey_washington-dc",
+      "name": "Search people named Logan Ramsey in Washington, DC"
+    }
+  }
+  ]}
+ 
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How old is Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> is 36 years old, and was born in November of 1989."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where does Logan Ramsey live currently?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a>'s current address is <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/1250-half-st-se-unit-739_washington-dc-20003\" title=\"Find people who lived at 1250 Half ST SE, Unit 739, Washington DC 20003\">1250 Half ST SE, Unit 739, Washington DC 20003<\/a>. Logan has lived there for about 5.4 years, since March of 2021. "
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who is related to Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> is likely related to the following people: <a href=\"https:\/\/www.fastpeoplesearch.com\/cody-tucker_id_G5137125349978292124\" title=\"Run a fast people search on Cody Tucker\">Cody Tucker<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/james-tiner_id_G6293914494405071754\" title=\"Run a fast people search on James Tiner\">James Tiner<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/john-ramsey_id_G-8610365677606274476\" title=\"Run a fast people search on John Ramsey\">John Ramsey<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/carrie-moore_id_G9045569239129387947\" title=\"Run a fast people search on Carrie Moore\">Carrie Moore<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/dillon-tucker_id_G6056190055354694424\" title=\"Run a fast people search on Dillon Tucker\">Dillon Tucker<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/emilee-tiner_id_G4443494352732658655\" title=\"Run a fast people search on Emilee Tiner\">Emilee Tiner<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/jess-ramsey_id_G8004191820722523734\" title=\"Run a fast people search on Jess Ramsey\">Jess Ramsey<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/jesse-ramsey_id_G2877321045009137990\" title=\"Run a fast people search on Jesse Ramsey\">Jesse Ramsey<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/john-ramsey_id_G4968537498193643645\" title=\"Run a fast people search on John Ramsey\">John Ramsey<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/kaci-tiner_id_G7475478944004634585\" title=\"Run a fast people search on Kaci Tiner\">Kaci Tiner<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/kim-royster_id_G-7830661743249401627\" title=\"Run a fast people search on Kim Royster\">Kim Royster<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Logan Ramsey currently married?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We can not find any public records indicating that Logan Ramsey is currently Married.  It is not likely."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best phone number for Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a>'s latest phone number is a wireless number at <a href=\"https:\/\/www.fastpeoplesearch.com\/512-577-4718\" title=\"Search people associated with the phone number (512) 577-4718\">(512) 577-4718<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best email for Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "logan.ramsey.lr@gmail.com is the most current email on record for <a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Logan Ramsey alive today?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! <a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> is living today."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Does Logan Ramsey go by any other names or aliases?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> may also go by the following names or aliases: Logan R Tucker, Logan Tucker, Ramsey Tucker Logan, Tucker Logan"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who does Logan Ramsey associate with?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The following people are friends, co-workers, partners, roomates, or otherwise associated with <a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a>: <a href=\"https:\/\/www.fastpeoplesearch.com\/bobby-turner_id_G6933886646550551539\" title=\"Run a FastPeopleSearch on Bobby Turner\">Bobby Turner<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/liam-carolan_id_G8510617502241383684\" title=\"Run a FastPeopleSearch on Liam Carolan\">Liam Carolan<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/liberty-pertiwi_id_G-5718407909416617976\" title=\"Run a FastPeopleSearch on Liberty Pertiwi\">Liberty Pertiwi<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/molly-grady_id_G-7680740648899549515\" title=\"Run a FastPeopleSearch on Molly Grady\">Molly Grady<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/natasha-webb_id_G6990681434509825841\" title=\"Run a FastPeopleSearch on Natasha Webb\">Natasha Webb<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/terell-campbell_id_G-3119801096555444192\" title=\"Run a FastPeopleSearch on Terell Campbell\">Terell Campbell<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where did Logan Ramsey live previously?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> was registered, and likely lived at the following addresses in the past:  | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/1255-25th-st-nw-unit-1028_washington-dc-20037\" title=\"Search people who lived at 1255 25th St NW, Unit 1028, Washington DC 20037\">1255 25th St NW, Unit 1028, Washington DC 20037<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/800-new-jersey-ave-se-unit-938_washington-dc-20003\" title=\"Search people who lived at 800 New Jersey Ave SE, Unit 938, Washington DC 20003\">800 New Jersey Ave SE, Unit 938, Washington DC 20003<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/110-d-st-se-unit-510_washington-dc-20003\" title=\"Search people who lived at 110 D St SE, Unit 510, Washington DC 20003\">110 D St SE, Unit 510, Washington DC 20003<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/2518-moray-ln_cedar-park-tx-78613\" title=\"Search people who lived at 2518 Moray Ln, Cedar Park TX 78613\">2518 Moray Ln, Cedar Park TX 78613<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/1819-e-capitol-st-se-unit-201_washington-dc-20003\" title=\"Search people who lived at 1819 E Capitol ST SE, Unit 201, Washington DC 20003\">1819 E Capitol ST SE, Unit 201, Washington DC 20003<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/2518-20th-st_lubbock-tx-79410\" title=\"Search people who lived at 2518 20th St, Lubbock TX 79410\">2518 20th St, Lubbock TX 79410<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What email addresses have been used by Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is one email account for <a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a>, and that is logan.ramsey.lr@gmail.com"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What phone numbers have been used by Logan Ramsey?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/logan-ramsey_id_G4504960884750094867\" title=\"FastPeopleSearch on Logan Ramsey\">Logan Ramsey<\/a> has been registered with the following phone numbers: <a href=\"https:\/\/www.fastpeoplesearch.com\/512-577-4718\" title=\"Search people associated with the phone number (512) 577-4718\">(512) 577-4718<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/512-250-0175\" title=\"Search people associated with the phone number (512) 250-0175\">(512) 250-0175<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/202-230-2253\" title=\"Search people associated with the phone number (202) 230-2253\">(202) 230-2253<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Logan Ramsey associated with any businesses?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We do not show Logan Ramsey associated with any business records"
+    }
+  }   ]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "Logan Ramsey(36) Washington, DC (512)577-4718 | Public Records Profile",
+  "@id": "https://www.fastpeoplesearch.com/logan-ramsey_id_G4504960884750094867",
+  "url": "https://www.fastpeoplesearch.com/logan-ramsey_id_G4504960884750094867",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ".person-content-block"
+  }
+    ,"contentLocation": {
+    "@type":"Place",
+        "@id":"https://www.fastpeoplesearch.com/address/1250-half-st-se-unit-739_washington-dc-20003",
+    "url":"https://www.fastpeoplesearch.com/address/1250-half-st-se-unit-739_washington-dc-20003",
+        "description": "Current home address of Logan Ramsey, 1250 Half ST SE, Unit 739, Washington DC 20003",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Washington",
+      "addressRegion": "DC",
+      "postalCode": "20003",
+      "streetAddress": "1250 Half ST SE, Unit 739"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "38.875309",
+      "longitude": "-77.007066"
+    }
+      }
+  }
+ 
+window.addEventListener('DOMContentLoaded',function(){
+
+  wam.init({
+    searchType:'details', 
+    section:'list',
+    fn:'Logan',
+    mn:'',
+    ln:'Ramsey',
+    city:'Washington',
+    state:'DC',
+    age:'36',
+    phone:'%28512%29+577-4718',
+    email:'logan.ramsey.lr%40gmail.com',
+    userIP:'206.171.115.135',
+    gResults:'[{&quot;firstname&quot;:&quot;Logan&quot;,&quot;middlename&quot;:null,&quot;lastname&quot;:&quot;Ramsey&quot;,&quot;prefix&quot;:null,&quot;suffix&quot;:null,&quot;fullname&quot;:&quot;Logan Ramsey&quot;,&quot;age&quot;:36,&quot;dob_month&quot;:&quot;November&quot;,&quot;birthdayComingUp&quot;:false,&quot;newAddress&quot;:false,&quot;city&quot;:&quot;Washington&quot;,&quot;state&quot;:&quot;DC&quot;,&quot;zip5&quot;:&quot;20003&quot;,&quot;tahoeId&quot;:&quot;G4504960884750094867&quot;}]',
+    env:'production',
+    requestPath:'logan-ramsey_id_G4504960884750094867',
+    requestTLD:'https://www.fastpeoplesearch.com',
+    isMobile:screenFormat=='mobile'?true:false
+  });
+
+  //map ads
+/*
+  if(adMapSized.left) $('#admap-left').html(adMapSized.left);
+  if(adMapSized.right) $('#admap-right').html(adMapSized.right);
+  if(adMapSized.middle1) $('#admap-middle1').html(adMapSized.middle1);
+  if(adMapSized.middle2) $('#admap-middle2').html(adMapSized.middle2);
+  if(adMapSized.middle3) $('#admap-middle3').html(adMapSized.middle3);
+  if(adMapSized.footer) $('#admap-footer').html(adMapSized.footer);
+  if(adMapSized.scroll) $('#admap-scroll').html(adMapSized.scroll);
+*/
+
+  $(function () {
+    //collapse elements
+    $('#collapsed-phones').on('hidden.bs.collapse', function () { $('#collapse-phone-links').text('Show More...'); });
+    $('#collapsed-phones').on('shown.bs.collapse', function () { $('#collapse-phone-links').text('Show Less...'); });
+    $('#collapsed-emails').on('hidden.bs.collapse', function () { $('#collapse-email-links').text('Show More...'); });
+    $('#collapsed-emails').on('shown.bs.collapse', function () { $('#collapse-email-links').text('Show Less...'); });
+    $('#collapsed-names').on('hidden.bs.collapse', function () { $('#collapse-name-links').text('Show More...'); });
+    $('#collapsed-names').on('shown.bs.collapse', function () { $('#collapse-name-links').text('Show Less...'); });
+    $('#collapsed-addresses').on('hidden.bs.collapse', function () { $('#collapse-address-links').text('Show More...'); });
+    $('#collapsed-addresses').on('shown.bs.collapse', function () { $('#collapse-address-links').text('Show Less...'); });
+    $('#collapsed-relatives').on('hidden.bs.collapse', function () { $('#collapse-relative-links').text('Show More...'); });
+    $('#collapsed-relatives').on('shown.bs.collapse', function () { $('#collapse-relative-links').text('Show Less...'); });
+    $('#collapsed-associates').on('hidden.bs.collapse', function () { $('#collapse-associate-links').text('Show More...'); });
+    $('#collapsed-associates').on('shown.bs.collapse', function () { $('#collapse-associate-links').text('Show Less...'); });
+    $('#collapsed-businesses').on('hidden.bs.collapse', function () { $('#collapse-business-links').text('Show More...'); });
+    $('#collapsed-businesses').on('shown.bs.collapse', function () { $('#collapse-business-links').text('Show Less...'); });
+  });
+
+  $('#toc-mobile').click(function(e){
+    $('#toc-mobile ul').toggle();
+  });
+
+});
+ 
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+
+    if (item.classList.contains('open')) {
+      answer.style.maxHeight = '0';
+      item.classList.remove('open');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      item.classList.add('open');
+    }
+  });
+});
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+    analytics_storage: 'granted'
+}); 
+                      ×
+                   
+                      ⤢
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:15 Pause Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Advertisement: 0:13

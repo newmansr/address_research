@@ -1,0 +1,462 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address Colin Fay City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip jsmith@gmail.com e.g 123 Park Ave City, State or Zip Name Phone Address Email Enter name, phone or address Colin Fay e.g 202-555-3456 e.g 123 Park Ave jsmith@gmail.com e.g John Smith Colin Fay City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip Search Neighbors jsmith@gmail.com ezstandalone.cmd.push(function() { ezstandalone.showAds(104); }); 
+        /* TOC FAB - Scoped styles for instance 44f7eacd */
+        .toc-fab-wrapper-44f7eacd {
+            position: fixed;
+            top: 128px;
+            z-index: 999;
+        }
+        .toc-fab-44f7eacd {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #436280 0%, #3f5a74 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        .toc-fab-44f7eacd:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .toc-fab-44f7eacd.active {
+            background: linear-gradient(135deg, #3f5a74 0%, #436280 100%);
+        }
+        .toc-fab-44f7eacd i {
+            transition: transform 0.3s ease;
+        }
+        .toc-fab-44f7eacd.active i {
+            transform: rotate(90deg);
+        }
+        .toc-fab-label-44f7eacd {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        .toc-fab-label-44f7eacd::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .toc-fab-wrapper-44f7eacd:hover .toc-fab-label-44f7eacd {
+            opacity: 1;
+            visibility: visible;
+        }
+        .toc-fab-44f7eacd.active + .toc-fab-label-44f7eacd {
+            display: none;
+        }
+        .toc-dropdown-44f7eacd {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.2s ease;
+        }
+        .toc-dropdown-44f7eacd.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .toc-dropdown-header-44f7eacd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc-dropdown-title-44f7eacd {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+        }
+        .toc-close-44f7eacd {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #adb5bd;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .toc-close-44f7eacd:hover {
+            color: #6c757d;
+        }
+        .toc-dropdown-body-44f7eacd {
+            padding: 8px 0;
+            max-height: min(calc(100vh - 200px), 600px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f8f9fa;
+        }
+        .toc-dropdown-body-44f7eacd::-webkit-scrollbar {
+            width: 6px;
+        }
+        .toc-dropdown-body-44f7eacd::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        .toc-dropdown-body-44f7eacd::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .toc-dropdown-body-44f7eacd::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        .toc-item-44f7eacd {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 16px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .toc-item-44f7eacd:hover {
+            background: #f8f9fa;
+            color: #436280;
+        }
+        .toc-item-44f7eacd i {
+            width: 20px;
+            text-align: center;
+            color: #112236;
+            font-size: 14px;
+        }
+        .toc-item-44f7eacd:hover i {
+            color: #436280;
+        }
+        @media (max-width: 767px) {
+            .toc-fab-wrapper-44f7eacd {
+                top: 130px;
+            }
+            .toc-fab-44f7eacd {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            .toc-fab-label-44f7eacd {
+                display: none !important;
+            }
+            .toc-dropdown-44f7eacd {
+                min-width: 220px;
+            }
+            .toc-dropdown-body-44f7eacd {
+                max-height: calc(100vh - 300px);
+                overflow-y: scroll;
+                -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+                mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .toc-fab-wrapper-44f7eacd {
+                top: 195px;
+            }
+            .toc-fab-label-44f7eacd {
+                display: none !important;
+            }
+        }
+     Jump to Section On This Page Top of Page Also Known As Current Address Previous Addresses Phone Numbers Possible Relatives Possible Associates Education & Employment Background Profile FAQ 
+        (function() {
+            var id = '44f7eacd';
+            var contentSelector = '.content-center';
+            var fabWidth = 48;
+            var baseScrollOffset = 130;
+
+            // Get responsive scroll offset based on screen size
+            function getScrollOffset() {
+                var w = window.innerWidth;
+                if (w < 768) return 130;      // Mobile: header ~95px + padding
+                if (w < 1024) return 195;     // Tablet: header ~167px + padding
+                return baseScrollOffset;       // Desktop: use configured value
+            }
+
+            // Position FAB at the right edge of content container
+            function positionFab() {
+                var content = document.querySelector(contentSelector);
+                var fab = document.getElementById('tocFabWrapper_' + id);
+                if (!content || !fab) return;
+                var rect = content.getBoundingClientRect();
+                fab.style.left = (rect.right - fabWidth) + 'px';
+            }
+
+            // Toggle dropdown
+            window['tocToggle_' + id] = function(trigger) {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                if (dropdown.classList.contains('open')) {
+                    window['tocClose_' + id]();
+                } else {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            // Close dropdown
+            window['tocClose_' + id] = function() {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                var trigger = document.querySelector('.toc-fab-' + id);
+                if (dropdown) dropdown.classList.remove('open');
+                if (trigger) {
+                    trigger.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // Scroll to top of page
+            window['tocScrollToTop_' + id] = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window['tocClose_' + id]();
+            };
+
+            // Scroll to section with offset for fixed header
+            window['tocScrollTo_' + id] = function(targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                window['tocClose_' + id]();
+            };
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#tocFabWrapper_' + id)) {
+                    window['tocClose_' + id]();
+                }
+            });
+
+            // Position on load and resize
+            positionFab();
+            window.addEventListener('resize', positionFab);
+        })();
+     Home  /  F  /  Fay  /  Colin Fay  /  DC  /  Washington Colin Fay 
+Age 37, Born January 1989 Lives in Washington, DC (202) 258-8168 Full Background Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Evictions & Foreclosures Marriage & Divorce Records Bankruptcies, Liens & Judgments Assets & Properties Business Records Professional Licenses Social Media Records 
+View Full Background Report
+                                             Also Seen As
+                         Includes all names used in any public records filings for Colin Fay. Colin Gerard Fay Current Address
+                         This is the most recently reported address for Colin Fay. 800 New Jersey Ave SE #427 Washington, DC 20003 District Of Columbia County 
+                                    (Feb 2019 - Aug 2026)
+                                 Phone Numbers
+                         Includes the current and past phone numbers for Colin Fay. (202) 258-8168  -  Wireless Possible Primary Phone Last reported Jul 2026 AT&T (301) 229-9267  -  Landline Last reported Jan 2015 Verizon Maryland (301) 215-9816  -  Landline Last reported Aug 2025 Verizon Maryland (202) 285-5548  -  Wireless Last reported Jul 2017 AT&T (202) 285-5546  -  Wireless Last reported Mar 2016 AT&T Full Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Birth & Death Records Police Records Search Warrants Criminal Records Data Property Records Current and Past Contact Info Reverse Phone Lookups AKAs, Age, Date of Birth Addresses and Phone Numbers Relatives and Associates Public Records Data Bankruptcies, Judgments, Liens Complete Background Check 
+View Full Background Report
+                                             
+                            Sponsored Links
+                         
+      /* CSS Reset for Shadow DOM */
+      :host {
+        all: initial;
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* Preserve publisher control over hidden/disabled ad containers.
+           Without these overrides, all: initial resets pointer-events to auto
+           and can make an invisible creative clickable. Interstitial close
+           buttons intentionally do not inherit these properties because they
+           must remain dismissible even when publisher UI disables input. */
+        pointer-events: inherit;
+        visibility: inherit;
+      }
+
+      * {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+      }
+
+      /* Apply consistent font family */
+      * {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      /* Prevent text decoration inheritance */
+      *, *::before, *::after {
+        text-decoration: none !important;
+      }
+
+      a, a:hover, a:visited, a:active {
+        text-decoration: none !important;
+      }
+
+      /* Restore useful defaults */
+      button {
+        cursor: pointer;
+      }
+
+      img {
+        max-width: 100%;
+      }
+     Judge Blocks Voter Roll Checks Court ruling impacts voters in Washington D.C. (Southeast Washington). Learn more. ezstandalone.cmd.push(function() { ezstandalone.showAds(109); }); Previous Addresses
+                         All previously reported addresses for Colin Fay. 3609 Dunlop St Chevy Chase, MD 20815 Montgomery County 
+                                            (May 2024 - Aug 2024)
+                                         800 New Jersey Ave SE #540 Washington, DC 20003 District Of Columbia County 
+                                                (Feb 2019 - Nov 2022)
+                                             4800 Auburn Ave Bethesda, MD 20814 Montgomery County 
+                                            (Sep 2018 - May 2019)
+                                         28584 9th Dr Easton, MD 21601 Talbot County 
+                                                (Oct 2014 - Jun 2019)
+                                             5611 Springfield Dr Bethesda, MD 20816 Montgomery County 
+                                            (Aug 2008 - Dec 2014)
+                                         2000 N St NW #910 Washington, DC 20036 District Of Columbia County 
+                                                (Mar 2010)
+                                             Criminal Records Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Speeding Tickets 
+View Criminal Records Report
+                                 
+                            Sponsored Links
+                         ezstandalone.cmd.push(function() { ezstandalone.showAds(110); }); Possible Relatives
+                         May include parents (mother, father), spouse (wife, husband), exes, brothers, sisters and children of Colin Fay. Ellen Fay 
+Age 67                                         Ellen Fay 
+Age 67                                             Gerard Fay 
+Age 73                                                 Gerard Fay 
+Age 73                                                     Kevin Fay 
+Age 42                                         Sean Fay 
+Age 40                                             Gerry Fay 
+Age 73                                                 Sean Fay 
+Age 42                                                     Jennifer Fay 
+Age 43                                         Lawrence Fay 
+Age 102                                             Ryan Fay 
+Age 44                                                 Shaunna Fay 
+Age 72                                                     Stella Fay 
+Age 98                                         Wayne Fay 
+Age 74                                             Possible Associates
+                         May include current and past roommates, friends, and extended family of Colin Fay. Margaret Crilley 
+Age 34                                         David Albright 
+Age 63                                             Raymond Albright 
+Age 97                                                 Ruth Albright 
+Age 98                                                     Education and Employment
+                         May include education and employment history for Colin Fay. 
+                                Company 
+Tishman Speyer                                 
+                                Job Title 
+Senior Director                                 
+                                From 
+DEC 2025                                 
+                                To 
+PRESENT                                 
+                                    College 
+Georgetown University                                     
+                                    Degree 
+Master's Of Professional Studies In Real Estate, Real Estate Finance, And Development                                     
+                                    From 
+2023                                     
+                                    To 
+PRESENT                                     Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Bankruptcies, Judgments, Liens Search Warrants Property Records Current and Past Contact Info Reverse Phone Lookups Age Locality History and Phone Numbers Relatives and Associates Public Records Data Background Search 
+View Background Report
+                                                     advertisement ezstandalone.cmd.push(function() { ezstandalone.showAds(111); }); Background Profile on Colin G Fay 
+                            Colin G Fay,  37 years old , was born in January 1989. Colin's address is  800 New Jersey AVE SE #427  in  Washington, DC , where he's lived since February 2019. He has a phone number of  (202) 258-8168 , a mobile number through AT&T.  Past addresses for Colin include Chevy Chase, MD, Bethesda, MD, Easton, MD, and Washington, DC for about 12 years (from March 2010 to November 2022). We also found phone numbers for Colin:  (301) 229-9267  (landline),  (301) 215-9816  (landline) and others.  Social media links, property ownership & more can be found at our  partner site . Colin has worked at  Tishman Speyer  as a  Senior Director  since DEC 2025. This company is associated with the  Real Estate and Construction  industry. Colin is an alumnus of  Georgetown University , having attended from 2023 to PRESENT and earned a  Master's of Professional Studies in Real Estate, Real Estate Finance, and Development .  Colin is related to  Ellen Fay ,  Gerard Fay ,  Kevin Fay ,  Sean Fay  and 10 others. Colin has been associated with  Margaret Crilley ,  David Albright  and others.  A more in-depth report can be found at our  partner site . {"context":"https://schema.org","type":"FAQPage","mainEntity":[{"type":"Question","name":"Where does Colin G Fay live?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay's address is 800 New Jersey Ave Se #427 Washington, DC 20003."}},{"type":"Question","name":"How old is Colin G Fay?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay is 37 years old."}},{"type":"Question","name":"What is Colin G Fay's phone number?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay's number is (202) 258-8168. This is a mobile line through AT&T."}},{"type":"Question","name":"Is Colin G Fay married?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay does not appear to be married based on available public records."}},{"type":"Question","name":"What other names is Colin G Fay known by?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay has also been known as Colin Gerard Fay."}},{"type":"Question","name":"Where has Colin G Fay lived previously?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay has previously lived in Chevy Chase, MD, Washington, DC, and Bethesda, MD and 1 other location."}},{"type":"Question","name":"Where does/did Colin G Fay work?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay is associated with Tishman Speyer as a Senior Director."}},{"type":"Question","name":"Where did Colin G Fay go to school?","acceptedAnswer":{"type":"Answer","text":"Colin G Fay attended Georgetown University and may have earned a Master's of Professional Studies in Real Estate, Real Estate Finance, and Development."}},{"type":"Question","name":"Who are Colin G Fay's relatives?","acceptedAnswer":{"type":"Answer","text":"Some of Colin G Fay's relatives include Ellen R Fay, Ellen Reidy Fay, and Gerard M Fay and 11 others."}}]} Frequently Asked Questions Where does  Colin G Fay  live? + Colin G Fay's  address is  800 New Jersey Ave Se #427 Washington, DC 20003 . How old is  Colin G Fay ? + Colin G Fay  is 37 years old. What is  Colin G Fay 's phone number? + Colin G Fay's  number is  (202) 258-8168 . This is a mobile line through AT&T. Is  Colin G Fay  married? + Colin G Fay  does not appear to be married based on available public records. What other names is  Colin G Fay  known by? + Colin G Fay  has also been known as Colin Gerard Fay. Where has  Colin G Fay  lived previously? + Colin G Fay  has previously lived in Chevy Chase, MD, Washington, DC, and Bethesda, MD and 1 other location. Where does/did  Colin G Fay  work? + Colin G Fay  is associated with  Tishman Speyer  as a  Senior Director . Where did  Colin G Fay  go to school? + Colin G Fay  attended  Georgetown University  and may have earned a  Master's of Professional Studies in Real Estate, Real Estate Finance, and Development . Who are  Colin G Fay 's relatives? + Some of  Colin G Fay's  relatives include  Ellen R Fay ,  Ellen Reidy Fay , and  Gerard M Fay  and 11 others. function toggleFaq(itemId) {var question = document.getElementById(itemId + '_question');var answer = document.getElementById(itemId + '_answer');if (answer.classList.contains('open')) {answer.classList.remove('open');question.setAttribute('aria-expanded', 'false');} else {answer.classList.add('open');question.setAttribute('aria-expanded', 'true');}} 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API Disclaimers Information displayed on this page is compiled from public records sources including but not limited to government agencies at the federal, state and local level. Although we update our records monthly, data on this page may not be accurate or up-to-date. Permissible use: please read our  FAQ  to understand how you may use this service. Does this page contain your information?  Click here to understand your privacy rights or to remove your record . Search all records free! × e.g John Smith City, State or Zip View All Details Free e.g 202-555-3456 View All Details Free e.g 123 Park Ave City, State or Zip View All Details Free True PeopleSearch  is the #1 FREE people search site used by millions of people.   Get current address, phone number, email address, relatives, friends and a lot more on anyone now, we're 100% free for everything!  ezstandalone.cmd.push(function() { ezstandalone.showAds(105); }); True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 var script=document.createElement("script"),scripts=document.getElementsByTagName("script")[0];script.async=!1,script.src="/js/bundle?v=mWKOfvyX",scripts.parentNode.insertBefore(script,scripts); window.addEventListener('load', function () {if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&first=&last=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&phoneno=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&streetaddress=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('G6071619388869783761' != '' && 1==2) {var fn, ln, city, state, age;fn = $("#personDetails").data("fn");ln = $("#personDetails").data("ln");city = $("#personDetails").data("city");state = $("#personDetails").data("state");age = $("#personDetails").data("age");if (fn != "" && ln != "" && city != "" && state != "" & age != "" && ((Math.floor(Math.random() * 10) + 1) <= 7)){$.ajax({url: '/search/widgetsdetails?fromdir=true&name=' + fn + ' ' + ln + '&citystatezip=' + city + ',' + state + "&agerange=" + age,success: function (text) {if (text != 'NONE') {if($("#widgetsTop").length){$("#widgetsTop").html(text);$("#widgetsTop").css("display", "");}}},error: function (text) {}});}}});  
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); 
+                      ×
+                   
+                      ⤢
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture

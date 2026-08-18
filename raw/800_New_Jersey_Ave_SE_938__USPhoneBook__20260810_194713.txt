@@ -1,0 +1,605 @@
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WCRK5H" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+ 
+						Search by phone, name, address
+					 × Sign In 
+                Phone
+             
+                Name
+             
+                Address
+             Phone Number Enter an address 800 New Jersey Ave Se Unit 938 
+                Please enter a phone number.
+             City City Washington State District of Columbia State State Alabama Alabama Alaska Alaska Arizona Arizona Arkansas Arkansas California California Colorado Colorado Connecticut Connecticut District of Columbia District of Columbia Delaware Delaware Florida Florida Georgia Georgia Hawaii Hawaii Idaho Idaho Illinois Illinois Indiana Indiana Iowa Iowa Kansas Kansas Kentucky Kentucky Louisiana Louisiana Maine Maine Maryland Maryland Massachusetts Massachusetts Michigan Michigan Minnesota Minnesota Mississippi Mississippi Missouri Missouri Montana Montana Nebraska Nebraska Nevada Nevada New Hampshire New Hampshire New Jersey New Jersey New Mexico New Mexico New York New York North Carolina North Carolina North Dakota North Dakota Ohio Ohio Oklahoma Oklahoma Oregon Oregon Pennsylvania Pennsylvania Rhode Island Rhode Island South Carolina South Carolina South Dakota South Dakota Tennessee Tennessee Texas Texas Utah Utah Vermont Vermont Virginia Virginia Washington Washington West Virginia West Virginia Wisconsin Wisconsin Wyoming Wyoming 
+            Please enter a phone number.
+         Search 800 New Jersey Ave Se Unit 938 Washington DC               800 New Jersey Ave Se Unit 938 Washington DC
+  Home  Report Results for 800 New Jersey Ave SE UNIT 938 Washington, DC 800 New Jersey Ave SE UNIT 938 Washington, DC 20003 
+                                                                was
+                                                                built in  2017 
+                                                                                                                                
+                                The property has
+                                                                a lot size of  49,885 Sq Ft  lot
+                                                                                                                                and is listed as a  Vacant Land General .
+                                
+                                The property is currently  not for sale .
+
+                                
+                                If you are looking to buy or rent a property, use USPhoneBook's property database to avoid rental scams, understand tax liabilities, and get a sense of the property's value over time. You can also check out the neighborhood section and see nearby homes, last sold for prices, tax records and more.
+                                
+                         
+    ezstandalone.cmd.push(function() {
+        ezstandalone.showAds(104);
+    });
+ 
+    .pr-banner {
+        background-color: #f1f6fb;
+        border: 1px solid #d9e2ec;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        container-type: inline-size;
+    }
+
+    .pr-banner__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .pr-banner__content {
+        flex: 1 1 22rem;
+        min-width: 0;
+    }
+
+    .pr-text-blue {
+        color: #1355a0 !important;
+    }
+
+    .pr-banner__sponsored {
+        font-size: 10px;
+        color: #94a6ba !important;
+    }
+
+    .pr-banner__actions {
+        flex: 0 1 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;        
+    }
+
+    .pr-banner__cta {
+        background-color: #1355a0 !important;
+    }
+
+
+    .pr-banner__cta {
+        line-height: 1.7;
+    }
+
+    .pr-banner__cta {
+        white-space: normal;
+        text-align: center;
+    }
+
+    .pr-banner__pin {
+        width: 22px;
+        height: 22px;
+    }
+
+    .pr-banner__features {
+        font-size: 14px;
+        color: #455366;
+    }
+
+    @container (max-width: 680px) {
+        .pr-banner__inner {
+            align-items: stretch;
+        }
+
+        .pr-banner__actions {
+            flex: 1 1 100%;
+            justify-content: stretch;
+        }
+
+        .pr-banner__cta {
+            width: 100%;
+        }
+    }
+ Property Reach Sponsored Full Property Report 
+                Property Values · Deed History · Ownership History · Foreclosures · Mortgage History
+             
+                Get More Property Details
+                 → Public Facts   Last sold Apr 14, 2025 2 Beds 1 Baths 1,003 Sqft  Off Market
+                                                                                                     
+                                                    Built in 2017
+                                                 
+                                                    49,885 lot sqft
+                                                 Property characteristics Property type Vacant Zoning type Vacant Land General APN 0737- -0827 Subdivision Old City 1 Property History                                      Over the last 12 months, the tax of  800 New Jersey Ave SE UNIT 938 Washington, DC 20003  has decreased by -49%.
+
+                                 There is currently no price history available. Tax History 2021 2022 2023 2024 2025 $35,000 $40,000 $45,000 $50,000 $55,000 $60,000 $65,000 $70,000 $75,000 
+                                    if (typeof runWhenChartistReady !== 'function') {
+                                        function runWhenChartistReady(initFn, retries) {
+                                            if (typeof Chartist !== 'undefined') {
+                                                initFn();
+                                                return;
+                                            }
+
+                                            if (retries <= 0) {
+                                                return;
+                                            }
+
+                                            setTimeout(function() {
+                                                runWhenChartistReady(initFn, retries - 1);
+                                            }, 50);
+                                        }
+                                    }
+
+                                    function initTaxChart() {
+                                        new Chartist.Line('#tax-history-chart-desktop', {
+                                            labels: [2021,2022,2023,2024,2025]
+                                            , series: [[69017.2,69017.2,69017.2,70399.9,35842.64]]
+                                        }, {
+                                            axisY: {
+                                                labelInterpolationFnc: function(value) {
+                                                    return '$' + value.toLocaleString();
+                                                }
+                                                , fullWidth: true
+                                                , chartPadding: {
+                                                    right: 10
+                                                    , left: 10
+                                                }
+                                                , offset: 70
+                                            }
+                                        });
+                                    }
+                                    runWhenChartistReady(initTaxChart, 120);
+
+                                 Expand Collapse Year Taxes Assesments 2025 $ 35,843   -49 % $ 4,216,780 2024 $ 70,400   2 % $ 4,266,660 2023 $ 69,017 
+                                                                                                        ----
+                                                                                                     $ 4,182,860 2022 $ 69,017 
+                                                                                                        ----
+                                                                                                     $ 4,182,860 2021 $ 69,017 
+                                                                                                        ----
+                                                                                                     $ 4,182,860 Property Reach Sponsored Full Property Report 
+                Property Values · Deed History · Ownership History · Foreclosures · Mortgage History
+             
+                Get More Property Details
+                 → Owner William Mcmahon William Thomas Mcmahon , Age 82  Lives at 
+                                                        71 Woodward St, Unit 217,  Destin, FL 32541-3550
+                                                     Relatives:  Susan Mcmahon , 
+                                                         Ashley Mcmahon , 
+                                                         Brendan Mcmahon , 
+                                                         Patrick Mcmahon , 
+                                                         Tyler Mcmahon , 
+                                                         Allen Phillips , 
+                                                         Allen W , 
+                                                         Ashley Crawford View Report People Living at 800 New Jersey Ave SE Washington, DC Pedro Colon Pedro J Colon , Age 44  Lives at  534 County Road 4884,  Copperas Cove, TX 76522-6279
+                                                 Copperas Cove TX 76522 534 County Road 4884 Prior addresses:   687 Psc 76,  Apo, AE 09720-0007
+                                                 Apo AE 09720 687 Psc 76  3434 Millbrook Dr, Apt 135,  San Angelo, TX 76904-5758
+                                                 San Angelo TX 76904 3434 Millbrook Dr, Apt 135  1660 W T C Jester Blvd, Apt 1307,  Houston, TX 77008-3270
+                                                 Houston TX 77008 1660 W T C Jester Blvd, Apt 1307 Relatives:  Christian Colon , 
+                                                 Edna Colon , 
+                                                 Pedro Colon , 
+                                                 Marco Colon , 
+                                                 Alan Patrick , 
+                                                 Cresencia Serna , 
+                                                 Dayne Laza , 
+                                                 Edwin Laza , 
+                                                 Elbert Laza View Report Logan Ramsey Logan P Ramsey , Age 36  Lives at  1250 Half ST SE, Apt 739,  Washington, DC 20003-3665
+                                                 Washington DC 20003 1250 Half ST SE, Apt 739 Prior addresses:   1255 25th St NW, Apt 1028,  Washington, DC 20037
+                                                 Washington DC 20037 1255 25th St NW, Apt 1028  800 New Jersey Ave SE, Apt 938,  Washington, DC 20003-4081
+                                                 Washington DC 20003 800 New Jersey Ave SE, Apt 938  110 D St SE, Apt 510,  Washington, DC 20003-1815
+                                                 Washington DC 20003 110 D St SE, Apt 510 Relatives:  Cody Tucker , 
+                                                 James Tiner , 
+                                                 John Ramsey , 
+                                                 Carrie Moore , 
+                                                 Dillon Tucker , 
+                                                 Emilee Tiner , 
+                                                 Jess Ramsey , 
+                                                 Jesse Ramsey View Report Cody Tucker Cody E Tucker , Age 39  Lives at  1255 25th St NW, Apt 1028,  Washington, DC 20037-4121
+                                                 Washington DC 20037 1255 25th St NW, Apt 1028 Prior addresses:   1250 Half St SE, Apt 739,  Washington, DC 20003-3665
+                                                 Washington DC 20003 1250 Half St SE, Apt 739  1819 E Capitol St SE, Apt 201,  Washington, DC 20003-1894
+                                                 Washington DC 20003 1819 E Capitol St SE, Apt 201 Relatives:  Carrie Moore , 
+                                                 Dillon Tucker , 
+                                                 Kim Royster , 
+                                                 Logan Ramsey , 
+                                                 Pearl Leclair , 
+                                                 Taylor Tucker , 
+                                                 Thomas Tucker , 
+                                                 Alfredo Bruzzese , 
+                                                 Brooks Tucker View Report 
+    ezstandalone.cmd.push(function() {
+        ezstandalone.showAds(101);
+    });
+ Amy Williams Amy Kathleen Williams , Age 48  Lives at  800 New Jersey Ave SE, Apt 938,  Washington, DC 20003-4081
+                                                 Washington DC 20003 800 New Jersey Ave SE, Apt 938 Prior addresses:   1101 S Arlington Ridge Rd, Apt 403,  Arlington, VA 22202-1924
+                                                 Arlington VA 22202 1101 S Arlington Ridge Rd, Apt 403  148 S Favorite ST,  Colorado Springs, CO 80905-4453
+                                                 Colorado Springs CO 80905 148 S Favorite ST Relatives:  Amy Williams , 
+                                                 Courtney Mcintyre , 
+                                                 Gordie Davidson , 
+                                                 Laurel Davidson , 
+                                                 Susan Davidson , 
+                                                 Allison Davidson , 
+                                                 Arron Williams , 
+                                                 Brandy Richardson View Report William Mcmahon William Thomas Mcmahon , Age 82  Lives at  71 Woodward St, Unit 217,  Destin, FL 32541-3550
+                                                 Destin FL 32541 71 Woodward St, Unit 217 Prior addresses:   4522 Olde Plantation Pl,  Destin, FL 32541-3425
+                                                 Destin FL 32541 4522 Olde Plantation Pl  4491 Clipper Cv,  Destin, FL 32541-5100
+                                                 Destin FL 32541 4491 Clipper Cv  800 New Jersey Ave SE, Apt 1005,  Washington, DC 20003-4081
+                                                 Washington DC 20003 800 New Jersey Ave SE, Apt 1005 Relatives:  Susan Mcmahon , 
+                                                 Ashley Mcmahon , 
+                                                 Brendan Mcmahon , 
+                                                 Patrick Mcmahon , 
+                                                 Tyler Mcmahon , 
+                                                 Allen Phillips , 
+                                                 Allen W , 
+                                                 Ashley Crawford View Report ﻿ (function() {
+var style = document.createElement('style');
+var div = document.getElementById('pagination-style-1');
+style.innerHTML = div.innerHTML;
+div.innerHTML = '';
+document.head.appendChild(style);
+})(); 
+    ezstandalone.cmd.push(function() {
+        ezstandalone.showAds(110);
+    });
+ Neighbors 800 New Jersey Ave SE Washington, DC View Property Report 800 New Jersey Ave SE Washington, DC View Property Report 101 H St SE Washington, DC View Property Report H St SE Washington, DC View Property Report FAQs Who lives at 800 New Jersey Ave SE, Washington, DC 20003?  According to our records, the current person living in 800 New Jersey Ave SE is William Mcmahon. Is this property currently for sale?  The property is not for sale. Use USPhoneBook to review nearby listings or compare similar homes in the area. What is the estimated value of this property?  We currently do not have sufficient data to provide an estimated value or recent price trends for this property. You may still explore nearby properties or historical records for additional insights. How big is this property?  It features approximately 1,003 sq ft of living space on a 49,885 sq ft lot, built in 2017 and classified as a Vacant Land General. What nearby properties can I compare this to?  Nearby homes include 800 New Jersey Ave SE, 800 New Jersey Ave SE, and 101 H St SE, each with its own property report to help compare size, value, and residents. 
+    ezstandalone.cmd.push(function() {
+        ezstandalone.showAds(105);
+    });
+  Didn't see the address you hoped? Use our public records search to find the right person you are looking for today. Search via addresses, names, ages, and more and browse through pages of results.
+                 (function() {
+var style = document.createElement('style');
+var div = document.getElementById('search-result-style-1');
+style.innerHTML = div.innerHTML;
+div.innerHTML = '';
+document.head.appendChild(style);
+})(); Search By Another Phone Number Search By Another Name Search By Another Address Please enter a 10 digit number First Last Name City State State State Alabama Alabama Alaska Alaska Arizona Arizona Arkansas Arkansas California California Colorado Colorado Connecticut Connecticut District of Columbia District of Columbia Delaware Delaware Florida Florida Georgia Georgia Hawaii Hawaii Idaho Idaho Illinois Illinois Indiana Indiana Iowa Iowa Kansas Kansas Kentucky Kentucky Louisiana Louisiana Maine Maine Maryland Maryland Massachusetts Massachusetts Michigan Michigan Minnesota Minnesota Mississippi Mississippi Missouri Missouri Montana Montana Nebraska Nebraska Nevada Nevada New Hampshire New Hampshire New Jersey New Jersey New Mexico New Mexico New York New York North Carolina North Carolina North Dakota North Dakota Ohio Ohio Oklahoma Oklahoma Oregon Oregon Pennsylvania Pennsylvania Rhode Island Rhode Island South Carolina South Carolina South Dakota South Dakota Tennessee Tennessee Texas Texas Utah Utah Vermont Vermont Virginia Virginia Washington Washington West Virginia West Virginia Wisconsin Wisconsin Wyoming Wyoming Address City State State State Alabama Alabama Alaska Alaska Arizona Arizona Arkansas Arkansas California California Colorado Colorado Connecticut Connecticut District of Columbia District of Columbia Delaware Delaware Florida Florida Georgia Georgia Hawaii Hawaii Idaho Idaho Illinois Illinois Indiana Indiana Iowa Iowa Kansas Kansas Kentucky Kentucky Louisiana Louisiana Maine Maine Maryland Maryland Massachusetts Massachusetts Michigan Michigan Minnesota Minnesota Mississippi Mississippi Missouri Missouri Montana Montana Nebraska Nebraska Nevada Nevada New Hampshire New Hampshire New Jersey New Jersey New Mexico New Mexico New York New York North Carolina North Carolina North Dakota North Dakota Ohio Ohio Oklahoma Oklahoma Oregon Oregon Pennsylvania Pennsylvania Rhode Island Rhode Island South Carolina South Carolina South Dakota South Dakota Tennessee Tennessee Texas Texas Utah Utah Vermont Vermont Virginia Virginia Washington Washington West Virginia West Virginia Wisconsin Wisconsin Wyoming Wyoming              Search by Phone  
+                      Search by Name    
+                      Search by Address
+                      Lookup over 2 Billion Phone Numbers Instantly
+         Contact Us x Details 
+:host summary {
+  display: list-item;
+  counter-increment: list-item 0;
+  list-style: disclosure-closed inside;
+}
+:host([open]) summary {
+  list-style-type: disclosure-open;
+}
+ Resources What is reverse phone lookup Reverse phone lookup to monitor your kids Find out who's calling Use reverse phone lookup to catch a cheater Why use reverse phone lookup Landline and cell phone lookups Details 
+:host summary {
+  display: list-item;
+  counter-increment: list-item 0;
+  list-style: disclosure-closed inside;
+}
+:host([open]) summary {
+  list-style-type: disclosure-open;
+}
+ Help About us Privacy policy Notice at collection Term of use Contact Phone number directory Developer API Real estate API NEW! Cookie management USPhonebook.com helps you find owners of phone numbers in the United States.
+                    USPhonebook.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose. Copyright © 2016 -2026 usphonebook.com. All rights reserved. Phone area code directory: 2 3 4 5 6 7 8 9 Social Media:  NEED MORE DATA IN REAL TIME?              Get access to our partner  EnformionGO's  Fast Developer API for Contact
+            Enrichment, and Sales, and Marketing Intelligence.
+            
+         Try our API Resources What is reverse phone lookup Reverse phone lookup to monitor your
+                                kids Find out who's calling Use reverse phone lookup to catch
+                                a cheater Why use reverse phone lookup Landline and cell phone lookups Help About us Privacy policy Notice at collection Term of use Contact Phone number directory Developer API Real estate API NEW! Accessibility Cookie management 
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "USPhoneBook",
+    "url": "https://www.usphonebook.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.usphonebook.com/{search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
+}
+ 
+    {
+      "@context": "https://schema.org/",
+      "@type": "Organization",
+      "name": "USPhonebook",
+      "url": "https://www.usphonebook.com",
+      "logo": "https://www.usphonebook.com/img/main-logo-white.png",
+      "contactPoint": [{
+        "@type": "ContactPoint",
+        "email": "customercare@usphonebook.com",
+        "contactType": "Customer Service",
+        "url": "https://www.usphonebook.com/contact"
+      }],
+      "sameAs": [
+        "https://www.facebook.com/usphonebook/",
+        "https://www.twitter.com/usphonebook",
+        "https://www.youtube.com/channel/UCG2EVoRhrmfQuE1Dr8-q7Qg",
+        "https://www.pinterest.com/usphonebook",
+        "https://www.instagram.com/usphonebook/"
+      ]
+    }
+     
+var siteId = 0;   
+var dr = null;
+var impressionIds = [];
+var partnerNames = [];
+var partnerSlots = [];
+var gotImpressions = false;
+var dfpUrls = [];
+var partnerUrls = [];
+var adblocked = true;
+var usingNameResultsForPhone = false;
+var impressionsAdded = 0;
+var addImpressionObjects = [];
+var checkImpressionsId = 0;
+let screen = 'desktop';
+let IsMobile = false;
+var screenWidth = document.documentElement.clientWidth;
+if(screenWidth < 767) { screen = 'mobile';}
+if(screen == 'mobile') {
+    IsMobile = true;
+}
+
+
+     
+      async function getImpressions(doClick, save_id, save_dfpUrl, save_linkClicked) {
+
+          var data = '';
+          var ids = [];
+          var rels = [];
+          var slnums = [];
+          var widgetPayloads = [];
+          var widgetTokens = [];
+          var widgets = [];
+          var hiddenWidgetIds = [];
+          var firstSiteId = null;
+
+          var ctr2 = 0;
+          document.querySelectorAll(".allads .ad-widget-container").forEach(function(elem) {
+              if (elem.style.display == "none") {
+                  hiddenWidgetIds[ctr2] = elem.id;
+                  console.log(hiddenWidgetIds[ctr2] + " is empty!");
+                  ctr2++;
+              }
+          });
+
+          var ctr = 0;
+          document.querySelectorAll(".AddImpressions").forEach(function(elem) {
+            ids[ctr] = elem.id;
+            rels[ctr] = elem.getAttribute("rel");
+            slnums[ctr] = elem.getAttribute("name");
+            var addThisImpression = true;
+            for (var j = 0; j < hiddenWidgetIds.length; j++) {
+                if (hiddenWidgetIds[j].match(rels[ctr])) {
+                    addThisImpression = false;
+                    console.log("Do not add this impression: " + rels[ctr]);
+                    break;
+                }
+            }
+
+              // do not add impression for slotTwoClass that is hidden on split
+            var partnerRel = rels[ctr];
+            var slonum = slnums[ctr];
+            if (partnerRel != undefined && slonum != undefined) {
+                var cssClass = document.querySelector("#" + partnerRel + "-bannertypebutton2") ? document.querySelector("#" + partnerRel + "-bannertypebutton2").className : undefined;
+                var cssDisplay = document.querySelector("#" + partnerRel + "-bannertypebutton2") ? document.querySelector("#" + partnerRel + "-bannertypebutton2").style.display : undefined;
+                if (cssClass != undefined) {
+                    if (cssClass.match("slotTwoClass") && cssDisplay == 'none' && slonum == 2) {
+                        addThisImpression = false;
+                        console.log("Do not add this button impression: " + rels[ctr] + " " + cssClass +
+                            " for " + ids[ctr]);
+                    }
+                }
+                var cssClass1 = document.querySelector("#" + partnerRel + "-bannertypebutton") ? document.querySelector("#" + partnerRel + "-bannertypebutton").className : undefined;
+                var cssDisplay1 = document.querySelector("#" + partnerRel + "-bannertypebutton") ? document.querySelector("#" + partnerRel + "-bannertypebutton").style.display : undefined;
+                if (cssClass1 != undefined) {
+                    if (cssClass1.match("slotOneClass") && cssDisplay1 == 'none' && slonum == 1) {
+                        addThisImpression = false;
+                        console.log("Do not add this button impression: " + rels[ctr] + " " + cssClass1 +
+                            " for " + ids[ctr]);
+                    }
+                }
+                var cssClass3 = document.querySelector("#" + partnerRel + "-bannertypebutton3") ? document.querySelector("#" + partnerRel + "-bannertypebutton3").className : undefined;
+                var cssDisplay3 = document.querySelector("#" + partnerRel + "-bannertypebutton3") ? document.querySelector("#" + partnerRel + "-bannertypebutton3").style.display : undefined;
+                if (cssClass3 != undefined) {
+                    if (cssClass3.match("slotThreeClass") && cssDisplay3 == 'none' && slonum == 3) {
+                        addThisImpression = false;
+                        console.log("Do not add this button impression: " + rels[ctr] + " " + cssClass3 +
+                            " for " + ids[ctr]);
+                    }
+                }
+            }
+
+            if (addThisImpression) {
+                var encryptedPayload = elem.getAttribute("data-wam-payload");
+                if (encryptedPayload) {
+                    widgetPayloads.push(encryptedPayload);
+                    if (firstSiteId === null) {
+                        var payloadSiteId = elem.getAttribute("data-siteid");
+                        if (payloadSiteId !== null && payloadSiteId !== "") {
+                            var parsedPayloadSiteId = parseInt(payloadSiteId, 10);
+                            if (!isNaN(parsedPayloadSiteId)) {
+                                firstSiteId = parsedPayloadSiteId;
+                            }
+                        }
+                    }
+                    ctr++;
+                    return;
+                }
+
+                var token = elem.getAttribute("data-wam-token");
+                if (token) {
+                    widgetTokens.push(token);
+                    if (firstSiteId === null) {
+                        var siteIdAttr = elem.getAttribute("data-siteid");
+                        if (siteIdAttr !== null && siteIdAttr !== "") {
+                            var parsedSiteId = parseInt(siteIdAttr, 10);
+                            if (!isNaN(parsedSiteId)) {
+                                firstSiteId = parsedSiteId;
+                            }
+                        }
+                    }
+                    ctr++;
+                    return;
+                }
+
+                var testObj = JSON.parse(elem.innerHTML.trim());
+                try {
+                    addImpressionObjects[impressionsAdded] = testObj;
+                    impressionsAdded++;
+                } catch (error) {}
+                if (firstSiteId === null) {
+                    firstSiteId = testObj.SiteId;
+                }
+                widgets[ctr] = {
+                    "PartnerId": testObj.PartnerId,
+                    "SlotId": testObj.SlotId,
+                    "UniqueGuid": testObj.SlotUniqueGuid,
+                    "SlotNumber": testObj.SlotNumber,
+                    "DFPUrl": "",
+                    "RedirectUrl": ""
+                };
+                                ctr++;
+            }
+          });
+
+          try {
+              sortInConsole();
+          } catch (error) {}
+
+          // we got data...
+          if (ctr > 0) {
+              siteId = firstSiteId || 0;
+          } else { // no data...
+              console.log("No data for AddImpressions... exiting");
+              return;
+          }
+          var addImpressionsPayload = {
+              SiteId: siteId,
+              UtmSource: "",
+              UtmCampaign: "",
+              FromPage: "/address/800-new-jersey-ave-se-unit-938_washington-dc",
+              RequestId: uuidv4(),
+          };
+          if (widgetPayloads.length > 0 || widgetTokens.length > 0) {
+              if (widgetPayloads.length > 0) {
+                  addImpressionsPayload.WidgetPayloads = widgetPayloads;
+              }
+              if (widgetTokens.length > 0) {
+                  addImpressionsPayload.WidgetTokens = widgetTokens;
+              }
+                        } else {
+              addImpressionsPayload.Widgets = widgets;
+          }
+          var predt = JSON.stringify(addImpressionsPayload);
+          data = JSON.stringify({
+            data: predt
+          });
+          var callHeaders = new Headers();
+          callHeaders.append('Content-Type', 'application/json');
+          fetchOptions = {
+              method: 'POST',
+              headers: callHeaders,
+              body: data
+          };
+          console.log("Data to send for AddImpressions: " + data);
+          let rand = Math.random();
+          const resp =  await fetch("/wam/ajax?"+ new URLSearchParams({
+            method: 'AddImpressions',
+            rand
+        }), fetchOptions);
+          dr = await resp.json();
+          console.log("Data sent for AddImpressions: " + JSON.stringify(dr));
+          for (var i = 0; i < dr["Data"].length; i++) {
+                impressionIds[i] = dr["Data"][i].Id;
+                partnerNames[i] = dr["Data"][i].PartnerName;
+                partnerSlots[i] = dr["Data"][i].Slot;
+          }
+          if (doClick) {
+                console.log("Clicking from getImpressions.");
+                addClickForWAM(save_id, save_dfpUrl, save_linkClicked);
+          }
+              
+      }
+
+      function compareObj(a, b) {
+          if (a.BannerTypeName < b.BannerTypeName) {
+              return -1;
+          }
+          if (a.BannerTypeName > b.BannerTypeName) {
+              return 1;
+          }
+          return 0;
+      }
+
+      function sortInConsole() {
+
+          addImpressionObjects.sort(compareObj);
+
+          for (var i = 0; i < addImpressionObjects.length; i++) {
+              var pn = addImpressionObjects[i].PartnerName;
+              if (pn.length < 20) {
+                  var spaces = ' ';
+                  for (var j = 0; j < 20 - pn.length; j++) {
+                      spaces += ' ';
+                  }
+                  pn += spaces;
+              }
+              console.log('> SiteId: ' + addImpressionObjects[i].SiteId + ', PartnerId: ' + addImpressionObjects[i]
+                  .PartnerId + ', PartnerName: ' + pn + ', BannerTypeName: ' + addImpressionObjects[i]
+                  .BannerTypeName + ', SlotId: ' + addImpressionObjects[i].SlotId + ', SlotNumber: ' +
+                  addImpressionObjects[i].SlotNumber);
+          }
+
+          // print links
+          console.log("---------- Button Links ----------");
+          document.querySelectorAll(".wamButtonWidgets").forEach(function(elem) {
+              var displayButton = elem.style.display;
+              if (displayButton != "none") {
+                  var hRef = elem.querySelector("a").href;
+                  console.log("Button: " + hRef);
+              }
+          });
+          console.log("---------- Teaser Links ----------");
+          document.querySelectorAll("#teaserWidgets .ad-widget-container").forEach(function(elem) {
+              var displayButton = elem.style.display;
+              if (displayButton != "none") {
+                  var hRef = elem.querySelector("div.wid… 
+(function(){
+    var loaded = false;
+    function loadFA() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.src = '/usphonebook/build/js/fontawesome-address-result.js?id=55cd2cfde09fbc59502fff567be88712';
+        document.body.appendChild(s);
+    }
+    var events = ['scroll','click','touchstart','mouseover','keydown'];
+    events.forEach(function(e){ document.addEventListener(e, loadFA, {once:true,passive:true}); });
+    setTimeout(loadFA, 3500);
+})();
+ 
+    // Lazy-load Google Maps iframe when scrolled into view
+    (function() {
+        var mapFrame = document.querySelector('#property-map iframe[data-src]');
+        if (!mapFrame) return;
+        if ('IntersectionObserver' in window) {
+            var obs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        mapFrame.src = mapFrame.getAttribute('data-src');
+                        obs.unobserve(mapFrame);
+                    }
+                });
+            }, {
+                rootMargin: '200px'
+            });
+            obs.observe(mapFrame);
+        } else {
+            mapFrame.src = mapFrame.getAttribute('data-src');
+        }
+    })();
+
+ (function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a292e25e0c7e3eac',t:'MTc4NjQwNTYzMQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})(); gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        });

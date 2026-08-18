@@ -1,0 +1,1208 @@
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W43M8PV" height="0" width="0" style="display:none;visibility:hidden"></iframe> var Global={appUrl:'https://www.fastpeoplesearch.com',ip:'172.69.22.234'} 
+          NAME
+         
+          PHONE
+         
+          ADDRESS
+         
+          NEAR ME
+         e.g John Doe City & State, or Zip  Close  Free Search e.g (818)444-3214  Close  Free Search e.g 321 Main St City & State, or Zip  Close  Free Search Search Properties Near Me Searching Your Location... In order to search properties nearby, you must first allow FastPeopleSearch.com to see your location. Geolocation is not available for this browser  Close Search Near Me 
+
+window.addEventListener('DOMContentLoaded',function(){
+$(document).ready(function() {
+
+  $('a[data-toggle="tab"]#search-nav-link-map').on('show.bs.tab', function (e) {
+    geolocate.getLocation();
+  });
+  $('a[data-toggle="tab"]#search-nav-link-map').on('geolocate-tab-activated', function (e) {
+    geolocate.getLocation();
+  });
+
+  var geolocate = {
+    lat:'',
+    lon:'',
+    hasLocation:false,
+    init:function(){
+      $('.location-message').hide();
+      $('#search-map-submit').hide();
+      $('#search-map').hide();
+    },
+
+    getLocation: function(){
+      this.init();
+		  if ("geolocation" in navigator) {
+  		  /* geolocation is available */
+        console.log('geolocation is available');
+        navigator.permissions.query({ name: "geolocation" }).then((result) => {
+          if (result.state !== "granted") {
+            console.log('geolocation is NOT allowed');
+            $('#allow-location-sharing').show();
+          }else{
+            $('#location-loading').show();
+          }
+          navigator.geolocation.getCurrentPosition(this.showPosition,this.showError);
+        });
+      } else {
+        console.log('geolocation is NOT available');
+        /* geolocation IS NOT available */
+        $('#geolocation-not-available').show();
+      }
+    },
+
+    showPosition: function(position){
+      console.log('--- POSITION FOUND ---');
+      console.log(position);
+      var that = this;
+      $('.location-message').hide();
+      $('#search-map-submit').show();
+      that.lat = position.coords.latitude;
+      that.lon = position.coords.longitude;
+      that.hasLocation = true;
+      var latlon = that.lat+','+that.lon;
+      $('#search-map').html('<iframe title="Google Map of the your current location" height="150" style="width:100%;border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBIi5biIVTLMW3whqQBNGW83pVTZxlRxF8&center='+latlon+'&q='+latlon+'&maptype=roadmap&attribution_source=FastPeopleSearch&attribution_web_url=https://www.fastpeoplesearch.com/phillip-lewis_id_G2370476760422444325&zoom=15"></iframe>');
+      $('#search-map').show();
+
+      $('#search-map-submit').off('click').click(function(){
+        window.location.href = 'https://www.fastpeoplesearch.com/near-me/'+that.lat+'_'+that.lon; 
+      });
+
+    },
+
+		showError:function(error) {
+      console.log('--- geolocation error ---');
+      console.log(error);
+      this.init();
+			switch(error.code) {
+        case error.PERMISSION_DENIED:
+          $('#allow-location-sharing').show();
+          console.log('PERMISSION_DENIED');
+					break;
+				case error.POSITION_UNAVAILABLE:
+          $('#geolocation-error').html('GEOLOCATION ERROR: Location information is unavailable. Try refreshing the page.');
+					break;
+				case error.TIMEOUT:
+          $('#geolocation-error').html('GEOLOCATION ERROR: The request to get user location timed out. Try refreshing the page.');
+					break;
+				case error.UNKNOWN_ERROR:
+          $('#geolocation-error').html('GEOLOCATION ERROR: An unknown error occurred. Try refreshing the page.');
+					break;
+			}
+		}
+  }//end geolocate object
+
+});
+});
+ Fast PeopleSearch Search for... googletag.cmd.push(function() { googletag.display('div-gpt-ad-1597774508223-0'); }); Search 
+         /      People 
+         /      L 
+         /      Lewis 
+         /      Phillip Lewis 
+         /      IN 
+         /      Leo Phillip Lewis
+       in Leo, IN  (Indiana) Age 58, Born August 1967 Lives in Leo, IN (574) 349-1915 Full Background Report   (Sponsored) Arrests & Criminal Records Warrants & Police Records Felonies & Misdemeanors Nationwide Court Records Registered Sex Offender Check Bankruptcies, Judgements, Liens Marriage & Divorce Records Evictions & Foreclosures Properties & Assets Business Records Professional Licenses Social Media Records 
+            View Full Background Report  Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status Businesses Current Employment Work Experience Education FREE Background Report FAQ 
+      Current Address
+             (Since July 2023) 
+            17685 Letterbrick Run 
+      Leo IN 46765
+       
+            Allen County 
+        3 Beds |         2.5 Bath |         4,824 SqFt. |         Built in 2021       Estimated Value $596,000 Estimated Equity $223,843 Last Sale Amount $532,000 Last Sale Date 2023-07-28 Full Name: Phillip S Lewis Phone Numbers for  Phillip Lewis  in  Leo, IN (574) 349-1915 Wireless Cellco Partnership dba Verizon Wireless - CA First reported  November 2012 (574) 875-8019 Landline Frontier North Inc - IN First reported  August 2010 (219) 293-7410 Wireless New Cingular Wireless PCS LLC - GA First reported  January 2007 (574) 294-1499 Wireless Cellco Partnership dba Verizon Wireless - CA First reported  January 2007 (574) 312-6113 Landline US Xchange of Wisconsin LLC dba Choice One Communication - WI First reported  November 2023 (574) 262-8364 Landline Frontier Telephone of Rochester Inc First reported  March 2021 (856) 625-3725 Wireless T-Mobile USA Inc First reported  March 2021 (574) 276-4896 Wireless Cellco Partnership dba Verizon Wireless - IN First reported  March 2026 (219) 272-1583 Voip Whitesky Communications LLC First reported  March 2016 (740) 743-7321 Landline Bandwidth.com CLEC LLC First reported  March 2016 Full Background Report   (Sponsored) Arrest Records Police Records Search Warrants Court Records Criminal Records Bankruptcies, Liens, Judgements Birth & Death Records Marriage & Divorce Records Current & Past Contact Info Addresses & Phone Numbers Family Members Neighbors & Associates Property Ownership Businesses Public Records Background Check 
+            View Full Background Report
+         Email Addresses for  Phillip Lewis  in  Leo, IN lewis239@comcast.net cynthia.lewis@flash.net Also Known As Phillip M Lewis Jr Phillip Lewis Shawn P Lewis Shawn Lewis Pshawn Shawn Lewis Shawn Lewis Pshawn Shawn N Lewis Shawn Lewiz P Shawn Lewis P S Lewis Sponsored Link Phillip Lewis Leo, IN Age 58             View Details       Sponsored By TruthFinder.com  Phillip Lewis Leo, IN Age 58             View Details       Sponsored By BeenVerified.com  Phillip Lewis Leo, IN Age 58             View Details       Sponsored By InstantCheckMate.com  Phillip Lewis Leo, IN Age 58             View Details       Sponsored By Spokeo.com  Ad  Advertise with us Birth, Death, and Divorce Records for  Phillip Lewis in Leo IN Sponsored by Ancestry.com Phillip Lewis Leo IN View Birth Records Phillip Lewis Leo IN View Death Records Phillip Lewis Leo IN View Divorce Records 
+function updateLinkHrefs(container) {
+  const links = container.querySelectorAll('a');
+
+  links.forEach(link => {
+    if (!link.href) return;
+
+    try {
+      const url = new URL(link.href);
+      const u1 = url.searchParams.get('u1');
+
+      if (u1 && u1.includes('mobile')) {
+        url.searchParams.set('u1', u1.replace('mobile', 'desktop'));
+        link.href = url.toString();
+      }
+    } catch (e) {
+      // skip malformed URLs
+    }
+  });
+}
+
+if(screenFormat=='desktop'){
+    const container = document.querySelector('#ancestry-ad');
+    updateLinkHrefs(container);
+}
+
+ Current Address Property Details 
+            17685 Letterbrick Run 
+      Leo IN 46765
+       
+            Allen County Bedrooms 3 Bathrooms 2.5 Square Feet 4,824 Year Built 2021 Estimated Value $596,000 Estimated Equity $223,843 Last Sale Amount $532,000 Last Sale Date 2023-07-28 Occupancy Type Owner Occupied Ownership Type Multiple Land Use Single Family Property Class Residential Subdivision Tullymore Run Lot SqFt. 26,330 Previous Addresses used by  Phillip Lewis 
+                    11831 Aster Dr 
+          Fort Wayne IN 46845
+            Allen County Recorded July 2022 
+                    51611 Copper Forest Ln 
+          Granger IN 46530
+            St Joseph County Recorded November 2016 
+                    5698 Cabernet Ct 
+          Morrow OH 45152
+            Warren County Recorded December 1999 
+                    5649 Yellow Wood Dr 
+          South Bend IN 46614
+            St Joseph County Recorded October 2006 
+                    23907 Summerwood Ln 
+          Elkhart IN 46517
+            Elkhart County Recorded December 2006 
+                    26383 Quail Ridge Dr 
+          Elkhart IN 46514
+            Elkhart County Recorded September 2005 
+                    2650 Links Dr, Unit 1B 
+          Elkhart IN 46514
+            Elkhart County Recorded May 2004 
+                    28999 Westwynd Dr 
+          Elkhart IN 46516
+            Elkhart County Recorded August 1996 
+                    1109 Seapine Ct 
+          Maineville OH 45039
+            Warren County Recorded November 1990 
+                    51924 Lake Knoll Ct 
+          Granger IN 46530
+            St Joseph County Recorded February 1992 
+                    300 Riverwalk Dr 
+          Elkhart IN 46516
+            Elkhart County Recorded May 2009 
+                    3020 N Norway Maple Ct 
+          South Bend IN 46628
+            St Joseph County Recorded June 1992 Show More... 
+                    7225 Camargowoods Dr 
+          Cincinnati OH 45243
+            Hamilton County Recorded January 1989 
+                    685 Woodduck Ct 
+          Columbus OH 43215
+            Franklin County Recorded March 1991 
+                    751 Hunter Ave 
+          Columbus OH 43215
+            Franklin County Recorded June 1990 Relatives  of  Phillip Lewis  in  Leo, IN           Cynthia Deloach Lewis
+           Age 80 (Dec 1945)           Paxton Lewis
+           Age 33 (May 1993)           Phillip Lewis
+           Age 82 (Aug 1943)           Reed Lewis
+           Age 30 (Nov 1995)           Cynthia Lewis
+           Age 52 (Aug 1973)           Dora Lewis
+           Age 106 (Jan 1920)           Mariah Lewis
+           Age 35 (Jun 1991)           Philip Lewis
+           Age 108 (Nov 1917)           Amilee Nuzzo
+           Age 25 (Aug 2000)           Anthony Nuzzo
+           Age 85 (Apr 1941)           Brady Nuzzo
+           Age 25 (Jun 2001)           Christine Nuzzo
+           Age 85 (Sep 1940)           Christine Nuzzo
+           Age 24 (Jun 2002)           Christine Weiland
+           Age 61 (Mar 1965)           Connie Gilstrap
+           Age 66 (Apr 1960)           Danielle Weiland
+           Age 33 (Jul 1992)           Dominic Nuzzo
+           Age 22 (Oct 2003)           Dominick Nuzzo
+           Age 54 (Apr 1972)           Eleanor Lewis
+           Age 82 (Jul 1943)           Eleanor Lewis
+           Age 82 (Jul 1943)           James Nuzzo
+           Age 58 (Oct 1967) Show More...           Jill Nuzzo
+           Age 58 (Apr 1968)           Joe Lewis
+           Age 51 (May 1975)           Joe Lewis
+           Age 87 (Mar 1939)           John Lewis
+           Age 49 (Sep 1976)           John Lewis
+           Age 38 (Apr 1988)           Johnnie Lewis
+           Age 78 (Jul 1947)           Jon Amos
+           Age 56 (Jun 1970)           Jordan Nuzzo
+           Age 33 (Mar 1993)           Kimberly Nuzzo
+           Age 55 (Dec 1970)           Kimberly Nuzzo
+           Age 30 (Jan 1996)           Larry Lewis
+           Age 57 (Feb 1969)           Maria Ortega
+           Age 94 (Apr 1932)           Mateo Ortega
+           Age 87 (May 1939)           Matthew Lewis
+           Age 54 (Feb 1972)           Matthew Ortega
+           Age 66 (Feb 1960)           Matthew Ortega
+           Age 39 (May 1987)           Michael Ortega
+           Age 63 (Mar 1963)           Nancy Conley
+           Age 74 (Jul 1951)           Ndoness Ortega
+           Age 69 (Oct 1956)           Norberto Ortega
+           Age 59 (Aug 1966)           Oliver Lewis
+           Age 47 (Mar 1979)           Sierra Nuzzo
+           Age 30 (Jan 1996)           Sierra Nuzzo
+           Age 31 (Jan 1995)           Theresa Ortega
+           Age 57 (Nov 1968)           Thomas Weiland
+           Age 57 (Apr 1969) Associates of  Phillip Lewis  in  Leo, IN           Jennifer Reiter
+           Age 54(Sep 1971)           David Miller
+           Age 67(May 1959)           Leigh Herrmann
+           Age 54(Nov 1971) Is Phillip Lewis Currently Married? We can not find any public records stating that Phillip Lewis is currently Married.  It is not likely. Sponsored Link Businesses  Phillip Lewis  in  Leo, IN  is associated with the following businesses: HELGESON PROPERTIES LLC  300 Riverwalk Dr  Elkhart IN 46516 SHAWN LEWIS AGENT Since February 2005 HELGESON PROPERTIES, LLC 300 RiverwalkDr  Elkhart IN 46516 SHAWN LEWIS AGENT Since January 2005 Current Employment for Phillip Lewis 
+          HALLERCOLVIN PC  
+         Fort Wayne, IN Title: OF COUNSEL Since: JUN 2023 Work Experience for Phillip Lewis 
+          LIPPERT COMPONENTS, INC.
+         VICE PRESIDENT, GENERAL COUNSEL AND CORPORATE SECRETARY 7 years 6 months 
+          BEAVERSON LAW GROUP, PC
+         OF COUNSEL 3 years 11 months 
+          SANDERS PIANOWSKI, LLP
+         PARTNER 18 years 7 months 
+          ASSOCIATED SURGEONS AND PHYSICIANS, LLC
+         CHIEF ADMINISTRATIVE OFFICER 3 years 3 months 
+          HALLERCOLVIN PC
+         OF COUNSEL 2 years 10 months 
+          INDEPENDENTLY HANDLING CORPORATE, M&A, REAL ESTATE, LABOR & EMPLOYMENT MATTERS.
+         BUSINESS ATTORNEY 1 years 
+          LIPPERT COMPONENTS, INC.
+         GENERAL COUNSEL 7 years 6 months Education for Phillip Lewis PURDUE UNIVERSITY - KRANNERT SCHOOL OF MANAGEMENT BACHELOR OF SCIENCE (B.S.) ACCOUNTING 1985 - 1989 CAPITAL UNIVERSITY DOCTOR OF LAW (J.D.) ORDER OF THE CURIA 1989 - 1992 FREE Background Report for Phillip S Lewis in Leo, IN (Indiana) Phillip S Lewis  is 58 years old and was born in August of 1967. Currently Phillip lives at the address  17685 Letterbrick Run, Leo IN 46765 . Phillip has lived at this  Leo, IN    address for about 2 years, after moving in around July of 2023. Phillip previously lived at  11831 Aster Dr, Fort Wayne IN 46845  for 1 year, starting in July of 2022. Going further back, starting in November of 2016, Phillip lived at  51611 Copper Forest Ln, Granger IN 46530  for 5 years.  Public records do not indicate that Phillip S Lewis is currently married.  The following people are relatives or close associates of Phillip:  Cynthia Deloach Lewis (80),  Paxton Lewis (33),  Phillip Lewis (82),  Reed Lewis (30),  Cynthia Lewis (52),  Dora Lewis (106),  Mariah Lewis (35),  Philip Lewis (108),  Amilee Nuzzo (25),  Anthony Nuzzo (85) and  Brady Nuzzo (25).  Phillip's current phone number is  (574) 349-1915 . This Wireless number was issued by 'Cellco Partnership dba Verizon Wireless - CA', first reported in public records on November of 2012. Past phone numbers for Phillip include  (574) 875-8019 ,  (219) 293-7410  and  (574) 294-1499 . The primary email address for Phillip is  lewis239@comcast.net . Phillip has also used the following email accounts:  and  cynthia.lewis@flash.net .  Frequently Asked Questions How old is Phillip S Lewis? + Phillip Lewis  is 58 years old, and was born in August of 1967. Where does Phillip Lewis live currently? + Phillip Lewis 's current address is  17685 Letterbrick Run, Leo IN 46765 . Phillip has lived there for about 2.9 years, since July of 2023.  Who is related to Phillip Lewis? + Phillip Lewis  is likely related to the following people:  Cynthia Deloach Lewis ,  Paxton Lewis ,  Phillip Lewis ,  Reed Lewis ,  Cynthia Lewis ,  Dora Lewis ,  Mariah Lewis ,  Philip Lewis ,  Amilee Nuzzo ,  Anthony Nuzzo ,  Brady Nuzzo What is the best phone number for Phillip Lewis? + Phillip Lewis 's latest phone number is a wireless number at  (574) 349-1915 . What is the best email for Phillip Lewis? + lewis239@comcast.net  is the most current email on record for  Phillip Lewis . Is Phillip Lewis alive today? + Yes!  Phillip Lewis  is living today. Does Phillip Lewis go by any other names or aliases? + Phillip Lewis  may also go by the following names or aliases: Phillip M Lewis JR, Phillip Lewis, Shawn P Lewis, Shawn Lewis, Pshawn Shawn Lewis, Shawn Lewis Pshawn, Shawn N Lewis, Shawn Lewiz, P Shawn Lewis, P S Lewis Who does Phillip Lewis associate with? + The following people are friends, co-workers, partners, roomates, or otherwise associated with  Phillip Lewis :  Jennifer Reiter ,  David Miller ,  Leigh Herrmann Where did Phillip Lewis live previously? + Phillip Lewis  was registered, and likely lived at the following addresses in the past:  |  11831 Aster Dr, Fort Wayne IN 46845  |  51611 Copper Forest Ln, Granger IN 46530  |  5698 Cabernet Ct, Morrow OH 45152  |  5649 Yellow Wood Dr, South Bend IN 46614  |  23907 Summerwood Ln, Elkhart IN 46517  |  26383 Quail Ridge Dr, Elkhart IN 46514 What email addresses have been used by Phillip Lewis? + Phillip Lewis  has used the following email addresses:  lewis239@comcast.net ,  cynthia.lewis@flash.net What phone numbers have been used by Phillip Lewis? + Phillip Lewis  has been registered with the following phone numbers:  (574) 349-1915 ,  (574) 875-8019 ,  (219) 293-7410 ,  (574) 294-1499 ,  (574) 312-6113 ,  (574) 262-8364 ,  (856) 625-3725 Is Phillip Lewis associated with any businesses? + Phillip Lewis  is associated with the following businesses: HELGESON PROPERTIES LLC , HELGESON PROPERTIES, LLC googletag.cmd.push(function() { googletag.display('div-gpt-ad-1552072718699-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1554751771828-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1557266427886-0'); }); Public Records for  Phillip Lewis Paid Results Sponsored by  PeopleFinders.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  PeopleFinders.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  TruthFinder.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  BeenVerified.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  PeopleFinders.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  Spokeo.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  TruthFinder.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  BeenVerified.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  FamFinder.com Phillip Lewis Leo, IN Age 58                 View Details          Public Records for  Phillip Lewis Paid Results Sponsored by  BeenVerified.com Family Tree Phillip Lewis Leo, IN Age 58                 View Details          Ad  Advertise with us Phillip Lewis Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status Businesses Current Employment Work Experience Education FREE Background Report FAQ NEED MORE DATA IN REAL-TIME? Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence. Try Our API 
+        Name Directory: A   
+ B   
+ C   
+ D   
+ E   
+ F   
+ G   
+ H   
+ I   
+ J   
+ K   
+ L   
+ M   
+ N   
+ O   
+ P   
+ Q   
+ R   
+ S   
+ T   
+ U   
+ V   
+ W   
+ X   
+ Y   
+ Z   
+ 
+        Phone Directory:  
+           1   
+                   2   
+                   3   
+                   4   
+                   5   
+                   6   
+                   7   
+                   8   
+                   9   
+                 FREE People Search  | 
+         FREE Reverse Phone Lookup  |  
+         FREE Address Lookup Best People Finder Sites  | 
+         Advertise With Us  | 
+         About Us  | 
+         Contact  
+
+        |  Cookie Management 
+        |  Accessibility FastPeopleSearch API  | 
+         Real Estate API  | 
+         Skip Trace API Do Not Sell or Share My Personal Information  | 
+         Terms  | 
+         Privacy Notice  |  
+         Notice at Collection FastPeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA). This site can't be used for employment, credit or tenant screening, or any related purpose. © Copyright 2026. All Right Reserved. FastPeopleSearch.com 
+        googletag.cmd.push(() => { 
+            //console.log('--------------- refresh gam slots --------------');
+            googletag.pubads().refresh(googletag.pubads().getSlots()); 
+        });
+     $("#teaserWidgets").html("<div style=\"display:none\" id=\"slot-c601f389-dd6f-45a1-8645-c1508506257f\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeButton\" data-partner-id=\"21\" data-slot-id=\"1672\" data-slot-unique-guid=\"c601f389-dd6f-45a1-8645-c1508506257f\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Phillip Lewis</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Phillip Lewis</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Leo, IN</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 58        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-fdcc7796-2909-4d7c-80c2-fa9a35286b8b\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeTeaser\" data-partner-id=\"21\" data-slot-id=\"2127\" data-slot-unique-guid=\"fdcc7796-2909-4d7c-80c2-fa9a35286b8b\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeTeaser\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Phillip Lewis</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"https%3A%2F%2Fwww.peoplefinders.com%2Fcheckout%2Fbackground-check%3FfirstName%3DPhillip%26middleName%3DS%26lastName%3DLewis%26city%3DLeo%26state%3DIN%26id%3DG2370476760422444325%26productMenuName%3Dsearch-name-background%26productOfferId%3DPremium-Membership-3-Day-Trial%26utm_source%3Dfastps%26utm_campaign%3Dpf_teaser_details_bgtrialcheckout\" onClick=\"window.open(\'https://www.peoplefinders.com/checkout/background-check?firstName=Phillip&middleName=S&lastName=Lewis&city=Leo&state=IN&id=G2370476760422444325&productMenuName=search-name-background&productOfferId=Premium-Membership-3-Day-Trial&utm_source=fastps&utm_campaign=pf_teaser_details_bgtrialcheckout\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Phillip Lewis</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Leo, IN</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 58        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1d251858-52ae-4bd7-8009-f4e296437378\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-TruthFinderSkipApi\" id=\"ad-widget-TruthFinderSkipApi-BannerTypeButton\" data-partner-id=\"9\" data-slot-id=\"2265\" data-slot-unique-guid=\"1d251858-52ae-4bd7-8009-f4e296437378\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"TruthFinderSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Phillip Lewis</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>TruthFinder.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Phillip Lewis</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Leo, IN</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 58        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-BeenVerifiedSkipApi\" id=\"ad-widget-BeenVerifiedSkipApi-BannerTypeButton\" data-partner-id=\"7\" data-slot-id=\"2267\" data-slot-unique-guid=\"1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"BeenVerifiedSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Phillip Lewis</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>BeenVerified.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Phillip Lewis</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Leo, IN</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 58        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-db8bb94e-8730-4d86-99ca-8ce293ef3e58\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeButton\" data-partner-id=\"21\" data-slot-id=\"1953\" data-slot-unique-guid=\"db8bb94e-8730-4d86-99ca-8ce293ef3e58\" data-slot-number=\"2\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Phillip Lewis</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Phillip Lewis</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Leo, IN</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 58        </div>      </div>    </div>    <div class=\"col-12 c… 
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.fastpeoplesearch.com/#organization",
+  "url": "https://www.fastpeoplesearch.com/",
+  "logo": "https://www.fastpeoplesearch.com/images/fastPeopleSearchLogo.png",
+  "name":"FastPeopleSearch",
+  "address":{
+    "@type": "PostalAddress",
+    "addressLocality": "Boston",
+    "addressRegion": "MA",
+    "postalCode": "02111-1929",
+    "streetAddress":"68 Harrison Ave Ste 605, PMB 29296"
+  },
+	"contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://www.fastpeoplesearch.com/contact",
+    "email": "support@fastpeoplesearch.com",
+    "contactType": "customer support",
+    "availableLanguage": [
+      "English"
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/Fast-People-Search-1763384900620802",
+    "https://twitter.com/fastpplsearch"
+  ]
+}
+ 
+{
+    "@context": "https://schema.org/",
+	"@graph": [ 
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com",
+    "url" : "https://www.fastpeoplesearch.com",
+    "name":"Fast People Search Home Page"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/address",
+    "url" : "https://www.fastpeoplesearch.com/address",
+    "name":"Find People by Address Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "url" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "name":"Reverse Phone Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/terms",
+    "url" : "https://www.fastpeoplesearch.com/terms",
+    "name":"Terms and Conditions"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/privacy",
+    "url" : "https://www.fastpeoplesearch.com/privacy",
+    "name":"Privacy Policy"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/contact",
+    "url" : "https://www.fastpeoplesearch.com/contact",
+    "name":"Contact"
+	},
+
+    {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/phone-directory",
+      "url" : "https://www.fastpeoplesearch.com/phone-directory",
+      "name": "Directory of United States Phone Numbers"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 2"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 3"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 4"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 5"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 6"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 7"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 8"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 9"
+  },
+  
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/a",
+      "url" : "https://www.fastpeoplesearch.com/names/a",
+      "name":"Name directory for last name starting with a"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/b",
+      "url" : "https://www.fastpeoplesearch.com/names/b",
+      "name":"Name directory for last name starting with b"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/c",
+      "url" : "https://www.fastpeoplesearch.com/names/c",
+      "name":"Name directory for last name starting with c"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/d",
+      "url" : "https://www.fastpeoplesearch.com/names/d",
+      "name":"Name directory for last name starting with d"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/e",
+      "url" : "https://www.fastpeoplesearch.com/names/e",
+      "name":"Name directory for last name starting with e"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/f",
+      "url" : "https://www.fastpeoplesearch.com/names/f",
+      "name":"Name directory for last name starting with f"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/g",
+      "url" : "https://www.fastpeoplesearch.com/names/g",
+      "name":"Name directory for last name starting with g"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/h",
+      "url" : "https://www.fastpeoplesearch.com/names/h",
+      "name":"Name directory for last name starting with h"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/i",
+      "url" : "https://www.fastpeoplesearch.com/names/i",
+      "name":"Name directory for last name starting with i"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/j",
+      "url" : "https://www.fastpeoplesearch.com/names/j",
+      "name":"Name directory for last name starting with j"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/k",
+      "url" : "https://www.fastpeoplesearch.com/names/k",
+      "name":"Name directory for last name starting with k"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/l",
+      "url" : "https://www.fastpeoplesearch.com/names/l",
+      "name":"Name directory for last name starting with l"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/m",
+      "url" : "https://www.fastpeoplesearch.com/names/m",
+      "name":"Name directory for last name starting with m"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/n",
+      "url" : "https://www.fastpeoplesearch.com/names/n",
+      "name":"Name directory for last name starting with n"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/o",
+      "url" : "https://www.fastpeoplesearch.com/names/o",
+      "name":"Name directory for last name starting with o"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/p",
+      "url" : "https://www.fastpeoplesearch.com/names/p",
+      "name":"Name directory for last name starting with p"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/q",
+      "url" : "https://www.fastpeoplesearch.com/names/q",
+      "name":"Name directory for last name starting with q"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/r",
+      "url" : "https://www.fastpeoplesearch.com/names/r",
+      "name":"Name directory for last name starting with r"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/s",
+      "url" : "https://www.fastpeoplesearch.com/names/s",
+      "name":"Name directory for last name starting with s"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/t",
+      "url" : "https://www.fastpeoplesearch.com/names/t",
+      "name":"Name directory for last name starting with t"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/u",
+      "url" : "https://www.fastpeoplesearch.com/names/u",
+      "name":"Name directory for last name starting with u"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/v",
+      "url" : "https://www.fastpeoplesearch.com/names/v",
+      "name":"Name directory for last name starting with v"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/w",
+      "url" : "https://www.fastpeoplesearch.com/names/w",
+      "name":"Name directory for last name starting with w"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/x",
+      "url" : "https://www.fastpeoplesearch.com/names/x",
+      "name":"Name directory for last name starting with x"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/y",
+      "url" : "https://www.fastpeoplesearch.com/names/y",
+      "name":"Name directory for last name starting with y"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/z",
+      "url" : "https://www.fastpeoplesearch.com/names/z",
+      "name":"Name directory for last name starting with z"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names",
+      "url" : "https://www.fastpeoplesearch.com/names",
+      "name":"Name Directory"
+  }
+
+]
+}
+ 
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "@id": "https://www.fastpeoplesearch.com/phillip-lewis_id_G2370476760422444325",
+  "url": "https://www.fastpeoplesearch.com/phillip-lewis_id_G2370476760422444325",
+  "name": "Phillip S Lewis",
+  "honorificPrefix": "",
+  "givenName":"Phillip",
+  "familyName":"Lewis",
+  
+	
+    "homeLocation":{
+    "@type": "Place",
+        "@id":"https://www.fastpeoplesearch.com/address/17685-letterbrick-run_leo-in-46765",
+    "url":"https://www.fastpeoplesearch.com/address/17685-letterbrick-run_leo-in-46765",
+        "description": "Current home address",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Leo",
+      "addressRegion": "IN",
+      "postalCode": "46765",
+      "streetAddress": "17685 Letterbrick Run"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.249883",
+      "longitude": "-85.014381"
+    }
+      },
+  
+			"additionalName": [
+				"Phillip M Lewis Jr",
+				"Phillip Lewis",
+				"Shawn P Lewis",
+				"Shawn Lewis",
+				"Pshawn Shawn Lewis",
+				"Shawn Lewis Pshawn",
+				"Shawn N Lewis",
+				"Shawn Lewiz",
+				"P Shawn Lewis",
+				"P S Lewis"
+		 ],
+		"telephone": [
+      "(574) 349-1915",
+	    "(574) 875-8019",
+	    "(219) 293-7410",
+	    "(574) 294-1499",
+	    "(574) 312-6113",
+	    "(574) 262-8364",
+	    "(856) 625-3725",
+	    "(574) 276-4896",
+	    "(219) 272-1583",
+	    "(740) 743-7321"
+	  ],
+	"relatedTo": [
+		{
+		"@type": "Person",
+    
+    
+		"name": "Cynthia Deloach Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Paxton M Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Phillip Mason Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Reed Taylor Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Cynthia Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Dora T Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Mariah J Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Philip M Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Amilee Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Anthony P Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Brady S Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Christine M Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Christine A Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Christine E Weiland"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Connie R Gilstrap"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Danielle E Weiland"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Dominic Vincenzo Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Dominick M Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Eleanor Joe Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Eleanor J Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "James Vincen Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jill Kathleen Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Joe Lewis Jr"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Joe E Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "John A Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "John A Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Johnnie B Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jon Keith Amos"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jordan Alan Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kimberly Ann Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Kimberly A Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Larry W Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Maria A Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Mateo A Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Matthew James Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Matthew Anthony Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Matthew A Ortega Jr"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Michael A Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Nancy C Conley"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Ndoness M Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Norberto Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Oliver B Lewis"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Sierra Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Sierra P Nuzzo"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Theresa Michelle Ortega"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas Weiland"
+	}
+		]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+       {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/",
+      "url": "https://www.fastpeoplesearch.com/",
+      "name": "FastPeopleSearch Homepage"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names",
+      "url": "https://www.fastpeoplesearch.com/names",
+      "name": "People Search Directory of names"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names/l",
+      "url": "https://www.fastpeoplesearch.com/names/l",
+      "name": "People Search Directory of Last Names Starting with L"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/lewis",
+      "url": "https://www.fastpeoplesearch.com/name/lewis",
+      "name": "Search people with last name Lewis"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 5,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/phillip-lewis",
+      "url": "https://www.fastpeoplesearch.com/name/phillip-lewis",
+      "name": "Search people named Phillip Lewis"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 6,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/phillip-lewis_in",
+      "url": "https://www.fastpeoplesearch.com/name/phillip-lewis_in",
+      "name": "Search people named Phillip Lewis in IN"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 7,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/phillip-lewis_leo-in",
+      "url": "https://www.fastpeoplesearch.com/name/phillip-lewis_leo-in",
+      "name": "Search people named Phillip Lewis in Leo, IN"
+    }
+  }
+  ]}
+ 
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How old is Phillip S Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> is 58 years old, and was born in August of 1967."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where does Phillip Lewis live currently?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a>'s current address is <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/17685-letterbrick-run_leo-in-46765\" title=\"Find people who lived at 17685 Letterbrick Run, Leo IN 46765\">17685 Letterbrick Run, Leo IN 46765<\/a>. Phillip has lived there for about 2.9 years, since July of 2023. "
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who is related to Phillip Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> is likely related to the following people: <a href=\"https:\/\/www.fastpeoplesearch.com\/cynthia-deloach-lewis_id_G1267076882141483377\" title=\"Run a fast people search on Cynthia Deloach Lewis\">Cynthia Deloach Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/paxton-lewis_id_G3522473346374628197\" title=\"Run a fast people search on Paxton Lewis\">Paxton Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G5384508449345533096\" title=\"Run a fast people search on Phillip Lewis\">Phillip Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/reed-lewis_id_G2454502013260370660\" title=\"Run a fast people search on Reed Lewis\">Reed Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/cynthia-lewis_id_G-8737104759859177462\" title=\"Run a fast people search on Cynthia Lewis\">Cynthia Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/dora-lewis_id_G2116349235905067061\" title=\"Run a fast people search on Dora Lewis\">Dora Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/mariah-lewis_id_G6580828331553637809\" title=\"Run a fast people search on Mariah Lewis\">Mariah Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/philip-lewis_id_G7417922766478634938\" title=\"Run a fast people search on Philip Lewis\">Philip Lewis<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/amilee-nuzzo_id_G-2695399132287506561\" title=\"Run a fast people search on Amilee Nuzzo\">Amilee Nuzzo<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/anthony-nuzzo_id_G166046350262883223\" title=\"Run a fast people search on Anthony Nuzzo\">Anthony Nuzzo<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/brady-nuzzo_id_G5642128373680460165\" title=\"Run a fast people search on Brady Nuzzo\">Brady Nuzzo<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Phillip Lewis currently married?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We can not find any public records indicating that Phillip Lewis is currently Married.  It is not likely."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best phone number for Phillip Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a>'s latest phone number is a wireless number at <a href=\"https:\/\/www.fastpeoplesearch.com\/574-349-1915\" title=\"Search people associated with the phone number (574) 349-1915\">(574) 349-1915<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best email for Phillip Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "lewis239@comcast.net is the most current email on record for <a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Phillip Lewis alive today?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! <a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> is living today."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Does Phillip Lewis go by any other names or aliases?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> may also go by the following names or aliases: Phillip M Lewis JR, Phillip Lewis, Shawn P Lewis, Shawn Lewis, Pshawn Shawn Lewis, Shawn Lewis Pshawn, Shawn N Lewis, Shawn Lewiz, P Shawn Lewis, P S Lewis"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who does Phillip Lewis associate with?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The following people are friends, co-workers, partners, roomates, or otherwise associated with <a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a>: <a href=\"https:\/\/www.fastpeoplesearch.com\/jennifer-reiter_id_G-4125165178599821614\" title=\"Run a FastPeopleSearch on Jennifer Reiter\">Jennifer Reiter<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/david-miller_id_G-3999689479810694042\" title=\"Run a FastPeopleSearch on David Miller\">David Miller<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/leigh-herrmann_id_G6505331307990449081\" title=\"Run a FastPeopleSearch on Leigh Herrmann\">Leigh Herrmann<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where did Phillip Lewis live previously?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> was registered, and likely lived at the following addresses in the past:  | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/11831-aster-dr_fort-wayne-in-46845\" title=\"Search people who lived at 11831 Aster Dr, Fort Wayne IN 46845\">11831 Aster Dr, Fort Wayne IN 46845<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/51611-copper-forest-ln_granger-in-46530\" title=\"Search people who lived at 51611 Copper Forest Ln, Granger IN 46530\">51611 Copper Forest Ln, Granger IN 46530<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/5698-cabernet-ct_morrow-oh-45152\" title=\"Search people who lived at 5698 Cabernet Ct, Morrow OH 45152\">5698 Cabernet Ct, Morrow OH 45152<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/5649-yellow-wood-dr_south-bend-in-46614\" title=\"Search people who lived at 5649 Yellow Wood Dr, South Bend IN 46614\">5649 Yellow Wood Dr, South Bend IN 46614<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/23907-summerwood-ln_elkhart-in-46517\" title=\"Search people who lived at 23907 Summerwood Ln, Elkhart IN 46517\">23907 Summerwood Ln, Elkhart IN 46517<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/26383-quail-ridge-dr_elkhart-in-46514\" title=\"Search people who lived at 26383 Quail Ridge Dr, Elkhart IN 46514\">26383 Quail Ridge Dr, Elkhart IN 46514<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What email addresses have been used by Phillip Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> has used the following email addresses: lewis239@comcast.net, cynthia.lewis@flash.net"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What phone numbers have been used by Phillip Lewis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> has been registered with the following phone numbers: <a href=\"https:\/\/www.fastpeoplesearch.com\/574-349-1915\" title=\"Search people associated with the phone number (574) 349-1915\">(574) 349-1915<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/574-875-8019\" title=\"Search people associated with the phone number (574) 875-8019\">(574) 875-8019<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/219-293-7410\" title=\"Search people associated with the phone number (219) 293-7410\">(219) 293-7410<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/574-294-1499\" title=\"Search people associated with the phone number (574) 294-1499\">(574) 294-1499<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/574-312-6113\" title=\"Search people associated with the phone number (574) 312-6113\">(574) 312-6113<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/574-262-8364\" title=\"Search people associated with the phone number (574) 262-8364\">(574) 262-8364<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/856-625-3725\" title=\"Search people associated with the phone number (856) 625-3725\">(856) 625-3725<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Phillip Lewis associated with any businesses?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/phillip-lewis_id_G2370476760422444325\" title=\"FastPeopleSearch on Phillip Lewis\">Phillip Lewis<\/a> is associated with the following businesses: HELGESON PROPERTIES LLC , HELGESON PROPERTIES, LLC"
+    }
+  }   ]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "Phillip Lewis(58) Leo, IN (574)349-1915 | Public Records Profile",
+  "@id": "https://www.fastpeoplesearch.com/phillip-lewis_id_G2370476760422444325",
+  "url": "https://www.fastpeoplesearch.com/phillip-lewis_id_G2370476760422444325",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ".person-content-block"
+  }
+    ,"contentLocation": {
+    "@type":"Place",
+        "@id":"https://www.fastpeoplesearch.com/address/17685-letterbrick-run_leo-in-46765",
+    "url":"https://www.fastpeoplesearch.com/address/17685-letterbrick-run_leo-in-46765",
+        "description": "Current home address of Phillip S Lewis, 17685 Letterbrick Run, Leo IN 46765",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Leo",
+      "addressRegion": "IN",
+      "postalCode": "46765",
+      "streetAddress": "17685 Letterbrick Run"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "41.249883",
+      "longitude": "-85.014381"
+    }
+      }
+  }
+ 
+window.addEventListener('DOMContentLoaded',function(){
+
+  wam.init({
+    searchType:'details', 
+    section:'list',
+    fn:'Phillip',
+    mn:'S',
+    ln:'Lewis',
+    city:'Leo',
+    state:'IN',
+    age:'58',
+    phone:'%28574%29+349-1915',
+    email:'lewis239%40comcast.net',
+    userIP:'73.197.168.19',
+    gResults:'[{&quot;firstname&quot;:&quot;Phillip&quot;,&quot;middlename&quot;:&quot;S&quot;,&quot;lastname&quot;:&quot;Lewis&quot;,&quot;prefix&quot;:null,&quot;suffix&quot;:null,&quot;fullname&quot;:&quot;Phillip S Lewis&quot;,&quot;age&quot;:58,&quot;dob_month&quot;:&quot;August&quot;,&quot;birthdayComingUp&quot;:false,&quot;newAddress&quot;:false,&quot;city&quot;:&quot;Leo&quot;,&quot;state&quot;:&quot;IN&quot;,&quot;zip5&quot;:&quot;46765&quot;,&quot;tahoeId&quot;:&quot;G2370476760422444325&quot;}]',
+    env:'production',
+    requestPath:'phillip-lewis_id_G2370476760422444325',
+    requestTLD:'https://www.fastpeoplesearch.com',
+    isMobile:screenFormat=='mobile'?true:false
+  });
+
+  //map ads
+/*
+  if(adMapSized.left) $('#admap-left').html(adMapSized.left);
+  if(adMapSized.right) $('#admap-right').html(adMapSized.right);
+  if(adMapSized.middle1) $('#admap-middle1').html(adMapSized.middle1);
+  if(adMapSized.middle2) $('#admap-middle2').html(adMapSized.middle2);
+  if(adMapSized.middle3) $('#admap-middle3').html(adMapSized.middle3);
+  if(adMapSized.footer) $('#admap-footer').html(adMapSized.footer);
+  if(adMapSized.scroll) $('#admap-scroll').html(adMapSized.scroll);
+*/
+
+  $(function () {
+    //collapse elements
+    $('#collapsed-phones').on('hidden.bs.collapse', function () { $('#collapse-phone-links').text('Show More...'); });
+    $('#collapsed-phones').on('shown.bs.collapse', function () { $('#collapse-phone-links').text('Show Less...'); });
+    $('#collapsed-emails').on('hidden.bs.collapse', function () { $('#collapse-email-links').text('Show More...'); });
+    $('#collapsed-emails').on('shown.bs.collapse', function () { $('#collapse-email-links').text('Show Less...'); });
+    $('#collapsed-names').on('hidden.bs.collapse', function () { $('#collapse-name-links').text('Show More...'); });
+    $('#collapsed-names').on('shown.bs.collapse', function () { $('#collapse-name-links').text('Show Less...'); });
+    $('#collapsed-addresses').on('hidden.bs.collapse', function () { $('#collapse-address-links').text('Show More...'); });
+    $('#collapsed-addresses').on('shown.bs.collapse', function () { $('#collapse-address-links').text('Show Less...'); });
+    $('#collapsed-relatives').on('hidden.bs.collapse', function () { $('#collapse-relative-links').text('Show More...'); });
+    $('#collapsed-relatives').on('shown.bs.collapse', function () { $('#collapse-relative-links').text('Show Less...'); });
+    $('#collapsed-associates').on('hidden.bs.collapse', function () { $('#collapse-associate-links').text('Show More...'); });
+    $('#collapsed-associates').on('shown.bs.collapse', function () { $('#collapse-associate-links').text('Show Less...'); });
+    $('#collapsed-businesses').on('hidden.bs.collapse', function () { $('#collapse-business-links').text('Show More...'); });
+    $('#collapsed-businesses').on('shown.bs.collapse', function () { $('#collapse-business-links').text('Show Less...'); });
+  });
+
+  $('#toc-mobile').click(function(e){
+    $('#toc-mobile ul').toggle();
+  });
+
+});
+ 
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+
+    if (item.classList.contains('open')) {
+      answer.style.maxHeight = '0';
+      item.classList.remove('open');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      item.classList.add('open');
+    }
+  });
+});
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+    analytics_storage: 'granted'
+}); 
+                      X
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture

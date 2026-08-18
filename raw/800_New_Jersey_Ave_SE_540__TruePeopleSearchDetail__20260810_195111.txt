@@ -1,0 +1,481 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address Julie Lucarelli City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip jsmith@gmail.com e.g 123 Park Ave City, State or Zip Name Phone Address Email Enter name, phone or address Julie Lucarelli e.g 202-555-3456 e.g 123 Park Ave jsmith@gmail.com e.g John Smith Julie Lucarelli City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip Search Neighbors jsmith@gmail.com ezstandalone.cmd.push(function() { ezstandalone.showAds(104); }); 
+        /* TOC FAB - Scoped styles for instance cf1f3261 */
+        .toc-fab-wrapper-cf1f3261 {
+            position: fixed;
+            top: 128px;
+            z-index: 999;
+        }
+        .toc-fab-cf1f3261 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #436280 0%, #3f5a74 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        .toc-fab-cf1f3261:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .toc-fab-cf1f3261.active {
+            background: linear-gradient(135deg, #3f5a74 0%, #436280 100%);
+        }
+        .toc-fab-cf1f3261 i {
+            transition: transform 0.3s ease;
+        }
+        .toc-fab-cf1f3261.active i {
+            transform: rotate(90deg);
+        }
+        .toc-fab-label-cf1f3261 {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        .toc-fab-label-cf1f3261::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .toc-fab-wrapper-cf1f3261:hover .toc-fab-label-cf1f3261 {
+            opacity: 1;
+            visibility: visible;
+        }
+        .toc-fab-cf1f3261.active + .toc-fab-label-cf1f3261 {
+            display: none;
+        }
+        .toc-dropdown-cf1f3261 {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.2s ease;
+        }
+        .toc-dropdown-cf1f3261.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .toc-dropdown-header-cf1f3261 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc-dropdown-title-cf1f3261 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+        }
+        .toc-close-cf1f3261 {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #adb5bd;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .toc-close-cf1f3261:hover {
+            color: #6c757d;
+        }
+        .toc-dropdown-body-cf1f3261 {
+            padding: 8px 0;
+            max-height: min(calc(100vh - 200px), 600px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f8f9fa;
+        }
+        .toc-dropdown-body-cf1f3261::-webkit-scrollbar {
+            width: 6px;
+        }
+        .toc-dropdown-body-cf1f3261::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        .toc-dropdown-body-cf1f3261::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .toc-dropdown-body-cf1f3261::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        .toc-item-cf1f3261 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 16px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .toc-item-cf1f3261:hover {
+            background: #f8f9fa;
+            color: #436280;
+        }
+        .toc-item-cf1f3261 i {
+            width: 20px;
+            text-align: center;
+            color: #112236;
+            font-size: 14px;
+        }
+        .toc-item-cf1f3261:hover i {
+            color: #436280;
+        }
+        @media (max-width: 767px) {
+            .toc-fab-wrapper-cf1f3261 {
+                top: 130px;
+            }
+            .toc-fab-cf1f3261 {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            .toc-fab-label-cf1f3261 {
+                display: none !important;
+            }
+            .toc-dropdown-cf1f3261 {
+                min-width: 220px;
+            }
+            .toc-dropdown-body-cf1f3261 {
+                max-height: calc(100vh - 300px);
+                overflow-y: scroll;
+                -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+                mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .toc-fab-wrapper-cf1f3261 {
+                top: 195px;
+            }
+            .toc-fab-label-cf1f3261 {
+                display: none !important;
+            }
+        }
+     Jump to Section On This Page Top of Page Also Known As Current Address Previous Addresses Phone Numbers Email Addresses Possible Relatives Possible Associates Education & Employment Background Profile FAQ 
+        (function() {
+            var id = 'cf1f3261';
+            var contentSelector = '.content-center';
+            var fabWidth = 48;
+            var baseScrollOffset = 130;
+
+            // Get responsive scroll offset based on screen size
+            function getScrollOffset() {
+                var w = window.innerWidth;
+                if (w < 768) return 130;      // Mobile: header ~95px + padding
+                if (w < 1024) return 195;     // Tablet: header ~167px + padding
+                return baseScrollOffset;       // Desktop: use configured value
+            }
+
+            // Position FAB at the right edge of content container
+            function positionFab() {
+                var content = document.querySelector(contentSelector);
+                var fab = document.getElementById('tocFabWrapper_' + id);
+                if (!content || !fab) return;
+                var rect = content.getBoundingClientRect();
+                fab.style.left = (rect.right - fabWidth) + 'px';
+            }
+
+            // Toggle dropdown
+            window['tocToggle_' + id] = function(trigger) {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                if (dropdown.classList.contains('open')) {
+                    window['tocClose_' + id]();
+                } else {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            // Close dropdown
+            window['tocClose_' + id] = function() {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                var trigger = document.querySelector('.toc-fab-' + id);
+                if (dropdown) dropdown.classList.remove('open');
+                if (trigger) {
+                    trigger.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // Scroll to top of page
+            window['tocScrollToTop_' + id] = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window['tocClose_' + id]();
+            };
+
+            // Scroll to section with offset for fixed header
+            window['tocScrollTo_' + id] = function(targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                window['tocClose_' + id]();
+            };
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#tocFabWrapper_' + id)) {
+                    window['tocClose_' + id]();
+                }
+            });
+
+            // Position on load and resize
+            positionFab();
+            window.addEventListener('resize', positionFab);
+        })();
+     Home  /  L  /  Lucarelli  /  Julie Lucarelli  /  CT  /  New Haven Julie Lucarelli 
+Age 30, Born April 1996 Lives in New Haven, CT (484) 889-1568 Full Background Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Evictions & Foreclosures Marriage & Divorce Records Bankruptcies, Liens & Judgments Assets & Properties Business Records Professional Licenses Social Media Records 
+View Full Background Report
+                                             Also Seen As
+                         Includes all names used in any public records filings for Julie Lucarelli. Julie Amanda Lucarelli Current Address
+                         This is the most recently reported address for Julie Lucarelli. 335 Orange St #414 New Haven, CT 06511 122,270  Sq Ft | Built 2022 South Central CT County 
+                                    (Jul 2023 - Aug 2026)
+                                 Phone Numbers
+                         Includes the current and past phone numbers for Julie Lucarelli. (484) 889-1568  -  Wireless Possible Primary Phone Last reported Jul 2026 Verizon Wireless (610) 429-8061  -  Landline Last reported Aug 2024 Verizon Services (610) 212-0031  -  Wireless Last reported Jul 2021 Verizon Wireless (484) 753-2054  -  Wireless Last reported Jul 2018 Verizon Wireless (610) 909-9129  -  Wireless Last reported Jul 2018 AT&T Full Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Birth & Death Records Police Records Search Warrants Criminal Records Data Property Records Current and Past Contact Info Reverse Phone Lookups AKAs, Age, Date of Birth Addresses and Phone Numbers Relatives and Associates Public Records Data Bankruptcies, Judgments, Liens Complete Background Check 
+View Full Background Report
+                                             
+                            Sponsored Links
+                         ezstandalone.cmd.push(function() { ezstandalone.showAds(109); }); Email Addresses
+                         Includes all known email addresses for Julie Lucarelli. 
+                                    llucarelli402@gmail.com
+                                 
+                                    jlucarelli23@gmail.com
+                                 
+                                    bpl1_99@yahoo.com
+                                 Current Address Property Details
+                         Property record details for the current residence of Julie Lucarelli. 335 Orange St #414 New Haven, CT 06511 
+                                Bedrooms 
+N/A                                 
+                                Bathrooms 
+N/A                                 
+                                Square Feet 
+122,270                                 
+                                Year Built 
+2022                                 
+                                Estimated Value 
+N/A                                 
+                                Estimated Equity 
+N/A                                 
+                                Last Sale Amount 
+N/A                                 
+                                Last Sale Date 
+N/A                                 
+                                Occupancy Type 
+Non-Owner Occupied                                 
+                                Ownership Type 
+Corporate                                 
+                                Land Use 
+Apt House 100+ Units                                 
+                                Property Class 
+Residential                                 
+                                Subdivision 
+N/A                                 
+                                Lot Square Feet 
+31,831                                 
+                                APN 
+NHVN M:210 B:0313 L:00100                                 
+                                School District 
+New Haven School District                                 Previous Addresses
+                         All previously reported addresses for Julie Lucarelli. 395 Broadway #10B New York, NY 10013 New York County 
+                                            (Aug 2024)
+                                         991 Regimental Dr West Chester, PA 19382 Chester County 
+                                                (Oct 2005 - Feb 2026)
+                                             261 Saint Ronan St New Haven, CT 06511 South Central CT County 
+                                            (Aug 2022 - Jan 2024)
+                                         800 New Jersey Ave SE #540 Washington, DC 20003 District Of Columbia County 
+                                                (Dec 2020 - Aug 2022)
+                                             2020 F St NW #329 Washington, DC 20006 District Of Columbia County 
+                                            (Aug 2018 - Dec 2020)
+                                         Criminal Records Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Speeding Tickets 
+View Criminal Records Report
+                                 
+                            Sponsored Links
+                         ezstandalone.cmd.push(function() { ezstandalone.showAds(110); }); Possible Relatives
+                         May include parents (mother, father), spouse (wife, husband), exes, brothers, sisters and children of Julie Lucarelli. Bruce Lucarelli 
+Age 62                                         Christine Lucarelli 
+Age 62                                             Laura Lucarelli 
+Age 28                                                 Scott Lucarelli 
+Age 22                                                     Sofia Lucarelli 
+Age 26                                         Alisa Lucarelli 
+Age 55                                             Alphonse Lucarelli Jr 
+Age 42                                                 Anna Lucarelli 
+Age 22                                                     Anthony Lucarelli 
+Age 64                                         Brett Lucarelli 
+Age 30                                             Corbin Lucarelli 
+Age 33                                                 Cynthia Lucarelli 
+Age 58                                                     
+                                    View All Relatives
+                                 Daniel Lucarelli 
+Age 54                                         Danielle Lucarelli 
+Age 52                                             David Lucarelli 
+Age 63                                                 Emma Lucarelli 
+Age 24                                                     Gail Lucarelli 
+Age 85                                         Gloria Lucarelli 
+Age 19                                             Jack Lucarelli 
+Age 97                                                 Jolie Lucarelli 
+Age 19                                                     Joseph Lucarelli 
+Age 56                                         Justin Lucarelli 
+Age 46                                             Kelly Lucarelli 
+Age 48                                                 Mary Lucarelli 
+Age 59                                                     Matthew Lucarelli 
+Age 48                                         Mia Lucarelli 
+Age 27                                             Michael Lucarelli 
+Age 89                                                 Monica Lucarelli 
+Age 49                                                     Nicole Lucarelli 
+Age 22                                         Rita Lucarelli 
+Age 53                                             Soleil Lucarelli 
+Age 23                                                 Soleil Lucarelli 
+Age 23                                                     Stefani Lucarelli 
+Age 28                                         Tori Lucarelli 
+Age 37                                             Tyler Lucarelli 
+Age 30                                                 John Lucarelli 
+Age 59                                                     Mary Lucarelli 
+Age 67                                         Michael Lucarelli 
+Age 58                                             Peter Lucarelli 
+Age 49                                                 Samuel Lucarelli 
+Age 82                                                     Possible Associates
+                         May include current and past roommates, friends, and extended family of Julie Lucarelli. Meghan Lindsay 
+Age 36                                         Education and Employment
+                         May include education and employment history for Julie Lucarelli. 
+                                Company 
+Citi                                 
+                                Job Title 
+Investment Banking Associate - Industrials Group                                 
+                                From 
+JUL 2024                                 
+                                To 
+PRESENT                                 
+                                    College 
+Yale School Of Management                                     
+                                    Degree 
+Master Of Business Administration - Mba                                     
+                                    From 
+2022                                     
+                                    To 
+2024                                     Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Bankruptcies, Judgments, Liens Search Warrants Property Records Current and Past Contact Info Reverse Phone Lookups Age Locality History and Phone Numbers Relatives and Associates Public Records Data Background Search 
+View Background Report
+                                                     advertisement ezstandalone.cmd.push(function() { ezstandalone.showAds(111); }); Background Profile on Julie A Lucarelli 
+                            Julie A Lucarelli, now  30 , has a birthdate of April 1996. She has resided at  335 Orange ST #414  in  New Haven, CT  since July 2023. You can reach her at  (484) 889-1568 , a mobile number through Verizon Wireless.  Her prior residences include New York, NY, West Chester, PA, New Haven, CT, and Washington, DC for about 4 years (from August 2018 to August 2022). Additional phone numbers on file for Julie include  (610) 429-8061  (landline),  (610) 212-0031  (mobile) and others. Julie has email addresses including  llucarelli402@gmail.com  and  jlucarelli23@gmail.com  plus 1 other.  Social media links, property ownership & more can be found at our  partner site . Career history shows Julie at  Citi  as an  Investment Banking Associate - Industrials Group  since JUL 2024. This company is associated with the  Retail  industry. Julie studied at  Yale School of Management  from 2022 to 2024 and earned a  Master of Business Administration - Mba .  Julie's relatives include  Bruce Lucarelli ,  Christine Lucarelli ,  Laura Lucarelli ,  Scott Lucarelli  and 36 others. Julie's associates include  Meghan Lindsay .  A full criminal records report for Julie Lucarelli can be found at our  partner site . Julie's current residence is located at  335 Orange ST # 414 in New Haven, CT 06511 . It appears Julie rents this property. It was built in 2022 (4 years ago).  A more in-depth report can be found at our  partner site . {"context":"https://schema.org","type":"FAQPage","mainEntity":[{"type":"Question","name":"Where does Julie A Lucarelli live?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli's address is 335 Orange St #414 New Haven, CT 06511."}},{"type":"Question","name":"How old is Julie A Lucarelli?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli is 30 years old."}},{"type":"Question","name":"What is Julie A Lucarelli's phone number?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli's number is (484) 889-1568. This is a mobile line through Verizon Wireless."}},{"type":"Question","name":"Is Julie A Lucarelli married?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli does not appear to be married based on available public records."}},{"type":"Question","name":"What other names is Julie A Lucarelli known by?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli has also been known as Julie Amanda Lucarelli."}},{"type":"Question","name":"Where has Julie A Lucarelli lived previously?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli has previously lived in New York, NY, West Chester, PA, and New Haven, CT and 1 other location."}},{"type":"Question","name":"Where does/did Julie A Lucarelli work?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli is associated with Citi as a Investment Banking Associate - Industrials Group."}},{"type":"Question","name":"Where did Julie A Lucarelli go to school?","acceptedAnswer":{"type":"Answer","text":"Julie A Lucarelli attended Yale School of Management and may have earned a Master of Business Administration - Mba."}},{"type":"Question","name":"Who are Julie A Lucarelli's relatives?","acceptedAnswer":{"type":"Answer","text":"Some of Julie A Lucarelli's relatives include Bruce Peter Lucarelli, Christine M Lucarelli, and Laura Melissa Lucarelli and 37 others."}}]} Frequently Asked Questions Where does  Julie A Lucarelli  live? + Julie A Lucarelli's  address is  335 Orange St #414 New Haven, CT 06511 . How old is  Julie A Lucarelli ? + Julie A Lucarelli  is 30 years old. What is  Julie A Lucarelli 's phone number? + Julie A Lucarelli's  number is  (484) 889-1568 . This is a mobile line through Verizon Wireless. Is  Julie A Lucarelli  married? + Julie A Lucarelli  does not appear to be married based on available public records. What other names is  Julie A Lucarelli  known by? + Julie A Lucarelli  has also been known as Julie Amanda Lucarelli. Where has  Julie A Lucarelli  lived previously? + Julie A Lucarelli  has previously lived in New York, NY, West Chester, PA, and New Haven, CT and 1 other location. Where does/did  Julie A Lucarelli  work? + Julie A Lucarelli  is associated with  Citi  as a  Investment Banking Associate - Industrials Group . Where did  Julie A Lucarelli  go to school? + Julie A Lucarelli  attended  Yale School of Management  and may have earned a  Master of Business Administration - Mba . Who are  Julie A Lucarelli 's relatives? + Some of  Julie A Lucarelli's  relatives include  Bruce Peter Lucarelli ,  Christine M Lucarelli , and  Laura Melissa Lucarelli  and 37 others. function toggleFaq(itemId) {var question = document.getElementById(itemId + '_question');var answer = document.getElementById(itemId + '_answer');if (answer.classList.contains('open')) {answer.classList.remove('open');question.setAttribute('aria-expanded', 'false');} else {answer.classList.add('open');question.setAttribute('aria-expanded', 'true');}} 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API Disclaimers Information displayed on this page is compiled from public records sources including but not limited to government agencies at the federal, state and local level. Although we update our records monthly, data on this page may not be accurate or up-to-date. Permissible use: please read our  FAQ  to understand how you may use this service. Does this page contain your information?  Click here to understand your privacy rights or to remove your record . Search all records free! × e.g John Smith City, State or Zip View All Details Free e.g 202-555-3456 View All Details Free e.g 123 Park Ave City, State or Zip View All Details Free True PeopleSearch  is the #1 FREE people search site used by millions of people.   Get current address, phone number, email address, relatives, friends and a lot more on anyone now, we're 100% free for everything!  ezstandalone.cmd.push(function() { ezstandalone.showAds(105); }); True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 var script=document.createElement("script"),scripts=document.getElementsByTagName("script")[0];script.async=!1,script.src="/js/bundle?v=mWKOfvyX",scripts.parentNode.insertBefore(script,scripts); window.addEventListener('load', function () {if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&first=&last=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&phoneno=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&streetaddress=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('G-6914288037785834794' != '' && 1==2) {var fn, ln, city, state, age;fn = $("#personDetails").data("fn");ln = $("#personDetails").data("ln");city = $("#personDetails").data("city");state = $("#personDetails").data("state");age = $("#personDetails").data("age");if (fn != "" && ln != "" && city != "" && state != "" & age != "" && ((Math.floor(Math.random() * 10) + 1) <= 7)){$.ajax({url: '/search/widgetsdetails?fromdir=true&name=' + fn + ' ' + ln + '&citystatezip=' + city + ',' + state + "&agerange=" + age,success: function (text) {if (text != 'NONE') {if($("#widgetsTop").length){$("#widgetsTop").html(text);$("#widgetsTop").css("display", "");}}},error: function (text) {}});}}});  
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); 
+                      ×
+                   
+                      ⤢
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture

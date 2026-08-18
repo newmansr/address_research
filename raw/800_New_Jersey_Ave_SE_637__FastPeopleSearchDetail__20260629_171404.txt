@@ -1,0 +1,1201 @@
+<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W43M8PV" height="0" width="0" style="display:none;visibility:hidden"></iframe> var Global={appUrl:'https://www.fastpeoplesearch.com',ip:'172.69.22.234'} 
+          NAME
+         
+          PHONE
+         
+          ADDRESS
+         
+          NEAR ME
+         e.g John Doe City & State, or Zip  Close  Free Search e.g (818)444-3214  Close  Free Search e.g 321 Main St City & State, or Zip  Close  Free Search Search Properties Near Me Searching Your Location... In order to search properties nearby, you must first allow FastPeopleSearch.com to see your location. Geolocation is not available for this browser  Close Search Near Me 
+
+window.addEventListener('DOMContentLoaded',function(){
+$(document).ready(function() {
+
+  $('a[data-toggle="tab"]#search-nav-link-map').on('show.bs.tab', function (e) {
+    geolocate.getLocation();
+  });
+  $('a[data-toggle="tab"]#search-nav-link-map').on('geolocate-tab-activated', function (e) {
+    geolocate.getLocation();
+  });
+
+  var geolocate = {
+    lat:'',
+    lon:'',
+    hasLocation:false,
+    init:function(){
+      $('.location-message').hide();
+      $('#search-map-submit').hide();
+      $('#search-map').hide();
+    },
+
+    getLocation: function(){
+      this.init();
+		  if ("geolocation" in navigator) {
+  		  /* geolocation is available */
+        console.log('geolocation is available');
+        navigator.permissions.query({ name: "geolocation" }).then((result) => {
+          if (result.state !== "granted") {
+            console.log('geolocation is NOT allowed');
+            $('#allow-location-sharing').show();
+          }else{
+            $('#location-loading').show();
+          }
+          navigator.geolocation.getCurrentPosition(this.showPosition,this.showError);
+        });
+      } else {
+        console.log('geolocation is NOT available');
+        /* geolocation IS NOT available */
+        $('#geolocation-not-available').show();
+      }
+    },
+
+    showPosition: function(position){
+      console.log('--- POSITION FOUND ---');
+      console.log(position);
+      var that = this;
+      $('.location-message').hide();
+      $('#search-map-submit').show();
+      that.lat = position.coords.latitude;
+      that.lon = position.coords.longitude;
+      that.hasLocation = true;
+      var latlon = that.lat+','+that.lon;
+      $('#search-map').html('<iframe title="Google Map of the your current location" height="150" style="width:100%;border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBIi5biIVTLMW3whqQBNGW83pVTZxlRxF8&center='+latlon+'&q='+latlon+'&maptype=roadmap&attribution_source=FastPeopleSearch&attribution_web_url=https://www.fastpeoplesearch.com/laurel-davidson_id_G4122267435744160317&zoom=15"></iframe>');
+      $('#search-map').show();
+
+      $('#search-map-submit').off('click').click(function(){
+        window.location.href = 'https://www.fastpeoplesearch.com/near-me/'+that.lat+'_'+that.lon; 
+      });
+
+    },
+
+		showError:function(error) {
+      console.log('--- geolocation error ---');
+      console.log(error);
+      this.init();
+			switch(error.code) {
+        case error.PERMISSION_DENIED:
+          $('#allow-location-sharing').show();
+          console.log('PERMISSION_DENIED');
+					break;
+				case error.POSITION_UNAVAILABLE:
+          $('#geolocation-error').html('GEOLOCATION ERROR: Location information is unavailable. Try refreshing the page.');
+					break;
+				case error.TIMEOUT:
+          $('#geolocation-error').html('GEOLOCATION ERROR: The request to get user location timed out. Try refreshing the page.');
+					break;
+				case error.UNKNOWN_ERROR:
+          $('#geolocation-error').html('GEOLOCATION ERROR: An unknown error occurred. Try refreshing the page.');
+					break;
+			}
+		}
+  }//end geolocate object
+
+});
+});
+ Fast PeopleSearch Search for... Search 
+         /      People 
+         /      D 
+         /      Davidson 
+         /      Laurel Davidson 
+         /      MO 
+         /      Kansas City Laurel Davidson
+       in Kansas City, MO  (Missouri) Age 51, Born March 1975 Lives in Kansas City, MO (816) 810-1231 Full Background Report   (Sponsored) Arrests & Criminal Records Warrants & Police Records Felonies & Misdemeanors Nationwide Court Records Registered Sex Offender Check Bankruptcies, Judgements, Liens Marriage & Divorce Records Evictions & Foreclosures Properties & Assets Business Records Professional Licenses Social Media Records 
+            View Full Background Report  Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status FREE Background Report FAQ 
+      Current Address
+             (Since December 2000) 
+            432 NW 81st St 
+      Kansas City MO 64118
+       
+            Clay County 
+        3 Beds |         2 Bath |         960 SqFt. |         Built in 1959       Estimated Value $198,000 Estimated Equity $147,298 Last Sale Amount $77,000 Last Sale Date 2010-01-04 Full Name: Laurel Davidson Phone Numbers for  Laurel Davidson  in  Kansas City, MO (816) 810-1231 Wireless T-Mobile USA Inc First reported  August 2010 (816) 436-9964 Landline Southwestern Bell Telephone Company First reported  October 2002 (816) 474-3242 Landline Southwestern Bell Telephone Company First reported  November 2001 (913) 727-2704 Landline Southwestern Bell Telephone Company First reported  October 2001 Full Background Report   (Sponsored) Arrest Records Police Records Search Warrants Court Records Criminal Records Bankruptcies, Liens, Judgements Birth & Death Records Marriage & Divorce Records Current & Past Contact Info Addresses & Phone Numbers Family Members Neighbors & Associates Property Ownership Businesses Public Records Background Check 
+            View Full Background Report
+         Email Addresses for  Laurel Davidson  in  Kansas City, MO laureldav6@yahoo.com Also Known As L A Davidson L Davidson Sponsored Link 
+      /* CSS Reset for Shadow DOM */
+      :host {
+        all: initial;
+        display: block;
+        width: 100%;
+        height: 100%;
+        /* Preserve publisher control over hidden/disabled ad containers.
+           Without these overrides, all: initial resets pointer-events to auto
+           and can make an invisible creative clickable. Interstitial close
+           buttons intentionally do not inherit these properties because they
+           must remain dismissible even when publisher UI disables input. */
+        pointer-events: inherit;
+        visibility: inherit;
+      }
+
+      * {
+        all: unset;
+        display: revert;
+        box-sizing: border-box;
+      }
+
+      /* Apply consistent font family */
+      * {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+
+      /* Prevent text decoration inheritance */
+      *, *::before, *::after {
+        text-decoration: none !important;
+      }
+
+      a, a:hover, a:visited, a:active {
+        text-decoration: none !important;
+      }
+
+      /* Restore useful defaults */
+      button {
+        cursor: pointer;
+      }
+
+      img {
+        max-width: 100%;
+      }
+     GPS Tracker Hidden GPS Tracker for Car, Strong Magnet, Weatherproof Build & Smart Alerts Learn More Laurel Davidson Kansas City, MO Age 51             View Details       Sponsored By PeopleFinders.com  Laurel Davidson Kansas City, MO Age 51             View Details       Sponsored By BeenVerified.com  Laurel A Davidson Kansas City, MO Age 36             View Details       Sponsored By InstantCheckMate.com  Laurel Davidson Kansas City, MO Age 51             View Details       Sponsored By Spokeo.com  Ad  Advertise with us Birth, Death, and Divorce Records for  Laurel Davidson in Kansas City MO Sponsored by Ancestry.com Laurel Davidson Kansas City MO View Birth Records Laurel Davidson Kansas City MO View Death Records Laurel Davidson Kansas City MO View Divorce Records 
+function updateLinkHrefs(container) {
+  const links = container.querySelectorAll('a');
+
+  links.forEach(link => {
+    if (!link.href) return;
+
+    try {
+      const url = new URL(link.href);
+      const u1 = url.searchParams.get('u1');
+
+      if (u1 && u1.includes('mobile')) {
+        url.searchParams.set('u1', u1.replace('mobile', 'desktop'));
+        link.href = url.toString();
+      }
+    } catch (e) {
+      // skip malformed URLs
+    }
+  });
+}
+
+if(screenFormat=='desktop'){
+    const container = document.querySelector('#ancestry-ad');
+    updateLinkHrefs(container);
+}
+
+ Current Address Property Details 
+            432 NW 81st St 
+      Kansas City MO 64118
+       
+            Clay County Bedrooms 3 Bathrooms 2 Square Feet 960 Year Built 1959 Estimated Value $198,000 Estimated Equity $147,298 Last Sale Amount $77,000 Last Sale Date 2010-01-04 Occupancy Type Non-Owner Occupied Ownership Type Individual Land Use Single Family Property Class Residential Subdivision Gashland Park Lot SqFt. 10,019 Previous Addresses used by  Laurel Davidson 
+                    Po Box 28955 
+          Kansas City MO 64188
+            Clay County Recorded August 2004 
+                    6896 N Bedford Ave 
+          Kansas City MO 64151
+            Platte County Recorded October 2004 
+                    414 Main St 
+          Weston MO 64098
+            Platte County Recorded November 2000 
+                    715 Armour Rd, Unit 102 
+          Kansas City MO 64116
+            Clay County Recorded November 2007 
+                    196 Canyon View Dr 
+          Lansing KS 66043
+            Leavenworth County Recorded March 1995 
+                    715 Armour Rd, Unit 216 
+          N Kansas City MO 64116
+            Clay County Recorded September 2002 
+                    2326 Cambridge St 
+          Leavenworth KS 66048
+            Leavenworth County Recorded April 2002 
+                    3529 N Chelsea Ave 
+          Kansas City MO 64117
+            Clay County Recorded August 2000 
+                    715 Armour Rd, Unit 216 
+          Kansas City MO 64116
+            Clay County Recorded July 2000 Relatives  of  Laurel Davidson  in  Kansas City, MO           Allison Davidson
+           Age 28 (Nov 1997)           Amy Williams
+           Age 47 (Jul 1978)           Deborah Davidson
+           Age 64 (Jul 1961)           Elizabeth Davidson
+           Age 26 (Sep 1999)           Gordie Davidson
+           Age 79 (Feb 1947)           James Davidson
+           Age 59 (Oct 1966)           Jocelyn Davidson
+           Age 31 (Aug 1994)           Susan Davidson
+           Age 79 (Jun 1947)           Allison Davidso
+           Age 28 (Nov 1997)           Amy Williams
+           Age 62 (Jul 1963)           Danyiel Davidson
+           Age 55 (Oct 1970)           Denise Davidson
+           Age 65 (Apr 1961)           Evalena Davidson
+           Age 85 (Jun 1941)           James Davidson
+           Age 85 (Oct 1940)           Troy Davidson
+           Age 59 (Jan 1967)           Troy Davidson
+           Age 58 (May 1968)           Benjamin Williams
+           Age 38 (Mar 1988)           Brenda Williams
+           Age 68 (Nov 1957)           Brenda Williams
+           Age 65 (Jun 1961)           Carol Stringer
+           Age 73 (Aug 1952)           Christine Davenport
+           Age 52 (Oct 1973) Show More...           Christopher Williams
+           Age 44 (Jun 1982)           Daniel Stringer
+           Age 49 (Jun 1977)           Daniel Williams
+           Age 49 (Mar 1977)           Edward Williams
+           Age 53 (Mar 1973)           Ethan Williams
+           Age 29 (Oct 1996)           Jackie Williams
+           Age 67 (Jan 1959)           Jackie Williams
+           Age 70 (Aug 1955)           Jackie Williams
+           Age 35 (Jul 1990)           Jackie Williams
+           Age 84 (Jan 1942)           Jacquie Williams
+           Age 71 (Jul 1954)           Jay Williams
+           Age 99 (Jun 1927)           Jay Williams
+           Age 72 (Dec 1953)           Jessi Williams
+           Age 24 (Apr 2002)           Johnny Williams
+           Age 70 (Aug 1955)           Meredith Williams
+           Age 40 (Jan 1986)           Nellie Williams
+           Age 124 (Oct 1901)           Paul Williams
+           Age 92 (Dec 1933)           Paula Williams
+           Age 52 (Mar 1974)           Stacey Stringer
+           Age 47 (May 1979)           Stacey Williams
+           Age 47 (May 1979)           Thomas Stringer
+           Age 73 (Feb 1953)           Thomas Stringer
+           Age 73 (Feb 1953)           Warren Williams
+           Age 55 (Feb 1971)           William Williams
+           Age 65 (Sep 1960) Associates of  Laurel Davidson  in  Kansas City, MO           Erica Jackson
+           Age 59(May 1967)           Lee Thomas
+           Age 64(Apr 1962)           Leslie Hernandez
+           Age 36(Dec 1989)           Maurice Jackson
+           Age 74(Feb 1952)           Michelle Benge
+           Age 53(Nov 1972)           Monica Abarca
+           Age 46(Oct 1979)           Terry Rodenberg
+           Age 45(Mar 1981) Is Laurel Davidson Currently Married? We can not find any public records stating that Laurel Davidson is currently Married.  It is not likely. Sponsored Link FREE Background Report for Laurel Davidson in Kansas City, MO (Missouri) Laurel Davidson  is 51 years old and was born in March of 1975. Currently Laurel lives at the address  432 NW 81st St, Kansas City MO 64118 . Laurel has lived at this  Kansas City, MO    address for about 25 years, after moving in around December of 2000. Laurel previously lived at  Po Box 28955, Kansas City MO 64188  for 6 years, starting in August of 2004. Going further back, starting in October of 2004, Laurel lived at  6896 N Bedford Ave, Kansas City MO 64151  for 5 years.  Public records do not indicate that Laurel Davidson is currently married.  The following people are relatives or close associates of Laurel:  Allison Davidson (28),  Amy Williams (47),  Deborah Davidson (64),  Elizabeth Davidson (26),  Gordie Davidson (79),  James Davidson (59),  Jocelyn Davidson (31),  Susan Davidson (79),  Allison Davidso (28),  Amy Williams (62) and  Danyiel Davidson (55).  Laurel's current phone number is  (816) 810-1231 . This Wireless number was issued by 'T-Mobile USA Inc', first reported in public records on August of 2010. Past phone numbers for Laurel include  (816) 436-9964 ,  (816) 474-3242  and  (913) 727-2704 . The primary email address for Laurel is  laureldav6@yahoo.com .  Frequently Asked Questions How old is Laurel Davidson? + Laurel Davidson  is 51 years old, and was born in March of 1975. Where does Laurel Davidson live currently? + Laurel Davidson 's current address is  432 NW 81st St, Kansas City MO 64118 . Laurel has lived there for about 25.5 years, since December of 2000.  Who is related to Laurel Davidson? + Laurel Davidson  is likely related to the following people:  Allison Davidson ,  Amy Williams ,  Deborah Davidson ,  Elizabeth Davidson ,  Gordie Davidson ,  James Davidson ,  Jocelyn Davidson ,  Susan Davidson ,  Allison Davidso ,  Amy Williams ,  Danyiel Davidson What is the best phone number for Laurel Davidson? + Laurel Davidson 's latest phone number is a wireless number at  (816) 810-1231 . What is the best email for Laurel Davidson? + laureldav6@yahoo.com  is the most current email on record for  Laurel Davidson . Is Laurel Davidson alive today? + Yes!  Laurel Davidson  is living today. Does Laurel Davidson go by any other names or aliases? + Laurel Davidson  may also go by the following names or aliases: L A Davidson, L Davidson Who does Laurel Davidson associate with? + The following people are friends, co-workers, partners, roomates, or otherwise associated with  Laurel Davidson :  Erica Jackson ,  Lee Thomas ,  Leslie Hernandez ,  Maurice Jackson ,  Michelle Benge ,  Monica Abarca ,  Terry Rodenberg Where did Laurel Davidson live previously? + Laurel Davidson  was registered, and likely lived at the following addresses in the past:  |  Po Box 28955, Kansas City MO 64188  |  6896 N Bedford Ave, Kansas City MO 64151  |  414 Main St, Weston MO 64098  |  715 Armour Rd, Unit 102, Kansas City MO 64116  |  196 Canyon View Dr, Lansing KS 66043  |  715 Armour Rd, Unit 216, N Kansas City MO 64116 What email addresses have been used by Laurel Davidson? + There is one email account for  Laurel Davidson , and that is  laureldav6@yahoo.com What phone numbers have been used by Laurel Davidson? + Laurel Davidson  has been registered with the following phone numbers:  (816) 810-1231 ,  (816) 436-9964 ,  (816) 474-3242 ,  (913) 727-2704 Is Laurel Davidson associated with any businesses? + We do not show Laurel Davidson associated with any business records googletag.cmd.push(function() { googletag.display('div-gpt-ad-1552072718699-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1554751771828-0'); }); googletag.cmd.push(function() { googletag.display('div-gpt-ad-1557266427886-0'); }); Public Records for  Laurel Davidson Paid Results Sponsored by  PeopleFinders.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  TruthFinder.com Laurel A Davidson Kansas City, MO Age 36                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  TruthFinder.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  BeenVerified.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  PeopleFinders.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  Spokeo.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  TruthFinder.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  BeenVerified.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  FamFinder.com Laurel Davidson Kansas City, MO Age 51                 View Details          Public Records for  Laurel Davidson Paid Results Sponsored by  BeenVerified.com Family Tree Laurel Davidson Kansas City, MO Age 51                 View Details          Ad  Advertise with us Laurel Davidson Profile Current Address Full Name Phone Number Email AKAs Addresses History Relatives Associates Marital Status FREE Background Report FAQ NEED MORE DATA IN REAL-TIME? Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence. Try Our API 
+        Name Directory: A   
+ B   
+ C   
+ D   
+ E   
+ F   
+ G   
+ H   
+ I   
+ J   
+ K   
+ L   
+ M   
+ N   
+ O   
+ P   
+ Q   
+ R   
+ S   
+ T   
+ U   
+ V   
+ W   
+ X   
+ Y   
+ Z   
+ 
+        Phone Directory:  
+           1   
+                   2   
+                   3   
+                   4   
+                   5   
+                   6   
+                   7   
+                   8   
+                   9   
+                 FREE People Search  | 
+         FREE Reverse Phone Lookup  |  
+         FREE Address Lookup Best People Finder Sites  | 
+         Advertise With Us  | 
+         About Us  | 
+         Contact  
+
+        |  Cookie Management 
+        |  Accessibility FastPeopleSearch API  | 
+         Real Estate API  | 
+         Skip Trace API Do Not Sell or Share My Personal Information  | 
+         Terms  | 
+         Privacy Notice  |  
+         Notice at Collection FastPeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA). This site can't be used for employment, credit or tenant screening, or any related purpose. © Copyright 2026. All Right Reserved. FastPeopleSearch.com 
+        googletag.cmd.push(() => { 
+            //console.log('--------------- refresh gam slots --------------');
+            googletag.pubads().refresh(googletag.pubads().getSlots()); 
+        });
+     $("#teaserWidgets").html("<div style=\"display:none\" id=\"slot-c601f389-dd6f-45a1-8645-c1508506257f\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeButton\" data-partner-id=\"21\" data-slot-id=\"1672\" data-slot-unique-guid=\"c601f389-dd6f-45a1-8645-c1508506257f\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Laurel Davidson</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Laurel Davidson</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Kansas City, MO</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 51        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-bc97c691-3e5b-4d7e-94a9-6f67ed16ed41\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-TruthFindercom\" id=\"ad-widget-TruthFindercom-BannerTypeTeaser\" data-partner-id=\"5\" data-slot-id=\"2126\" data-slot-unique-guid=\"bc97c691-3e5b-4d7e-94a9-6f67ed16ed41\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeTeaser\" data-partner-name=\"TruthFinder.com\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Laurel Davidson</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>TruthFinder.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"https%3A%2F%2Ftracking.truthfinder.com%2F%3Fa%3D938%26oc%3D27%26c%3D288%26subtheme%3D%26s1%3DCM-FastPeopleSearch%26s2%3DAG-Details%26s3%3DCRE-%2B%26s4%3DLP-288%26s5%3D%26firstName%3DLaurel%26lastName%3DDavidson%26city%3DKansas+City%26state%3DMO\" onClick=\"window.open(\'https://tracking.truthfinder.com/?a=938&oc=27&c=288&subtheme=&s1=CM-FastPeopleSearch&s2=AG-Details&s3=CRE-+&s4=LP-288&s5=&firstName=Laurel&lastName=Davidson&city=Kansas City&state=MO\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Laurel A Davidson</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Kansas City, MO</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 36        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1d251858-52ae-4bd7-8009-f4e296437378\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-TruthFinderSkipApi\" id=\"ad-widget-TruthFinderSkipApi-BannerTypeButton\" data-partner-id=\"9\" data-slot-id=\"2265\" data-slot-unique-guid=\"1d251858-52ae-4bd7-8009-f4e296437378\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"TruthFinderSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Laurel Davidson</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>TruthFinder.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Laurel Davidson</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Kansas City, MO</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 51        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-BeenVerifiedSkipApi\" id=\"ad-widget-BeenVerifiedSkipApi-BannerTypeButton\" data-partner-id=\"7\" data-slot-id=\"2267\" data-slot-unique-guid=\"1e21b69f-cc32-4122-ab2b-00b1bc76fbd8\" data-slot-number=\"1\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"BeenVerifiedSkipApi\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Laurel Davidson</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>BeenVerified.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Laurel Davidson</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Kansas City, MO</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 51        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View Details         <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" style=\"width:18px;height:18px\"  class=\"w-5 h-5\"><path fill-rule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM6.75 9.25a.75.75 0 000 1.5h4.59l-2.1 1.95a.75.75 0 001.02 1.1l3.5-3.25a.75.75 0 000-1.1l-3.5-3.25a.75.75 0 10-1.02 1.1l2.1 1.95H6.75z\" clip-rule=\"evenodd\" /></svg>      </button>    </div>  </div></div><div style=\"display:none\" id=\"slot-db8bb94e-8730-4d86-99ca-8ce293ef3e58\" data-impression-id=\"\"></div><div style=\"display:none\" class=\"ad-widget-container clearfix ad-widget-teaser ad-widget-partner-PeopleFindersSkipAPI\" id=\"ad-widget-PeopleFindersSkipAPI-BannerTypeButton\" data-partner-id=\"21\" data-slot-id=\"1953\" data-slot-unique-guid=\"db8bb94e-8730-4d86-99ca-8ce293ef3e58\" data-slot-number=\"2\" data-site-id=\"4\" data-banner-type=\"BannerTypeButton\" data-partner-name=\"PeopleFindersSkipAPI\">  <div class=\"row awl-header\">    <div class=\"col\"><div class=\"awl-header-name\">Public Records for <strong style=\"white-space:nowrap\">Laurel Davidson</strong></div><div class=\"awl-header-sponsor\">Paid Results Sponsored by <b>PeopleFinders.com</b></div>    </div>  </div>  <div class=\"awl-spacer\"></div>  <div class=\"row awl-data widget-link\" data-link=\"\" onClick=\"window.open(\'\', \'_blank\');\">    <div class=\"col-12 col-xl-8\" style=\"padding-top:2px\">      <div class=\"row\">        <div class=\"col-9\">          <div class=\"row\">            <div class=\"col-12 col-xl-6 awl-data-name\" style=\"white-space:nowrap\">Laurel Davidson</div>            <div class=\"col-12 col-xl-6 awl-data-address nowrap\">Kansas City, MO</div>          </div>        </div>        <div class=\"col-3 awl-data-age\">Age 51        </div>      </div>    </div>    <div class=\"col-12 col-xl-4 awl-data-button\" style=\"text-align:center\">      <button class=\"btn btn-sm btn-primary\" style=\"width:100%;padding:6px 0;white-space:nowrap\">        View … 
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "@id": "https://www.fastpeoplesearch.com/#organization",
+  "url": "https://www.fastpeoplesearch.com/",
+  "logo": "https://www.fastpeoplesearch.com/images/fastPeopleSearchLogo.png",
+  "name":"FastPeopleSearch",
+  "address":{
+    "@type": "PostalAddress",
+    "addressLocality": "Boston",
+    "addressRegion": "MA",
+    "postalCode": "02111-1929",
+    "streetAddress":"68 Harrison Ave Ste 605, PMB 29296"
+  },
+	"contactPoint": {
+    "@type": "ContactPoint",
+    "url": "https://www.fastpeoplesearch.com/contact",
+    "email": "support@fastpeoplesearch.com",
+    "contactType": "customer support",
+    "availableLanguage": [
+      "English"
+    ]
+  },
+  "sameAs": [
+    "https://www.facebook.com/Fast-People-Search-1763384900620802",
+    "https://twitter.com/fastpplsearch"
+  ]
+}
+ 
+{
+    "@context": "https://schema.org/",
+	"@graph": [ 
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com",
+    "url" : "https://www.fastpeoplesearch.com",
+    "name":"Fast People Search Home Page"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/address",
+    "url" : "https://www.fastpeoplesearch.com/address",
+    "name":"Find People by Address Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "url" : "https://www.fastpeoplesearch.com/reverse-phone-lookup",
+    "name":"Reverse Phone Search"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/terms",
+    "url" : "https://www.fastpeoplesearch.com/terms",
+    "name":"Terms and Conditions"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/privacy",
+    "url" : "https://www.fastpeoplesearch.com/privacy",
+    "name":"Privacy Policy"
+	},
+	{
+    "@type": "SiteNavigationElement",
+    "@id" : "https://www.fastpeoplesearch.com/contact",
+    "url" : "https://www.fastpeoplesearch.com/contact",
+    "name":"Contact"
+	},
+
+    {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/phone-directory",
+      "url" : "https://www.fastpeoplesearch.com/phone-directory",
+      "name": "Directory of United States Phone Numbers"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/2xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 2"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/3xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 3"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/4xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 4"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/5xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 5"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/6xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 6"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/7xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 7"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/8xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 8"
+  },
+      {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "url" : "https://www.fastpeoplesearch.com/9xx-area-code",
+      "name":"Directory of US Phone numbers whose area code starts with 9"
+  },
+  
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/a",
+      "url" : "https://www.fastpeoplesearch.com/names/a",
+      "name":"Name directory for last name starting with a"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/b",
+      "url" : "https://www.fastpeoplesearch.com/names/b",
+      "name":"Name directory for last name starting with b"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/c",
+      "url" : "https://www.fastpeoplesearch.com/names/c",
+      "name":"Name directory for last name starting with c"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/d",
+      "url" : "https://www.fastpeoplesearch.com/names/d",
+      "name":"Name directory for last name starting with d"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/e",
+      "url" : "https://www.fastpeoplesearch.com/names/e",
+      "name":"Name directory for last name starting with e"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/f",
+      "url" : "https://www.fastpeoplesearch.com/names/f",
+      "name":"Name directory for last name starting with f"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/g",
+      "url" : "https://www.fastpeoplesearch.com/names/g",
+      "name":"Name directory for last name starting with g"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/h",
+      "url" : "https://www.fastpeoplesearch.com/names/h",
+      "name":"Name directory for last name starting with h"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/i",
+      "url" : "https://www.fastpeoplesearch.com/names/i",
+      "name":"Name directory for last name starting with i"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/j",
+      "url" : "https://www.fastpeoplesearch.com/names/j",
+      "name":"Name directory for last name starting with j"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/k",
+      "url" : "https://www.fastpeoplesearch.com/names/k",
+      "name":"Name directory for last name starting with k"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/l",
+      "url" : "https://www.fastpeoplesearch.com/names/l",
+      "name":"Name directory for last name starting with l"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/m",
+      "url" : "https://www.fastpeoplesearch.com/names/m",
+      "name":"Name directory for last name starting with m"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/n",
+      "url" : "https://www.fastpeoplesearch.com/names/n",
+      "name":"Name directory for last name starting with n"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/o",
+      "url" : "https://www.fastpeoplesearch.com/names/o",
+      "name":"Name directory for last name starting with o"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/p",
+      "url" : "https://www.fastpeoplesearch.com/names/p",
+      "name":"Name directory for last name starting with p"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/q",
+      "url" : "https://www.fastpeoplesearch.com/names/q",
+      "name":"Name directory for last name starting with q"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/r",
+      "url" : "https://www.fastpeoplesearch.com/names/r",
+      "name":"Name directory for last name starting with r"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/s",
+      "url" : "https://www.fastpeoplesearch.com/names/s",
+      "name":"Name directory for last name starting with s"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/t",
+      "url" : "https://www.fastpeoplesearch.com/names/t",
+      "name":"Name directory for last name starting with t"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/u",
+      "url" : "https://www.fastpeoplesearch.com/names/u",
+      "name":"Name directory for last name starting with u"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/v",
+      "url" : "https://www.fastpeoplesearch.com/names/v",
+      "name":"Name directory for last name starting with v"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/w",
+      "url" : "https://www.fastpeoplesearch.com/names/w",
+      "name":"Name directory for last name starting with w"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/x",
+      "url" : "https://www.fastpeoplesearch.com/names/x",
+      "name":"Name directory for last name starting with x"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/y",
+      "url" : "https://www.fastpeoplesearch.com/names/y",
+      "name":"Name directory for last name starting with y"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names/z",
+      "url" : "https://www.fastpeoplesearch.com/names/z",
+      "name":"Name directory for last name starting with z"
+  },
+  {
+      "@type": "SiteNavigationElement",
+      "@id" : "https://www.fastpeoplesearch.com/names",
+      "url" : "https://www.fastpeoplesearch.com/names",
+      "name":"Name Directory"
+  }
+
+]
+}
+ 
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "@id": "https://www.fastpeoplesearch.com/laurel-davidson_id_G4122267435744160317",
+  "url": "https://www.fastpeoplesearch.com/laurel-davidson_id_G4122267435744160317",
+  "name": "Laurel Davidson",
+  "honorificPrefix": "",
+  "givenName":"Laurel",
+  "familyName":"Davidson",
+  
+	
+    "homeLocation":{
+    "@type": "Place",
+        "@id":"https://www.fastpeoplesearch.com/address/432-nw-81st-st_kansas-city-mo-64118",
+    "url":"https://www.fastpeoplesearch.com/address/432-nw-81st-st_kansas-city-mo-64118",
+        "description": "Current home address",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City",
+      "addressRegion": "MO",
+      "postalCode": "64118",
+      "streetAddress": "432 NW 81st St"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.241624",
+      "longitude": "-94.586407"
+    }
+      },
+  
+			"additionalName": [
+				"L A Davidson",
+				"L Davidson"
+		 ],
+		"telephone": [
+      "(816) 810-1231",
+	    "(816) 436-9964",
+	    "(816) 474-3242",
+	    "(913) 727-2704"
+	  ],
+	"relatedTo": [
+		{
+		"@type": "Person",
+    
+    
+		"name": "Allison C Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Amy K Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Deborah Lynn Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Elizabeth C Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Gordie Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "James H Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jocelyn O Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Susan Kay Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Allison C Davidso"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Amy R Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Danyiel Josef Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Denise M Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Evalena D Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "James H Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Troy Lon Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Troy L Davidson"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Benjamin R Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Brenda L Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Brenda L Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Carol Marie Stringer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Christine Renee Davenport"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Christopher Glynn Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Daniel A Stringer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Daniel P Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Edward E Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Ethan Jackie Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jackie Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jackie L Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jackie Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jackie Mrs Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jacquie Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jay C Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jay H Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Jessi T Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Johnny Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Meredith L Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Nellie J Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Paul E Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Paula M Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Stacey M Stringer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Stacey M Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas Scott Stringer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Thomas B Stringer"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "Warren R Williams"
+	},
+		{
+		"@type": "Person",
+    
+    
+		"name": "William J Williams"
+	}
+		]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+       {
+    "@type": "ListItem",
+    "position": 1,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/",
+      "url": "https://www.fastpeoplesearch.com/",
+      "name": "FastPeopleSearch Homepage"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 2,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names",
+      "url": "https://www.fastpeoplesearch.com/names",
+      "name": "People Search Directory of names"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 3,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/names/d",
+      "url": "https://www.fastpeoplesearch.com/names/d",
+      "name": "People Search Directory of Last Names Starting with D"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 4,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/davidson",
+      "url": "https://www.fastpeoplesearch.com/name/davidson",
+      "name": "Search people with last name Davidson"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 5,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/laurel-davidson",
+      "url": "https://www.fastpeoplesearch.com/name/laurel-davidson",
+      "name": "Search people named Laurel Davidson"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 6,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/laurel-davidson_mo",
+      "url": "https://www.fastpeoplesearch.com/name/laurel-davidson_mo",
+      "name": "Search people named Laurel Davidson in MO"
+    }
+  },
+     {
+    "@type": "ListItem",
+    "position": 7,
+    "item": {
+      "@id": "https://www.fastpeoplesearch.com/name/laurel-davidson_kansas-city-mo",
+      "url": "https://www.fastpeoplesearch.com/name/laurel-davidson_kansas-city-mo",
+      "name": "Search people named Laurel Davidson in Kansas City, MO"
+    }
+  }
+  ]}
+ 
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "How old is Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> is 51 years old, and was born in March of 1975."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where does Laurel Davidson live currently?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a>'s current address is <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/432-nw-81st-st_kansas-city-mo-64118\" title=\"Find people who lived at 432 NW 81st St, Kansas City MO 64118\">432 NW 81st St, Kansas City MO 64118<\/a>. Laurel has lived there for about 25.5 years, since December of 2000. "
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who is related to Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> is likely related to the following people: <a href=\"https:\/\/www.fastpeoplesearch.com\/allison-davidson_id_G1163507396519446382\" title=\"Run a fast people search on Allison Davidson\">Allison Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/amy-williams_id_G-3064663601137858185\" title=\"Run a fast people search on Amy Williams\">Amy Williams<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/deborah-davidson_id_G-2302560271625133841\" title=\"Run a fast people search on Deborah Davidson\">Deborah Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/elizabeth-davidson_id_G-2627377948519714871\" title=\"Run a fast people search on Elizabeth Davidson\">Elizabeth Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/gordie-davidson_id_G5175024874009917603\" title=\"Run a fast people search on Gordie Davidson\">Gordie Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/james-davidson_id_G-3984619768237392487\" title=\"Run a fast people search on James Davidson\">James Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/jocelyn-davidson_id_G2528447019609542527\" title=\"Run a fast people search on Jocelyn Davidson\">Jocelyn Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/susan-davidson_id_G3360715022652519086\" title=\"Run a fast people search on Susan Davidson\">Susan Davidson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/allison-davidso_id_G7562366797608353309\" title=\"Run a fast people search on Allison Davidso\">Allison Davidso<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/amy-williams_id_G82686844572167898\" title=\"Run a fast people search on Amy Williams\">Amy Williams<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/danyiel-davidson_id_G809316643231962762\" title=\"Run a fast people search on Danyiel Davidson\">Danyiel Davidson<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Laurel Davidson currently married?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We can not find any public records indicating that Laurel Davidson is currently Married.  It is not likely."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best phone number for Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a>'s latest phone number is a wireless number at <a href=\"https:\/\/www.fastpeoplesearch.com\/816-810-1231\" title=\"Search people associated with the phone number (816) 810-1231\">(816) 810-1231<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "What is the best email for Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "laureldav6@yahoo.com is the most current email on record for <a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a>."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Laurel Davidson alive today?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Yes! <a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> is living today."
+    }
+  },    {
+    "@type": "Question",
+    "name": "Does Laurel Davidson go by any other names or aliases?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> may also go by the following names or aliases: L A Davidson, L Davidson"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Who does Laurel Davidson associate with?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "The following people are friends, co-workers, partners, roomates, or otherwise associated with <a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a>: <a href=\"https:\/\/www.fastpeoplesearch.com\/erica-jackson_id_G7824369899830782790\" title=\"Run a FastPeopleSearch on Erica Jackson\">Erica Jackson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/lee-thomas_id_G-4196342099108567554\" title=\"Run a FastPeopleSearch on Lee Thomas\">Lee Thomas<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/leslie-hernandez_id_G-2096465042590442435\" title=\"Run a FastPeopleSearch on Leslie Hernandez\">Leslie Hernandez<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/maurice-jackson_id_G-3917133787382978607\" title=\"Run a FastPeopleSearch on Maurice Jackson\">Maurice Jackson<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/michelle-benge_id_G6654144822332931584\" title=\"Run a FastPeopleSearch on Michelle Benge\">Michelle Benge<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/monica-abarca_id_G-8523249611415504849\" title=\"Run a FastPeopleSearch on Monica Abarca\">Monica Abarca<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/terry-rodenberg_id_G6675504538771620864\" title=\"Run a FastPeopleSearch on Terry Rodenberg\">Terry Rodenberg<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Where did Laurel Davidson live previously?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> was registered, and likely lived at the following addresses in the past:  | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/po-box-28955_kansas-city-mo-64188\" title=\"Search people who lived at Po Box 28955, Kansas City MO 64188\">Po Box 28955, Kansas City MO 64188<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/6896-n-bedford-ave_kansas-city-mo-64151\" title=\"Search people who lived at 6896 N Bedford Ave, Kansas City MO 64151\">6896 N Bedford Ave, Kansas City MO 64151<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/414-main-st_weston-mo-64098\" title=\"Search people who lived at 414 Main St, Weston MO 64098\">414 Main St, Weston MO 64098<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/715-armour-rd-unit-102_kansas-city-mo-64116\" title=\"Search people who lived at 715 Armour Rd, Unit 102, Kansas City MO 64116\">715 Armour Rd, Unit 102, Kansas City MO 64116<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/196-canyon-view-dr_lansing-ks-66043\" title=\"Search people who lived at 196 Canyon View Dr, Lansing KS 66043\">196 Canyon View Dr, Lansing KS 66043<\/a> | <a href=\"https:\/\/www.fastpeoplesearch.com\/address\/715-armour-rd-unit-216_n-kansas-city-mo-64116\" title=\"Search people who lived at 715 Armour Rd, Unit 216, N Kansas City MO 64116\">715 Armour Rd, Unit 216, N Kansas City MO 64116<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What email addresses have been used by Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "There is one email account for <a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a>, and that is laureldav6@yahoo.com"
+    }
+  },    {
+    "@type": "Question",
+    "name": "What phone numbers have been used by Laurel Davidson?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "<a href=\"https:\/\/www.fastpeoplesearch.com\/laurel-davidson_id_G4122267435744160317\" title=\"FastPeopleSearch on Laurel Davidson\">Laurel Davidson<\/a> has been registered with the following phone numbers: <a href=\"https:\/\/www.fastpeoplesearch.com\/816-810-1231\" title=\"Search people associated with the phone number (816) 810-1231\">(816) 810-1231<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/816-436-9964\" title=\"Search people associated with the phone number (816) 436-9964\">(816) 436-9964<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/816-474-3242\" title=\"Search people associated with the phone number (816) 474-3242\">(816) 474-3242<\/a>, <a href=\"https:\/\/www.fastpeoplesearch.com\/913-727-2704\" title=\"Search people associated with the phone number (913) 727-2704\">(913) 727-2704<\/a>"
+    }
+  },    {
+    "@type": "Question",
+    "name": "Is Laurel Davidson associated with any businesses?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "We do not show Laurel Davidson associated with any business records"
+    }
+  }   ]
+}
+ 
+{
+  "@context": "http://schema.org",
+  "@type": "WebPage",
+  "name": "Laurel Davidson(51) Kansas City, MO (816)810-1231 | Public Records Profile",
+  "@id": "https://www.fastpeoplesearch.com/laurel-davidson_id_G4122267435744160317",
+  "url": "https://www.fastpeoplesearch.com/laurel-davidson_id_G4122267435744160317",
+  "speakable": {
+    "@type": "SpeakableSpecification",
+    "cssSelector": ".person-content-block"
+  }
+    ,"contentLocation": {
+    "@type":"Place",
+        "@id":"https://www.fastpeoplesearch.com/address/432-nw-81st-st_kansas-city-mo-64118",
+    "url":"https://www.fastpeoplesearch.com/address/432-nw-81st-st_kansas-city-mo-64118",
+        "description": "Current home address of Laurel Davidson, 432 NW 81st St, Kansas City MO 64118",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kansas City",
+      "addressRegion": "MO",
+      "postalCode": "64118",
+      "streetAddress": "432 NW 81st St"
+    }
+        ,"geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "39.241624",
+      "longitude": "-94.586407"
+    }
+      }
+  }
+ 
+window.addEventListener('DOMContentLoaded',function(){
+
+  wam.init({
+    searchType:'details', 
+    section:'list',
+    fn:'Laurel',
+    mn:'',
+    ln:'Davidson',
+    city:'Kansas City',
+    state:'MO',
+    age:'51',
+    phone:'%28816%29+810-1231',
+    email:'laureldav6%40yahoo.com',
+    userIP:'2600:1700:86a0:13e0:909d:93c3:704a:74f7',
+    gResults:'[{&quot;firstname&quot;:&quot;Laurel&quot;,&quot;middlename&quot;:null,&quot;lastname&quot;:&quot;Davidson&quot;,&quot;prefix&quot;:null,&quot;suffix&quot;:null,&quot;fullname&quot;:&quot;Laurel Davidson&quot;,&quot;age&quot;:51,&quot;dob_month&quot;:&quot;March&quot;,&quot;birthdayComingUp&quot;:false,&quot;newAddress&quot;:false,&quot;city&quot;:&quot;Kansas City&quot;,&quot;state&quot;:&quot;MO&quot;,&quot;zip5&quot;:&quot;64118&quot;,&quot;tahoeId&quot;:&quot;G4122267435744160317&quot;}]',
+    env:'production',
+    requestPath:'laurel-davidson_id_G4122267435744160317',
+    requestTLD:'https://www.fastpeoplesearch.com',
+    isMobile:screenFormat=='mobile'?true:false
+  });
+
+  //map ads
+/*
+  if(adMapSized.left) $('#admap-left').html(adMapSized.left);
+  if(adMapSized.right) $('#admap-right').html(adMapSized.right);
+  if(adMapSized.middle1) $('#admap-middle1').html(adMapSized.middle1);
+  if(adMapSized.middle2) $('#admap-middle2').html(adMapSized.middle2);
+  if(adMapSized.middle3) $('#admap-middle3').html(adMapSized.middle3);
+  if(adMapSized.footer) $('#admap-footer').html(adMapSized.footer);
+  if(adMapSized.scroll) $('#admap-scroll').html(adMapSized.scroll);
+*/
+
+  $(function () {
+    //collapse elements
+    $('#collapsed-phones').on('hidden.bs.collapse', function () { $('#collapse-phone-links').text('Show More...'); });
+    $('#collapsed-phones').on('shown.bs.collapse', function () { $('#collapse-phone-links').text('Show Less...'); });
+    $('#collapsed-emails').on('hidden.bs.collapse', function () { $('#collapse-email-links').text('Show More...'); });
+    $('#collapsed-emails').on('shown.bs.collapse', function () { $('#collapse-email-links').text('Show Less...'); });
+    $('#collapsed-names').on('hidden.bs.collapse', function () { $('#collapse-name-links').text('Show More...'); });
+    $('#collapsed-names').on('shown.bs.collapse', function () { $('#collapse-name-links').text('Show Less...'); });
+    $('#collapsed-addresses').on('hidden.bs.collapse', function () { $('#collapse-address-links').text('Show More...'); });
+    $('#collapsed-addresses').on('shown.bs.collapse', function () { $('#collapse-address-links').text('Show Less...'); });
+    $('#collapsed-relatives').on('hidden.bs.collapse', function () { $('#collapse-relative-links').text('Show More...'); });
+    $('#collapsed-relatives').on('shown.bs.collapse', function () { $('#collapse-relative-links').text('Show Less...'); });
+    $('#collapsed-associates').on('hidden.bs.collapse', function () { $('#collapse-associate-links').text('Show More...'); });
+    $('#collapsed-associates').on('shown.bs.collapse', function () { $('#collapse-associate-links').text('Show Less...'); });
+    $('#collapsed-businesses').on('hidden.bs.collapse', function () { $('#collapse-business-links').text('Show More...'); });
+    $('#collapsed-businesses').on('shown.bs.collapse', function () { $('#collapse-business-links').text('Show Less...'); });
+  });
+
+  $('#toc-mobile').click(function(e){
+    $('#toc-mobile ul').toggle();
+  });
+
+});
+ 
+document.querySelectorAll('.faq-question').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.parentElement;
+    const answer = item.querySelector('.faq-answer');
+
+    if (item.classList.contains('open')) {
+      answer.style.maxHeight = '0';
+      item.classList.remove('open');
+    } else {
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+      item.classList.add('open');
+    }
+  });
+});
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+    analytics_storage: 'granted'
+}); 
+                      X
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture

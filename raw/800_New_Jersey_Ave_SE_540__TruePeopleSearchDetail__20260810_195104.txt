@@ -1,0 +1,464 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address Joseph Fernandez City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip jsmith@gmail.com e.g 123 Park Ave City, State or Zip Name Phone Address Email Enter name, phone or address Joseph Fernandez e.g 202-555-3456 e.g 123 Park Ave jsmith@gmail.com e.g John Smith Joseph Fernandez City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip Search Neighbors jsmith@gmail.com ezstandalone.cmd.push(function() { ezstandalone.showAds(104); }); 
+        /* TOC FAB - Scoped styles for instance f15e3bd3 */
+        .toc-fab-wrapper-f15e3bd3 {
+            position: fixed;
+            top: 128px;
+            z-index: 999;
+        }
+        .toc-fab-f15e3bd3 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #436280 0%, #3f5a74 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        .toc-fab-f15e3bd3:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .toc-fab-f15e3bd3.active {
+            background: linear-gradient(135deg, #3f5a74 0%, #436280 100%);
+        }
+        .toc-fab-f15e3bd3 i {
+            transition: transform 0.3s ease;
+        }
+        .toc-fab-f15e3bd3.active i {
+            transform: rotate(90deg);
+        }
+        .toc-fab-label-f15e3bd3 {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        .toc-fab-label-f15e3bd3::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .toc-fab-wrapper-f15e3bd3:hover .toc-fab-label-f15e3bd3 {
+            opacity: 1;
+            visibility: visible;
+        }
+        .toc-fab-f15e3bd3.active + .toc-fab-label-f15e3bd3 {
+            display: none;
+        }
+        .toc-dropdown-f15e3bd3 {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.2s ease;
+        }
+        .toc-dropdown-f15e3bd3.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .toc-dropdown-header-f15e3bd3 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc-dropdown-title-f15e3bd3 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+        }
+        .toc-close-f15e3bd3 {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #adb5bd;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .toc-close-f15e3bd3:hover {
+            color: #6c757d;
+        }
+        .toc-dropdown-body-f15e3bd3 {
+            padding: 8px 0;
+            max-height: min(calc(100vh - 200px), 600px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f8f9fa;
+        }
+        .toc-dropdown-body-f15e3bd3::-webkit-scrollbar {
+            width: 6px;
+        }
+        .toc-dropdown-body-f15e3bd3::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        .toc-dropdown-body-f15e3bd3::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .toc-dropdown-body-f15e3bd3::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        .toc-item-f15e3bd3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 16px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .toc-item-f15e3bd3:hover {
+            background: #f8f9fa;
+            color: #436280;
+        }
+        .toc-item-f15e3bd3 i {
+            width: 20px;
+            text-align: center;
+            color: #112236;
+            font-size: 14px;
+        }
+        .toc-item-f15e3bd3:hover i {
+            color: #436280;
+        }
+        @media (max-width: 767px) {
+            .toc-fab-wrapper-f15e3bd3 {
+                top: 130px;
+            }
+            .toc-fab-f15e3bd3 {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            .toc-fab-label-f15e3bd3 {
+                display: none !important;
+            }
+            .toc-dropdown-f15e3bd3 {
+                min-width: 220px;
+            }
+            .toc-dropdown-body-f15e3bd3 {
+                max-height: calc(100vh - 300px);
+                overflow-y: scroll;
+                -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+                mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .toc-fab-wrapper-f15e3bd3 {
+                top: 195px;
+            }
+            .toc-fab-label-f15e3bd3 {
+                display: none !important;
+            }
+        }
+     Jump to Section On This Page Top of Page Current Address Previous Addresses Phone Numbers Email Addresses Possible Relatives Possible Associates Background Profile FAQ 
+        (function() {
+            var id = 'f15e3bd3';
+            var contentSelector = '.content-center';
+            var fabWidth = 48;
+            var baseScrollOffset = 130;
+
+            // Get responsive scroll offset based on screen size
+            function getScrollOffset() {
+                var w = window.innerWidth;
+                if (w < 768) return 130;      // Mobile: header ~95px + padding
+                if (w < 1024) return 195;     // Tablet: header ~167px + padding
+                return baseScrollOffset;       // Desktop: use configured value
+            }
+
+            // Position FAB at the right edge of content container
+            function positionFab() {
+                var content = document.querySelector(contentSelector);
+                var fab = document.getElementById('tocFabWrapper_' + id);
+                if (!content || !fab) return;
+                var rect = content.getBoundingClientRect();
+                fab.style.left = (rect.right - fabWidth) + 'px';
+            }
+
+            // Toggle dropdown
+            window['tocToggle_' + id] = function(trigger) {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                if (dropdown.classList.contains('open')) {
+                    window['tocClose_' + id]();
+                } else {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            // Close dropdown
+            window['tocClose_' + id] = function() {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                var trigger = document.querySelector('.toc-fab-' + id);
+                if (dropdown) dropdown.classList.remove('open');
+                if (trigger) {
+                    trigger.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // Scroll to top of page
+            window['tocScrollToTop_' + id] = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window['tocClose_' + id]();
+            };
+
+            // Scroll to section with offset for fixed header
+            window['tocScrollTo_' + id] = function(targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                window['tocClose_' + id]();
+            };
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#tocFabWrapper_' + id)) {
+                    window['tocClose_' + id]();
+                }
+            });
+
+            // Position on load and resize
+            positionFab();
+            window.addEventListener('resize', positionFab);
+        })();
+     Home  /  F  /  Fernandez  /  Joseph Fernandez  /  FL  /  Miami Joseph Fernandez 
+Age 30, Born May 1996 Lives in Miami, FL (786) 925-4384 Full Background Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Evictions & Foreclosures Marriage & Divorce Records Bankruptcies, Liens & Judgments Assets & Properties Business Records Professional Licenses Social Media Records 
+View Full Background Report
+                                             Current Address
+                         This is the most recently reported address for Joseph Fernandez. 180 NE 29th St #1804 Miami, FL 33137 397 Bed | 390 Bath | 523,318  Sq Ft | Built 2018 Miami-Dade County 
+                                    (Nov 2023 - Aug 2026)
+                                 Phone Numbers
+                         Includes the current and past phone numbers for Joseph Fernandez. (786) 925-4384  -  Wireless Possible Primary Phone Last reported Jul 2026 T-Mobile (937) 602-4628  -  Wireless Last reported Sep 2020 Verizon Wireless (954) 792-3650  -  Landline Last reported Dec 2025 AT&T (305) 454-5438  -  Voip Last reported Sep 2020 Ton80 Communications (786) 925-4383  -  Wireless Last reported Sep 2020 T-Mobile (786) 493-0547  -  Wireless Last reported Dec 2025 T-Mobile Full Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Birth & Death Records Police Records Search Warrants Criminal Records Data Property Records Current and Past Contact Info Reverse Phone Lookups AKAs, Age, Date of Birth Addresses and Phone Numbers Relatives and Associates Public Records Data Bankruptcies, Judgments, Liens Complete Background Check 
+View Full Background Report
+                                             
+                            Sponsored Links
+                         ezstandalone.cmd.push(function() { ezstandalone.showAds(109); }); Email Addresses
+                         Includes all known email addresses for Joseph Fernandez. 
+                                    joseph.fernandez@citlink.net
+                                 
+                                    libertylynn@msn.com
+                                 Current Address Property Details
+                         Property record details for the current residence of Joseph Fernandez. 180 NE 29th St #1804 Miami, FL 33137 
+                                Bedrooms 
+397                                 
+                                Bathrooms 
+390                                 
+                                Square Feet 
+523,318                                 
+                                Year Built 
+2018                                 
+                                Estimated Value 
+N/A                                 
+                                Estimated Equity 
+N/A                                 
+                                Last Sale Amount 
+$104,166,900                                 
+                                Last Sale Date 
+02/16/2022                                 
+                                Occupancy Type 
+Non-Owner Occupied                                 
+                                Ownership Type 
+Corporate                                 
+                                Land Use 
+Apt House 5+ Units                                 
+                                Property Class 
+Residential                                 
+                                Subdivision 
+Western Boulevard Tract                                 
+                                Lot Square Feet 
+74,326                                 
+                                APN 
+01-3125-004-0300                                 
+                                School District 
+Dade County School District                                 Previous Addresses
+                         All previously reported addresses for Joseph Fernandez. 624 N Glebe Rd #719 Arlington, VA 22203 Arlington County 
+                                            (Jan 2025 - Apr 2026)
+                                         717 SW 107th Ave Pembroke Pines, FL 33025 Broward County 
+                                                (Jun 2020 - May 2026)
+                                             10021 SW 7th Ct Pembroke Pines, FL 33025 Broward County 
+                                            (Jul 2017 - May 2026)
+                                         3213 Dian Rd Tallahassee, FL 32304 Leon County 
+                                                (Jan 2015 - Dec 2021)
+                                             20163 NW 78th Ct Hialeah, FL 33015 Miami-Dade County 
+                                            (Nov 2014 - Aug 2015)
+                                         717 College Hwy #B Southwick, MA 01077 Hampden County 
+                                                (Mar 2015 - Jan 2019)
+                                             717B College Hwy Southwick, MA 01077 Hampden County 
+                                            (Mar 2016)
+                                         Criminal Records Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Speeding Tickets 
+View Criminal Records Report
+                                 
+                            Sponsored Links
+                         ezstandalone.cmd.push(function() { ezstandalone.showAds(110); }); Possible Relatives
+                         May include parents (mother, father), spouse (wife, husband), exes, brothers, sisters and children of Joseph Fernandez. Claudia Fernandez 
+Age 51                                         Jessica Fernandez 
+Age 51                                             Nicholas Fernandez 
+Age 33                                                 Ricardo Fernandez 
+Age 54                                                     Possible Associates
+                         May include current and past roommates, friends, and extended family of Joseph Fernandez. Alan Marshall 
+Age 70                                         Sandra Marshall 
+Age 79                                             Charlotte Brown 
+Age 105                                                 Clyde Dupee 
+Age 64                                                     Denise Hills 
+Age 68                                         Gabriela Paez 
+Age 30                                             Robert Cagliostro 
+Age 63                                                 Ana Diaz 
+Age 84                                                     Anahi Fernandez 
+Age 61                                         Ashton Fernandez 
+Age 32                                             Carlos Cedeno 
+Age 87                                                 Carlos Fernandez 
+Age 61                                                     
+                                    View All Associates
+                                 Claudia Fernandez 
+Age 62                                         David Miller 
+Age 69                                             Evelyn Fernandez 
+Age 54                                                 Gerald Thompson 
+Age 68                                                     Gustavo Fernandez 
+Age 37                                         Ian Thompson 
+Age 43                                             Javier Fernandez 
+Age 52                                                 Jazmin Fernandez 
+Age 24                                                     Jessica Fernanadez 
+Age 51                                         Joanne Cagliostro 
+Age 56                                             Johanna Burgos 
+Age 39                                                 Manuel Fernandez 
+Age 54                                                     Manuel Fernandez 
+Age 85                                         Marlene Torres 
+Age 54                                             Nicole Leon 
+Age 38                                                 Orlando Acosta 
+Age 75                                                     Ricardo Fernandez 
+Age 97                                         Roberta Miller 
+Age 67                                             Samantha Rivera 
+Age 34                                                 Shabelly Rojo 
+Age 30                                                     Stephanie Fernandez 
+Age 32                                         Teresita Fernandez 
+Age 82                                             Welber Fernandes 
+Age 55                                                 Xiomara Fernandez 
+Age 85                                                     Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Bankruptcies, Judgments, Liens Search Warrants Property Records Current and Past Contact Info Reverse Phone Lookups Age Locality History and Phone Numbers Relatives and Associates Public Records Data Background Search 
+View Background Report
+                                                     advertisement ezstandalone.cmd.push(function() { ezstandalone.showAds(111); }); Background Profile on Joseph Fernandez 
+                            Joseph Fernandez is  30 years old  and was born in May 1996. He has lived at  180 NE 29th St #1804  in  Miami, FL  since November 2023. Joseph's phone number is  (786) 925-4384 , a mobile number through T-Mobile.  Joseph has also lived in Arlington, VA, Tallahassee, FL, Hialeah, FL, Southwick, MA, and Pembroke Pines, FL for about 8 years (from July 2017 to May 2026). Other phone numbers are also on file for Joseph, including  (937) 602-4628  (mobile),  (954) 792-3650  (landline) and others. Email addresses on file for Joseph include  joseph.fernandez@citlink.net  and  libertylynn@msn.com .  Social media links, property ownership & more can be found at our  partner site . Among his relatives are  Claudia Fernandez ,  Jessica Fernandez ,  Nicholas Fernandez , and  Ricardo Fernandez . Known associates include  Alan Marshall ,  Sandra Marshall  and others.  A full criminal records report for Joseph Fernandez can be found at our  partner site . Joseph's current residence is located at  180 NE 29th St # 1804 in Miami, FL 33137 . It appears Joseph rents this property. The property was purchased in February 2022 for  $104,166,900 . It was built in 2018 (8 years ago).  A more in-depth report can be found at our  partner site . {"context":"https://schema.org","type":"FAQPage","mainEntity":[{"type":"Question","name":"Where does Joseph Fernandez live?","acceptedAnswer":{"type":"Answer","text":"Joseph Fernandez's address is 180 Ne 29th St #1804 Miami, FL 33137."}},{"type":"Question","name":"How old is Joseph Fernandez?","acceptedAnswer":{"type":"Answer","text":"Joseph Fernandez is 30 years old."}},{"type":"Question","name":"What is Joseph Fernandez's phone number?","acceptedAnswer":{"type":"Answer","text":"Joseph Fernandez's number is (786) 925-4384. This is a mobile line through T-Mobile."}},{"type":"Question","name":"Is Joseph Fernandez married?","acceptedAnswer":{"type":"Answer","text":"Joseph Fernandez does not appear to be married based on available public records."}},{"type":"Question","name":"Where has Joseph Fernandez lived previously?","acceptedAnswer":{"type":"Answer","text":"Joseph Fernandez has previously lived in Arlington, VA, Pembroke Pines, FL, and Tallahassee, FL and 2 other locations."}},{"type":"Question","name":"Who are Joseph Fernandez's relatives?","acceptedAnswer":{"type":"Answer","text":"Some of Joseph Fernandez's relatives include Claudia Cedeno Fernandez, Jessica Jean Fernandez, and Nicholas Fernandez and 1 other."}}]} Frequently Asked Questions Where does  Joseph Fernandez  live? + Joseph Fernandez's  address is  180 Ne 29th St #1804 Miami, FL 33137 . How old is  Joseph Fernandez ? + Joseph Fernandez  is 30 years old. What is  Joseph Fernandez 's phone number? + Joseph Fernandez's  number is  (786) 925-4384 . This is a mobile line through T-Mobile. Is  Joseph Fernandez  married? + Joseph Fernandez  does not appear to be married based on available public records. Where has  Joseph Fernandez  lived previously? + Joseph Fernandez  has previously lived in Arlington, VA, Pembroke Pines, FL, and Tallahassee, FL and 2 other locations. Who are  Joseph Fernandez 's relatives? + Some of  Joseph Fernandez's  relatives include  Claudia Cedeno Fernandez ,  Jessica Jean Fernandez , and  Nicholas Fernandez  and 1 other. function toggleFaq(itemId) {var question = document.getElementById(itemId + '_question');var answer = document.getElementById(itemId + '_answer');if (answer.classList.contains('open')) {answer.classList.remove('open');question.setAttribute('aria-expanded', 'false');} else {answer.classList.add('open');question.setAttribute('aria-expanded', 'true');}} 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API Disclaimers Information displayed on this page is compiled from public records sources including but not limited to government agencies at the federal, state and local level. Although we update our records monthly, data on this page may not be accurate or up-to-date. Permissible use: please read our  FAQ  to understand how you may use this service. Does this page contain your information?  Click here to understand your privacy rights or to remove your record . Search all records free! × e.g John Smith City, State or Zip View All Details Free e.g 202-555-3456 View All Details Free e.g 123 Park Ave City, State or Zip View All Details Free True PeopleSearch  is the #1 FREE people search site used by millions of people.   Get current address, phone number, email address, relatives, friends and a lot more on anyone now, we're 100% free for everything!  ezstandalone.cmd.push(function() { ezstandalone.showAds(105); }); True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 var script=document.createElement("script"),scripts=document.getElementsByTagName("script")[0];script.async=!1,script.src="/js/bundle?v=mWKOfvyX",scripts.parentNode.insertBefore(script,scripts); window.addEventListener('load', function () {if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&first=&last=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&phoneno=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&streetaddress=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('G-5091320653204160861' != '' && 1==2) {var fn, ln, city, state, age;fn = $("#personDetails").data("fn");ln = $("#personDetails").data("ln");city = $("#personDetails").data("city");state = $("#personDetails").data("state");age = $("#personDetails").data("age");if (fn != "" && ln != "" && city != "" && state != "" & age != "" && ((Math.floor(Math.random() * 10) + 1) <= 7)){$.ajax({url: '/search/widgetsdetails?fromdir=true&name=' + fn + ' ' + ln + '&citystatezip=' + city + ',' + state + "&agerange=" + age,success: function (text) {if (text != 'NONE') {if($("#widgetsTop").length){$("#widgetsTop").html(text);$("#widgetsTop").css("display", "");}}},error: function (text) {}});}}});  
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); 
+                      ×
+                   
+                      ⤢
+                   0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture Please enable JavaScript Play Mute Current Time  0:00 / Duration  0:00 Remaining Time  - 0:00 1x Playback Rate Captions captions off , selected Picture-in-Picture Fullscreen 0:00 / 0:00 Play Fullscreen Download Unmute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture 0:00 / 0:00 Play Fullscreen Download Mute Cast Captions Playback speed Video Tracks Audio Tracks Picture in picture

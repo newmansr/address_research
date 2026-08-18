@@ -1,0 +1,498 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address City, State or Zip Washington, DC 20003 e.g 202-555-3456 e.g 123 Park Ave 800 New Jersey Ave SE Apt 637 City, State or Zip Washington, DC 20003 jsmith@gmail.com e.g 123 Park Ave 800 New Jersey Ave SE Apt 637 City, State or Zip Washington, DC 20003 Name Phone Address Email Enter name, phone or address e.g 202-555-3456 e.g 123 Park Ave 800 New Jersey Ave SE Apt 637 jsmith@gmail.com e.g John Smith City, State or Zip Washington, DC 20003 e.g 202-555-3456 e.g 123 Park Ave 800 New Jersey Ave SE Apt 637 City, State or Zip Washington, DC 20003 Search Neighbors jsmith@gmail.com ezstandalone.cmd.push(function() { ezstandalone.showAds(104); }); 
+            3 records found  for 800 New Jersey Ave Se Apt 637 in Washington, DC 20003 
+                Filter by Age
+             All Ages 18 : 80 18 80 18,80 Apply 
+            3 records found  for 800 New Jersey Ave Se Apt 637 in Washington, DC 20003 All Ages 18 : 80 18 80 18,80 Apply 
+                Amy Williams
+             Age  
+47                  •  Washington, DC Also seen as  Amy Davidson Used to live in  Arlington VA, Colorado Springs CO, Alexan...   Related to  Amy Williams, Gordie Davidson, Laurel Davi... View Details   View Details   
+                Wayne Hwilliams
+             Age  
+48                  •  Washington, DC View Details   View Details   
+                Kathryn Tenkhoff
+             Age  
+34                  •  Washington, DC Used to live in  Kansas City MO, Franklin TN   Related to  Anne Tenkhoff, Grace Tenkhoff, John Tenkho... View Details   View Details   
+                Amy Williams
+             Age  
+47                 Lives in  Washington, DC Used to live in  Arlington VA, Colorado Springs CO, Al...   Related to  Amy Williams, Gordie Davidson, Laurel... View Details   View Details   
+                Sponsored Links
+             Paid service sponsored by  BeenVerified.com 
+                                    Search owner of
+                                     800 New Jersey Ave SE Apt 637 Search Details 
+                                    Search current phone of
+                                     800 New Jersey Ave SE Apt 637 Search Details 
+                                    Search email address of
+                                     800 New Jersey Ave SE Apt 637 Search Details Advertise with us ezstandalone.cmd.push(function() { ezstandalone.showAds(111); }); 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API ezstandalone.cmd.push(function() { ezstandalone.showAds(105); }); True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+    :root {
+        --pwa-widget-primary-color: #436280;
+        --pwa-widget-secondary-color: #f8f8f8;
+        --pwa-widget-text-color: #333333;
+        --pwa-widget-button-text-color: #ffffff;
+    }
+
+    #universalPwaInstallBanner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: var(--pwa-widget-secondary-color);
+        color: var(--pwa-widget-text-color);
+        padding: 10px 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+        z-index: 99998;
+        cursor: pointer;
+        border-top: 1px solid #ddd;
+        font-size: 0.9rem;
+    }
+
+    #universalPwaInstallBanner p {
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    #universalPwaInstallBannerButtons {
+        display: flex;
+        align-items: center;
+    }
+
+    #universalPwaInstallBanner .universal-pwa-install-btn,
+    #universalPwaInstallBanner .universal-pwa-dismiss-btn {
+        background-color: var(--pwa-widget-primary-color);
+        color: var(--pwa-widget-button-text-color);
+        border: none;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        margin-left: 10px;
+        text-decoration: none;
+        display: inline-block;
+    }
+    
+    #universalPwaInstallBanner .universal-pwa-dismiss-btn {
+        background-color: transparent;
+        color: var(--pwa-widget-text-color);
+        font-size: 1.2rem;
+        padding: 5px 8px;
+    }
+
+    #universalPwaInstallOverlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 99998;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0.3s;
+    }
+
+    #universalPwaInstallOverlay.visible {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 0.3s ease-in-out, visibility 0s linear 0s;
+    }
+
+    #universalPwaInstallInstructionsPanel {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.15);
+        z-index: 99999;
+        display: flex;
+        flex-direction: column;
+        max-height: 75vh;
+        
+        transform: translateY(100%);
+        visibility: hidden;
+        transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s;
+    }
+
+    #universalPwaInstallInstructionsPanel.visible {
+        transform: translateY(0%);
+        visibility: visible;
+        transition: transform 0.3s ease-in-out, visibility 0s linear 0s;
+    }
+
+    .universal-pwa-instructions-header {
+        background-color: var(--pwa-widget-primary-color);
+        color: var(--pwa-widget-button-text-color);
+        padding: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-shrink: 0;
+    }
+
+    .universal-pwa-instructions-header h5 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .universal-pwa-instructions-header .universal-pwa-close-instructions-btn {
+        background: none;
+        border: none;
+        color: var(--pwa-widget-button-text-color);
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .universal-pwa-instructions-content {
+        padding: 20px;
+        flex-grow: 1;
+        overflow-y: auto;
+        color: var(--pwa-widget-text-color);
+    }
+
+    .universal-pwa-instructions-content p {
+        margin-bottom: 15px;
+        line-height: 1.6;
+    }
+    
+    .universal-pwa-instructions-content strong {
+        font-weight: bold;
+    }
+
+    .universal-pwa-instructions-content .instruction-step {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+    }
+
+    .universal-pwa-instructions-content .instruction-step img {
+        width: 40px;
+        height: auto;
+        margin-right: 15px;
+        border: 1px solid #ddd;
+        padding: 5px;
+        border-radius: 3px;
+        flex-shrink: 0;
+    }
+    
+    .universal-pwa-instructions-content .instruction-step span {
+        flex: 1;
+    }
+
+
+
+    /* Hide on non-mobile or when in PWA mode - initial state, JS will control */
+    .universal-pwa-widget-hidden {
+        display: none !important;
+    }
+
+ Install our app for the best experience! Install × Install App × 
+(function() {
+    var banner = document.getElementById('universalPwaInstallBanner');
+    var bannerText = document.getElementById('universalPwaInstallBannerText');
+    var instructionsPanel = document.getElementById('universalPwaInstallInstructionsPanel');
+    var instructionsTitle = document.getElementById('universalPwaInstructionsTitle');
+    var instructionsContent = document.getElementById('universalPwaInstructionsContent');
+    var overlay = document.getElementById('universalPwaInstallOverlay');
+    var installButton = document.getElementById('universalPwaInstallBtn');
+    var dismissButton = banner.querySelector('.universal-pwa-dismiss-btn');
+    var closeInstructionsButton = instructionsPanel.querySelector('.universal-pwa-close-instructions-btn');
+
+    var cookieName = "universalPwaInstallDismissed";
+    var dismissDurationDays = parseInt("7", 10);
+    var initialDisplayBanner = false;
+    var androidAppStoreUrl = "https://play.google.com/store/apps/details?id=com.freedataservices.truepeoplesearch&utm_source=tps&utm_campaign=home&utm_medium=web";
+    var androidAppName = "TruePeopleSearch";
+    var appName = "TruePeopleSearch";
+    
+    // Platform-specific messages
+    var iosMessage = "Install our app, no app store required!";
+    var androidMessage = "Get the TruePeopleSearch app!";
+    var iosButtonText = "Install";
+    var androidButtonText = "Install";
+
+    // Check if user came from PWA and set cookie if needed
+    checkAndSetPWAAppCookie();
+    
+    // Device detection
+    var deviceInfo = getDeviceInfo();
+
+    function checkAndSetPWAAppCookie() {
+        // Check if URL contains utm_source=pwa
+        var urlParams = new URLSearchParams(window.location.search);
+        var utmSource = urlParams.get('utm_source');
+        
+        if (utmSource === 'pwa') {
+            // Check if ispwaapp cookie doesn't exist
+            if (!getCookie('ispwaapp')) {
+                // Set the cookie to indicate user is in PWA app
+                setCookie('ispwaapp', '1', 365); // Set for 1 year
+            }
+        }
+    }
+
+    function getDeviceInfo() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        var isIOS = /iphone|ipad|ipod/.test(userAgent);
+        var isAndroid = /android/.test(userAgent);
+        var isSafari = isIOS && !/crios|fxios|edgios/.test(userAgent) && /version\/[\d\.]+.*safari/.test(userAgent);
+        var isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+        var isAlreadyPWA = document.cookie.indexOf('ispwaapp=1') > -1 || window.location.href.indexOf('utm_source=pwa') > -1;
+
+        return {
+            isIOS: isIOS,
+            isAndroid: isAndroid,
+            isSafari: isSafari,
+            isInStandaloneMode: isInStandaloneMode,
+            isAlreadyPWA: isAlreadyPWA,
+            deviceType: isIOS ? 'ios' : (isAndroid ? 'android' : 'other')
+        };
+    }
+
+    function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function setCookie(name, value, days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+    }
+
+    function shouldShowPrompt() {
+        if (getCookie(cookieName)) return false;
+        
+        if (deviceInfo.deviceType === 'ios') {
+            return deviceInfo.isSafari && !deviceInfo.isInStandaloneMode && !deviceInfo.isAlreadyPWA;
+        } else if (deviceInfo.deviceType === 'android') {
+            return !deviceInfo.isInStandaloneMode && !deviceInfo.isAlreadyPWA;
+        }
+        
+        return false;
+    }
+
+    function updateBannerForDevice() {
+        if (deviceInfo.deviceType === 'ios') {
+            bannerText.textContent = iosMessage;
+            installButton.textContent = iosButtonText;
+        } else if (deviceInfo.deviceType === 'android') {
+            bannerText.textContent = androidMessage;
+            installButton.textContent = androidButtonText;
+        }
+    }
+
+    function createIOSInstructions() {
+        var imgShare = "/images/ios-share-icon.png";
+        var imgAddToHome = "/images/add-to-home.png";
+        var imgAdd = "/images/add-to-home.png";
+        
+        return '<p>Install TruePeopleSearch on your home screen, no app store required:</p>' +
+               '<div class="instruction-step">' +
+               '<img src="' + imgShare + '" alt="Safari Share Icon" loading="lazy" />' +
+               '<span><strong>1.</strong> Tap the <strong>Share</strong> button below.</span>' +
+               '</div>' +
+               '<div class="instruction-step">' +
+               '<img src="' + imgAddToHome + '" alt="Add to Home Screen Option" loading="lazy" />' +
+               '<span><strong>2.</strong> Scroll down and tap <strong>"Add to Home Screen"</strong>.</span>' +
+               '</div>' +
+               '<div class="instruction-step">' +
+               '<img src="' + imgAdd + '" alt="Add Button" loading="lazy" />' +
+               '<span><strong>3.</strong> Tap <strong>"Add"</strong> in the top right corner.</span>' +
+               '</div>';
+    }
+
+
+
+    function showBanner() {
+        if (banner) {
+            updateBannerForDevice();
+            banner.classList.remove('universal-pwa-widget-hidden');
+        }
+    }
+
+    function hideBanner() {
+        if (banner) {
+            banner.classList.add('universal-pwa-widget-hidden');
+        }
+    }
+
+    function showInstructions() {
+        // Only show instructions for iOS - Android goes directly to Play Store
+        if (!instructionsPanel || !overlay || deviceInfo.deviceType !== 'ios') return;
+        
+        hideBanner();
+        
+        // Set up iOS PWA installation content
+        instructionsTitle.textContent = 'Install ' + appName;
+        instructionsContent.innerHTML = createIOSInstructions();
+        
+        overlay.classList.add('visible');
+        instructionsPanel.classList.add('visible');
+    }
+
+    function hideInstructions(showBannerAfter) {
+        if (!instructionsPanel || !overlay) return;
+
+        instructionsPanel.classList.remove('visible');
+        overlay.classList.remove('visible');
+        if (showBannerAfter && initialDisplayBanner && !getCookie(cookieName)) {
+            showBanner();
+        }
+    }
+    
+    function dismissPrompt() {
+        setCookie(cookieName, 'true', dismissDurationDays);
+        hideBanner();
+        if (instructionsPanel) instructionsPanel.classList.remove('visible');
+        if (overlay) overlay.classList.remove('visible');
+    }
+
+    function handleInstallClick() {
+        if (deviceInfo.deviceType === 'ios') {
+            showInstructions();
+        } else if (deviceInfo.deviceType === 'android') {
+            window.open(androidAppStoreUrl, '_blank', 'noopener');
+            dismissPrompt(); // Auto-dismiss after redirecting to app store
+        }
+    }
+
+    if (shouldShowPrompt()) {
+        // Expose function to show instructions globally
+        window.showUniversalPWAInstallInstructions = function() {
+            showInstructions();
+        };
+
+        if (initialDisplayBanner && banner) {
+            showBanner();
+
+            installButton.addEventListener('click', function(e) {
+                e.stopPropagation(); 
+                handleInstallClick();
+            });
+            
+            banner.addEventListener('click', function(e) {
+                if (e.target !== dismissButton && e.target.parentNode !== dismissButton && e.target !== installButton) {
+                    handleInstallClick();
+                }
+            });
+
+            dismissButton.addEventListener('click', function(e) {
+                e.stopPropagation();
+                dismissPrompt();
+            });
+        }
+
+        // Panel event listeners
+        if (closeInstructionsButton) {
+            closeInstructionsButton.addEventListener('click', function() {
+                hideInstructions(true); 
+            });
+        }
+        
+        if (overlay) {
+            overlay.addEventListener('click', function() {
+                hideInstructions(true);
+            });
+        }
+    }
+})();
+ 
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        });

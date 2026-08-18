@@ -1,0 +1,425 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address Edmond Leber City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip jsmith@gmail.com e.g 123 Park Ave City, State or Zip Name Phone Address Email Enter name, phone or address Edmond Leber e.g 202-555-3456 e.g 123 Park Ave jsmith@gmail.com e.g John Smith Edmond Leber City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip Search Neighbors jsmith@gmail.com 
+        /* TOC FAB - Scoped styles for instance 99cb2194 */
+        .toc-fab-wrapper-99cb2194 {
+            position: fixed;
+            top: 128px;
+            z-index: 999;
+        }
+        .toc-fab-99cb2194 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #436280 0%, #3f5a74 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        .toc-fab-99cb2194:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .toc-fab-99cb2194.active {
+            background: linear-gradient(135deg, #3f5a74 0%, #436280 100%);
+        }
+        .toc-fab-99cb2194 i {
+            transition: transform 0.3s ease;
+        }
+        .toc-fab-99cb2194.active i {
+            transform: rotate(90deg);
+        }
+        .toc-fab-label-99cb2194 {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        .toc-fab-label-99cb2194::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .toc-fab-wrapper-99cb2194:hover .toc-fab-label-99cb2194 {
+            opacity: 1;
+            visibility: visible;
+        }
+        .toc-fab-99cb2194.active + .toc-fab-label-99cb2194 {
+            display: none;
+        }
+        .toc-dropdown-99cb2194 {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.2s ease;
+        }
+        .toc-dropdown-99cb2194.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .toc-dropdown-header-99cb2194 {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc-dropdown-title-99cb2194 {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+        }
+        .toc-close-99cb2194 {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #adb5bd;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .toc-close-99cb2194:hover {
+            color: #6c757d;
+        }
+        .toc-dropdown-body-99cb2194 {
+            padding: 8px 0;
+            max-height: min(calc(100vh - 200px), 600px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f8f9fa;
+        }
+        .toc-dropdown-body-99cb2194::-webkit-scrollbar {
+            width: 6px;
+        }
+        .toc-dropdown-body-99cb2194::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        .toc-dropdown-body-99cb2194::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .toc-dropdown-body-99cb2194::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        .toc-item-99cb2194 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 16px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .toc-item-99cb2194:hover {
+            background: #f8f9fa;
+            color: #436280;
+        }
+        .toc-item-99cb2194 i {
+            width: 20px;
+            text-align: center;
+            color: #112236;
+            font-size: 14px;
+        }
+        .toc-item-99cb2194:hover i {
+            color: #436280;
+        }
+        @media (max-width: 767px) {
+            .toc-fab-wrapper-99cb2194 {
+                top: 130px;
+            }
+            .toc-fab-99cb2194 {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            .toc-fab-label-99cb2194 {
+                display: none !important;
+            }
+            .toc-dropdown-99cb2194 {
+                min-width: 220px;
+            }
+            .toc-dropdown-body-99cb2194 {
+                max-height: calc(100vh - 300px);
+                overflow-y: scroll;
+                -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+                mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .toc-fab-wrapper-99cb2194 {
+                top: 195px;
+            }
+            .toc-fab-label-99cb2194 {
+                display: none !important;
+            }
+        }
+     Jump to Section On This Page Top of Page Also Known As Current Address Previous Addresses Phone Numbers Possible Relatives Possible Associates Education & Employment Background Profile FAQ 
+        (function() {
+            var id = '99cb2194';
+            var contentSelector = '.content-center';
+            var fabWidth = 48;
+            var baseScrollOffset = 130;
+
+            // Get responsive scroll offset based on screen size
+            function getScrollOffset() {
+                var w = window.innerWidth;
+                if (w < 768) return 130;      // Mobile: header ~95px + padding
+                if (w < 1024) return 195;     // Tablet: header ~167px + padding
+                return baseScrollOffset;       // Desktop: use configured value
+            }
+
+            // Position FAB at the right edge of content container
+            function positionFab() {
+                var content = document.querySelector(contentSelector);
+                var fab = document.getElementById('tocFabWrapper_' + id);
+                if (!content || !fab) return;
+                var rect = content.getBoundingClientRect();
+                fab.style.left = (rect.right - fabWidth) + 'px';
+            }
+
+            // Toggle dropdown
+            window['tocToggle_' + id] = function(trigger) {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                if (dropdown.classList.contains('open')) {
+                    window['tocClose_' + id]();
+                } else {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            // Close dropdown
+            window['tocClose_' + id] = function() {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                var trigger = document.querySelector('.toc-fab-' + id);
+                if (dropdown) dropdown.classList.remove('open');
+                if (trigger) {
+                    trigger.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // Scroll to top of page
+            window['tocScrollToTop_' + id] = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window['tocClose_' + id]();
+            };
+
+            // Scroll to section with offset for fixed header
+            window['tocScrollTo_' + id] = function(targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                window['tocClose_' + id]();
+            };
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#tocFabWrapper_' + id)) {
+                    window['tocClose_' + id]();
+                }
+            });
+
+            // Position on load and resize
+            positionFab();
+            window.addEventListener('resize', positionFab);
+        })();
+     Home  /  L  /  Leber  /  Edmond Leber  /  DC  /  Washington Edmond Leber 
+Age 39, Born June 1987 Lives in Washington, DC (703) 200-8166 Full Background Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Evictions & Foreclosures Marriage & Divorce Records Bankruptcies, Liens & Judgments Assets & Properties Business Records Professional Licenses Social Media Records 
+View Full Background Report
+                                             Also Seen As
+                         Includes all names used in any public records filings for Edmond Leber. Edmond I Ber Current Address
+                         This is the most recently reported address for Edmond Leber. 55 M St NE #1000 Washington, DC 20002 $658,000 | 1,264  Sq Ft | Built 2018 District Of Columbia County 
+                                    (Jan 2019 - Jun 2026)
+                                 Phone Numbers
+                         Includes the current and past phone numbers for Edmond Leber. (703) 200-8166  -  Wireless Possible Primary Phone Last reported May 2026 T-Mobile (703) 690-3288  -  Landline Last reported Aug 2010 Verizon Services (571) 278-9503  -  Wireless Last reported Sep 2021 T-Mobile Full Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Birth & Death Records Police Records Search Warrants Criminal Records Data Property Records Current and Past Contact Info Reverse Phone Lookups AKAs, Age, Date of Birth Addresses and Phone Numbers Relatives and Associates Public Records Data Bankruptcies, Judgments, Liens Complete Background Check 
+View Full Background Report
+                                             Current Address Property Details
+                         Property record details for the current residence of Edmond Leber. 55 M St NE #1000 Washington, DC 20002 
+                                Bedrooms 
+N/A                                 
+                                Bathrooms 
+N/A                                 
+                                Square Feet 
+1,264                                 
+                                Year Built 
+2018                                 
+                                Estimated Value 
+$658,000                                 
+                                Estimated Equity 
+$658,000                                 
+                                Last Sale Amount 
+N/A                                 
+                                Last Sale Date 
+N/A                                 
+                                Occupancy Type 
+Non-Owner Occupied                                 
+                                Ownership Type 
+Corporate                                 
+                                Land Use 
+Condominium                                 
+                                Property Class 
+Residential                                 
+                                Subdivision 
+R. L. A. Ne                                 
+                                Lot Square Feet 
+167                                 
+                                APN 
+0673- -2761                                 
+                                School District 
+District of Columbia Public Schools                                 Previous Addresses
+                         All previously reported addresses for Edmond Leber. 9303 Meadow Crossing Way #WA Fairfax Station, VA 22039 Fairfax County 
+                                            (Apr 2004 - Jul 2024)
+                                         208 Wharton St SE #C Blacksburg, VA 24060 Montgomery County 
+                                                (Nov 2009)
+                                             7917 Treeside Ct Springfield, VA 22152 Fairfax County 
+                                            (Aug 2007 - Feb 2019)
+                                         800 New Jersey Ave SE #837 Washington, DC 20003 District Of Columbia County 
+                                                (May 2021)
+                                             Criminal Records Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Speeding Tickets 
+View Criminal Records Report
+                                 Possible Relatives
+                         May include parents (mother, father), spouse (wife, husband), exes, brothers, sisters and children of Edmond Leber. Jean Leber 
+Age 89                                         Suiling Leber 
+Age 73                                             Possible Associates
+                         May include current and past roommates, friends, and extended family of Edmond Leber. Ryan McKeown 
+Age 36                                         Shu Liulin 
+Age 70                                             Education and Employment
+                         May include education and employment history for Edmond Leber. 
+                                Company 
+Higher Logic                                 
+                                Job Title 
+Sales Engineer                                 
+                                From 
+NOV 2017                                 
+                                To 
+PRESENT                                 
+                                    College 
+Virginia Tech                                     
+                                    Degree 
+Bachelor's Degree                                     
+                                    From 
+2007                                     
+                                    To 
+2011                                     Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Bankruptcies, Judgments, Liens Search Warrants Property Records Current and Past Contact Info Reverse Phone Lookups Age Locality History and Phone Numbers Relatives and Associates Public Records Data Background Search 
+View Background Report
+                                                     Background Profile on Edmond I Leber 
+                            Edmond I Leber is  39 years old  and was born in June 1987. He has resided at  55 M St NE #1000  in  Washington, DC  since January 2019. Contact information for Edmond includes  (703) 200-8166 , a mobile number through T-Mobile.  Public records filings have reported Edmond under different names including  Edmond I Ber .  Edmond has also lived in Fairfax Station, VA, Blacksburg, VA, Springfield, VA, and Washington, DC. Edmond's previously reported phone numbers include  (703) 690-3288  (landline) and  (571) 278-9503  (mobile).  Social media links, property ownership & more can be found at our  partner site . Edmond's professional background includes working at  Higher Logic  as a  Sales Engineer  since NOV 2017. This company is associated with the  Software and Internet  industry. For education, he went to  Virginia Tech  from 2007 to 2011 and earned a  Bachelor's Degree  in  Business Information Technology .  Among his relatives are  Jean Leber  and  Suiling Leber . Known associates include  Ryan McKeown  and  Shu Liulin .  A full criminal records report for Edmond Leber can be found at our  partner site . Located at  55 M St NE # 1000 in Washington, DC 20002 , the residence is 1,264 sq feet. It appears Edmond rents this property. This property is valued at approximately  $658,000  with approximately $658,000 in equity (100%). It was built in 2018 (8 years ago).  A more in-depth report can be found at our  partner site . {"context":"https://schema.org","type":"FAQPage","mainEntity":[{"type":"Question","name":"Where does Edmond I Leber live?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber's address is 55 M St Ne #1000 Washington, DC 20002."}},{"type":"Question","name":"How old is Edmond I Leber?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber is 39 years old."}},{"type":"Question","name":"What is Edmond I Leber's phone number?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber's number is (703) 200-8166. This is a mobile line through T-Mobile."}},{"type":"Question","name":"Is Edmond I Leber married?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber does not appear to be married based on available public records."}},{"type":"Question","name":"What other names is Edmond I Leber known by?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber has also been known as Edmond I Ber."}},{"type":"Question","name":"Where has Edmond I Leber lived previously?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber has previously lived in Fairfax Station, VA, Blacksburg, VA, and Springfield, VA and 1 other location."}},{"type":"Question","name":"Where does/did Edmond I Leber work?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber is associated with Higher Logic as a Sales Engineer."}},{"type":"Question","name":"Where did Edmond I Leber go to school?","acceptedAnswer":{"type":"Answer","text":"Edmond I Leber attended Virginia Tech and may have earned a Bachelor's Degree in Business Information Technology."}},{"type":"Question","name":"Who are Edmond I Leber's relatives?","acceptedAnswer":{"type":"Answer","text":"Some of Edmond I Leber's relatives include Jean Rle Leber and Suiling Leber."}}]} Frequently Asked Questions Where does  Edmond I Leber  live? + Edmond I Leber's  address is  55 M St Ne #1000 Washington, DC 20002 . How old is  Edmond I Leber ? + Edmond I Leber  is 39 years old. What is  Edmond I Leber 's phone number? + Edmond I Leber's  number is  (703) 200-8166 . This is a mobile line through T-Mobile. Is  Edmond I Leber  married? + Edmond I Leber  does not appear to be married based on available public records. What other names is  Edmond I Leber  known by? + Edmond I Leber  has also been known as Edmond I Ber. Where has  Edmond I Leber  lived previously? + Edmond I Leber  has previously lived in Fairfax Station, VA, Blacksburg, VA, and Springfield, VA and 1 other location. Where does/did  Edmond I Leber  work? + Edmond I Leber  is associated with  Higher Logic  as a  Sales Engineer . Where did  Edmond I Leber  go to school? + Edmond I Leber  attended  Virginia Tech  and may have earned a  Bachelor's Degree  in  Business Information Technology . Who are  Edmond I Leber 's relatives? + Some of  Edmond I Leber's  relatives include  Jean Rle Leber  and  Suiling Leber . function toggleFaq(itemId) {var question = document.getElementById(itemId + '_question');var answer = document.getElementById(itemId + '_answer');if (answer.classList.contains('open')) {answer.classList.remove('open');question.setAttribute('aria-expanded', 'false');} else {answer.classList.add('open');question.setAttribute('aria-expanded', 'true');}} 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API Disclaimers Information displayed on this page is compiled from public records sources including but not limited to government agencies at the federal, state and local level. Although we update our records monthly, data on this page may not be accurate or up-to-date. Permissible use: please read our  FAQ  to understand how you may use this service. Does this page contain your information?  Click here to understand your privacy rights or to remove your record . Search all records free! × e.g John Smith City, State or Zip View All Details Free e.g 202-555-3456 View All Details Free e.g 123 Park Ave City, State or Zip View All Details Free True PeopleSearch  is the #1 FREE people search site used by millions of people.   Get current address, phone number, email address, relatives, friends and a lot more on anyone now, we're 100% free for everything!  True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 var script=document.createElement("script"),scripts=document.getElementsByTagName("script")[0];script.async=!1,script.src="/js/bundle?v=mWKOfvyX",scripts.parentNode.insertBefore(script,scripts); window.addEventListener('load', function () {if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&first=&last=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&phoneno=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&streetaddress=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('G-5562804947978508805' != '' && 1==2) {var fn, ln, city, state, age;fn = $("#personDetails").data("fn");ln = $("#personDetails").data("ln");city = $("#personDetails").data("city");state = $("#personDetails").data("state");age = $("#personDetails").data("age");if (fn != "" && ln != "" && city != "" && state != "" & age != "" && ((Math.floor(Math.random() * 10) + 1) <= 7)){$.ajax({url: '/search/widgetsdetails?fromdir=true&name=' + fn + ' ' + ln + '&citystatezip=' + city + ',' + state + "&agerange=" + age,success: function (text) {if (text != 'NONE') {if($("#widgetsTop").length){$("#widgetsTop").html(text);$("#widgetsTop").css("display", "");}}},error: function (text) {}});}}});  
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ 
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); We use cookies to run our site, improve your experience, and personalize content. Manage preferences via the settings icon. See our Privacy Notice for more information. Opt-out signals not detected Accessibility Accept powered by

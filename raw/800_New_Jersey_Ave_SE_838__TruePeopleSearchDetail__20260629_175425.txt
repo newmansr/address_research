@@ -1,0 +1,407 @@
+True PeopleSearch True PeopleSearch Name Phone Address Email Neighbors Enter name, phone or address Paxton Lewis City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip jsmith@gmail.com e.g 123 Park Ave City, State or Zip Name Phone Address Email Enter name, phone or address Paxton Lewis e.g 202-555-3456 e.g 123 Park Ave jsmith@gmail.com e.g John Smith Paxton Lewis City, State or Zip e.g 202-555-3456 e.g 123 Park Ave City, State or Zip Search Neighbors jsmith@gmail.com 
+        /* TOC FAB - Scoped styles for instance 905826dd */
+        .toc-fab-wrapper-905826dd {
+            position: fixed;
+            top: 128px;
+            z-index: 999;
+        }
+        .toc-fab-905826dd {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #436280 0%, #3f5a74 100%);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            color: #fff;
+            font-size: 18px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: all 0.2s ease;
+        }
+        .toc-fab-905826dd:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        }
+        .toc-fab-905826dd.active {
+            background: linear-gradient(135deg, #3f5a74 0%, #436280 100%);
+        }
+        .toc-fab-905826dd i {
+            transition: transform 0.3s ease;
+        }
+        .toc-fab-905826dd.active i {
+            transform: rotate(90deg);
+        }
+        .toc-fab-label-905826dd {
+            position: absolute;
+            right: 58px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #333;
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+        }
+        .toc-fab-label-905826dd::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 6px solid transparent;
+            border-left-color: #333;
+        }
+        .toc-fab-wrapper-905826dd:hover .toc-fab-label-905826dd {
+            opacity: 1;
+            visibility: visible;
+        }
+        .toc-fab-905826dd.active + .toc-fab-label-905826dd {
+            display: none;
+        }
+        .toc-dropdown-905826dd {
+            position: absolute;
+            top: 58px;
+            right: 0;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+            min-width: 240px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px) scale(0.95);
+            transform-origin: top right;
+            transition: all 0.2s ease;
+        }
+        .toc-dropdown-905826dd.open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+        .toc-dropdown-header-905826dd {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 16px 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .toc-dropdown-title-905826dd {
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6c757d;
+        }
+        .toc-close-905826dd {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            color: #adb5bd;
+            font-size: 16px;
+            line-height: 1;
+        }
+        .toc-close-905826dd:hover {
+            color: #6c757d;
+        }
+        .toc-dropdown-body-905826dd {
+            padding: 8px 0;
+            max-height: min(calc(100vh - 200px), 600px);
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #ccc #f8f9fa;
+        }
+        .toc-dropdown-body-905826dd::-webkit-scrollbar {
+            width: 6px;
+        }
+        .toc-dropdown-body-905826dd::-webkit-scrollbar-track {
+            background: #f8f9fa;
+        }
+        .toc-dropdown-body-905826dd::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 3px;
+        }
+        .toc-dropdown-body-905826dd::-webkit-scrollbar-thumb:hover {
+            background: #aaa;
+        }
+        .toc-item-905826dd {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 11px 16px;
+            color: #495057;
+            text-decoration: none;
+            font-size: 14px;
+            transition: all 0.15s ease;
+        }
+        .toc-item-905826dd:hover {
+            background: #f8f9fa;
+            color: #436280;
+        }
+        .toc-item-905826dd i {
+            width: 20px;
+            text-align: center;
+            color: #112236;
+            font-size: 14px;
+        }
+        .toc-item-905826dd:hover i {
+            color: #436280;
+        }
+        @media (max-width: 767px) {
+            .toc-fab-wrapper-905826dd {
+                top: 130px;
+            }
+            .toc-fab-905826dd {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+            }
+            .toc-fab-label-905826dd {
+                display: none !important;
+            }
+            .toc-dropdown-905826dd {
+                min-width: 220px;
+            }
+            .toc-dropdown-body-905826dd {
+                max-height: calc(100vh - 300px);
+                overflow-y: scroll;
+                -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+                mask-image: linear-gradient(to bottom, black calc(100% - 30px), transparent 100%);
+            }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .toc-fab-wrapper-905826dd {
+                top: 195px;
+            }
+            .toc-fab-label-905826dd {
+                display: none !important;
+            }
+        }
+     Jump to Section On This Page Top of Page Current Address Previous Addresses Phone Numbers Email Addresses Possible Relatives Possible Associates Background Profile FAQ 
+        (function() {
+            var id = '905826dd';
+            var contentSelector = '.content-center';
+            var fabWidth = 48;
+            var baseScrollOffset = 130;
+
+            // Get responsive scroll offset based on screen size
+            function getScrollOffset() {
+                var w = window.innerWidth;
+                if (w < 768) return 130;      // Mobile: header ~95px + padding
+                if (w < 1024) return 195;     // Tablet: header ~167px + padding
+                return baseScrollOffset;       // Desktop: use configured value
+            }
+
+            // Position FAB at the right edge of content container
+            function positionFab() {
+                var content = document.querySelector(contentSelector);
+                var fab = document.getElementById('tocFabWrapper_' + id);
+                if (!content || !fab) return;
+                var rect = content.getBoundingClientRect();
+                fab.style.left = (rect.right - fabWidth) + 'px';
+            }
+
+            // Toggle dropdown
+            window['tocToggle_' + id] = function(trigger) {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                if (dropdown.classList.contains('open')) {
+                    window['tocClose_' + id]();
+                } else {
+                    dropdown.classList.add('open');
+                    trigger.classList.add('active');
+                    trigger.setAttribute('aria-expanded', 'true');
+                }
+            };
+
+            // Close dropdown
+            window['tocClose_' + id] = function() {
+                var dropdown = document.getElementById('tocDropdown_' + id);
+                var trigger = document.querySelector('.toc-fab-' + id);
+                if (dropdown) dropdown.classList.remove('open');
+                if (trigger) {
+                    trigger.classList.remove('active');
+                    trigger.setAttribute('aria-expanded', 'false');
+                }
+            };
+
+            // Scroll to top of page
+            window['tocScrollToTop_' + id] = function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                window['tocClose_' + id]();
+            };
+
+            // Scroll to section with offset for fixed header
+            window['tocScrollTo_' + id] = function(targetId) {
+                var target = document.getElementById(targetId);
+                if (target) {
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - getScrollOffset();
+                    window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                }
+                window['tocClose_' + id]();
+            };
+
+            // Close on outside click
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('#tocFabWrapper_' + id)) {
+                    window['tocClose_' + id]();
+                }
+            });
+
+            // Position on load and resize
+            positionFab();
+            window.addEventListener('resize', positionFab);
+        })();
+     Home  /  L  /  Lewis  /  Paxton Lewis  /  DC  /  Washington Paxton Lewis 
+Age 33, Born May 1993 Lives in Washington, DC (574) 807-1726 Full Background Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Evictions & Foreclosures Marriage & Divorce Records Bankruptcies, Liens & Judgments Assets & Properties Business Records Professional Licenses Social Media Records 
+View Full Background Report
+                                             Current Address
+                         This is the most recently reported address for Paxton Lewis. 800 New Jersey Ave SE #838 Washington, DC 20003 District Of Columbia County 
+                                    (Sep 2021 - Jun 2026)
+                                 Phone Numbers
+                         Includes the current and past phone numbers for Paxton Lewis. (574) 807-1726  -  Wireless Possible Primary Phone Last reported May 2026 Verizon Wireless Full Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Birth & Death Records Police Records Search Warrants Criminal Records Data Property Records Current and Past Contact Info Reverse Phone Lookups AKAs, Age, Date of Birth Addresses and Phone Numbers Relatives and Associates Public Records Data Bankruptcies, Judgments, Liens Complete Background Check 
+View Full Background Report
+                                             Email Addresses
+                         Includes all known email addresses for Paxton Lewis. 
+                                    plewis@butler.edu
+                                 Previous Addresses
+                         All previously reported addresses for Paxton Lewis. 802 10th St NE #2 Washington, DC 20002 District Of Columbia County 
+                                            (Jan 2022 - Aug 2024)
+                                         802 10th St NE #P-1 Washington, DC 20002 District Of Columbia County 
+                                                (Jan 2022 - Jul 2022)
+                                             902 N Market St #324 Wilmington, DE 19801 New Castle County 
+                                            (Jul 2020 - Aug 2024)
+                                         650 N 300 W #149 Salt Lake City, UT 84103 Salt Lake County 
+                                                (Jun 2018 - Aug 2024)
+                                             5649 Yellow Wood Dr South Bend, IN 46614 St Joseph County 
+                                            (Jun 2009 - Aug 2024)
+                                         27242 High Seas Ln Bonita Springs, FL 34135 Lee County 
+                                                (Aug 2016 - Nov 2019)
+                                             650 N 300 W #300 Salt Lake City, UT 84103 Salt Lake County 
+                                            (Jan 2023)
+                                         Criminal Records Report     Sponsored Link Arrest & Criminal Records Misdemeanors & Felonies Registered Sex Offender Check Warrants & Police Records Nationwide Court Records Speeding Tickets 
+View Criminal Records Report
+                                 Possible Relatives
+                         May include parents (mother, father), spouse (wife, husband), exes, brothers, sisters and children of Paxton Lewis. Mariah Lewis 
+Age 35                                         Phillip Lewis 
+Age 58                                             Reed Lewis 
+Age 30                                                 Gerald Lewis 
+Age 83                                                     Gregory Lewis 
+Age 59                                         Jerry Lewis 
+Age 83                                             Matthew Lewis 
+Age 54                                                 Nicolaus Lewis 
+Age 28                                                     Phillip Lewis 
+Age 82                                         Yolanda Lewis 
+Age 80                                             Zsavea Lewis 
+Age 35                                                 Dora Lewis 
+Age 106                                                     Joe Lewis Jr 
+Age 51                                         Philip Lewis 
+Age 108                                             Possible Associates
+                         May include current and past roommates, friends, and extended family of Paxton Lewis. Derek Sprunger 
+Age 35                                         Farris Darawsheh 
+Age 39                                             Tommy Ingersoll 
+Age 61                                                 Alicia Darawsheh 
+Age 40                                                     David Beyene 
+Age 32                                         David Miller 
+Age 67                                             Gordon Williams 
+Age 76                                                 John Harper 
+Age 74                                                     Jonathan Fargey 
+Age 35                                         Leah Johnson 
+Age 48                                             Paul Eona 
+Age 46                                                 William Mussenden 
+Age 52                                                     Cynthia Deloach Lewis 
+Age 80                                         Denise Gonzales 
+Age 57                                             Background Report     Sponsored Link Arrest Records Court Records Marriage & Divorce Records Bankruptcies, Judgments, Liens Search Warrants Property Records Current and Past Contact Info Reverse Phone Lookups Age Locality History and Phone Numbers Relatives and Associates Public Records Data Background Search 
+View Background Report
+                                                     Background Profile on Paxton M Lewis 
+                            Paxton M Lewis, now  33 , has a birthdate of May 1993. He has resided at  800 New Jersey Ave SE #838  in  Washington, DC  since September 2021. You can reach him at  (574) 807-1726 , a mobile number through Verizon Wireless.  His prior residences include Wilmington, DE, Salt Lake City, UT, South Bend, IN, Bonita Springs, FL, and Washington, DC for about 2 years (from January 2022 to August 2024). Paxton can be contacted at  plewis@butler.edu .  Paxton's relatives include  Mariah Lewis ,  Phillip Lewis ,  Reed Lewis ,  Gerald Lewis  and 10 others. Paxton's associates include  Derek Sprunger ,  Farris Darawsheh  and others.  A more in-depth report can be found at our  partner site . {"context":"https://schema.org","type":"FAQPage","mainEntity":[{"type":"Question","name":"Where does Paxton M Lewis live?","acceptedAnswer":{"type":"Answer","text":"Paxton M Lewis' address is 800 New Jersey Ave Se #838 Washington, DC 20003."}},{"type":"Question","name":"How old is Paxton M Lewis?","acceptedAnswer":{"type":"Answer","text":"Paxton M Lewis is 33 years old."}},{"type":"Question","name":"What is Paxton M Lewis's phone number?","acceptedAnswer":{"type":"Answer","text":"Paxton M Lewis' number is (574) 807-1726. This is a mobile line through Verizon Wireless."}},{"type":"Question","name":"Is Paxton M Lewis married?","acceptedAnswer":{"type":"Answer","text":"Paxton M Lewis does not appear to be married based on available public records."}},{"type":"Question","name":"Where has Paxton M Lewis lived previously?","acceptedAnswer":{"type":"Answer","text":"Paxton M Lewis has previously lived in Washington, DC, Wilmington, DE, and Salt Lake City, UT and 2 other locations."}},{"type":"Question","name":"Who are Paxton M Lewis's relatives?","acceptedAnswer":{"type":"Answer","text":"Some of Paxton M Lewis' relatives include Mariah J Lewis, Phillip Shawn Lewis, and Reed Taylor Lewis and 11 others."}}]} Frequently Asked Questions Where does  Paxton M Lewis  live? + Paxton M Lewis'  address is  800 New Jersey Ave Se #838 Washington, DC 20003 . How old is  Paxton M Lewis ? + Paxton M Lewis  is 33 years old. What is  Paxton M Lewis 's phone number? + Paxton M Lewis'  number is  (574) 807-1726 . This is a mobile line through Verizon Wireless. Is  Paxton M Lewis  married? + Paxton M Lewis  does not appear to be married based on available public records. Where has  Paxton M Lewis  lived previously? + Paxton M Lewis  has previously lived in Washington, DC, Wilmington, DE, and Salt Lake City, UT and 2 other locations. Who are  Paxton M Lewis 's relatives? + Some of  Paxton M Lewis'  relatives include  Mariah J Lewis ,  Phillip Shawn Lewis , and  Reed Taylor Lewis  and 11 others. function toggleFaq(itemId) {var question = document.getElementById(itemId + '_question');var answer = document.getElementById(itemId + '_answer');if (answer.classList.contains('open')) {answer.classList.remove('open');question.setAttribute('aria-expanded', 'false');} else {answer.classList.add('open');question.setAttribute('aria-expanded', 'true');}} 
+    .inline-svg {
+        width: 30%;
+        max-width: 300px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+        .inline-svg {
+            width: 60%;
+        }
+    }
+ NEED MORE DATA IN REAL-TIME? 
+                        Get access to our partner  EnformionGO's Fast Developer API  for Contact Enrichment, Sales and Marketing Intelligence.
+                     
+                        Find Real Estate Leads, Homeowner Lookups, Reverse Phone, Business and Consumer Data.
+                     Try Our API Disclaimers Information displayed on this page is compiled from public records sources including but not limited to government agencies at the federal, state and local level. Although we update our records monthly, data on this page may not be accurate or up-to-date. Permissible use: please read our  FAQ  to understand how you may use this service. Does this page contain your information?  Click here to understand your privacy rights or to remove your record . Search all records free! × e.g John Smith City, State or Zip View All Details Free e.g 202-555-3456 View All Details Free e.g 123 Park Ave City, State or Zip View All Details Free True PeopleSearch  is the #1 FREE people search site used by millions of people.   Get current address, phone number, email address, relatives, friends and a lot more on anyone now, we're 100% free for everything!  True PeopleSearch .com 
+                    Find people fast with the most comprehensive public records search available. 100% free people search, reverse phone lookup, address & email search.
+                 
+                        PO Box 7775 PMB 29296 
+                        San Francisco, CA 94120-7775 
+                            support@truepeoplesearch.com
+                         Search Services People Search Reverse Phone Lookup Address Lookup Email Lookup Neighbors Lookup True People Search API Real Estate API Skip Trace API Download Our App Company About Us Advertise with us Help Center Contact Terms of Service Privacy Policy Accessibility Cookie Management People Directory A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+                    © 2026 TruePeopleSearch.com. All rights reserved.
+                 Do Not Sell or Share My Personal Information Notice at Collection Important Notice 
+                    TruePeopleSearch.com is not a Consumer Reporting Agency (CRA) as defined by the  Fair Credit Reporting Act (FCRA) . This site can't be used for employment, credit or tenant screening, or any related purpose.
+                 var script=document.createElement("script"),scripts=document.getElementsByTagName("script")[0];script.async=!1,script.src="/js/bundle?v=mWKOfvyX",scripts.parentNode.insertBefore(script,scripts); window.addEventListener('load', function () {if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&first=&last=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&phoneno=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('' !=''){$.ajax({url: '/search/widgets?fromdir=true&streetaddress=&citystatezip=', success: function (text){if (text !='NONE'){$("#widgets").html(text); $("#widgets").css("display", "");}}, error: function (text){}});}else if ('G3522473346374628197' != '' && 1==2) {var fn, ln, city, state, age;fn = $("#personDetails").data("fn");ln = $("#personDetails").data("ln");city = $("#personDetails").data("city");state = $("#personDetails").data("state");age = $("#personDetails").data("age");if (fn != "" && ln != "" && city != "" && state != "" & age != "" && ((Math.floor(Math.random() * 10) + 1) <= 7)){$.ajax({url: '/search/widgetsdetails?fromdir=true&name=' + fn + ' ' + ln + '&citystatezip=' + city + ',' + state + "&agerange=" + age,success: function (text) {if (text != 'NONE') {if($("#widgetsTop").length){$("#widgetsTop").html(text);$("#widgetsTop").css("display", "");}}},error: function (text) {}});}}});  
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-JB1DKYFLTX');
+
+ 
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', function () {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+     
+        .clym-widget-bottom {
+            bottom: 120px !important;
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget-bottom {
+                bottom: 150px !important;
+            }
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body .clym-widget-gpc {
+            display: none !important
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-body {
+            line-height: 18px
+        }
+
+        .clym-widget.clym-widget-notice .clym-widget-actions.clym-widget-actions-split, .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-body {
+            margin-bottom: 10px !important;
+            margin-top: 0
+        }
+
+        @media (max-width:460px) and (min-width:320px) {
+            .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split {
+                flex-direction: row !important;
+                margin-bottom: 5px !important
+            }
+
+                .clym-widget.clym-widget-notice .clym-widget-container .clym-widget-actions.clym-widget-actions-split:not(.clym-widget-actions-multi) .clym-widget-actions-buttons {
+                    margin-top: 0 !important
+                }
+
+            .clym-widget.clym-widget-notice .clym-widget-actions .clym-widget-actions-buttons button {
+                padding: 4px 18px !important
+            }
+        }
+     gtag('consent', 'update', {
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'ad_storage': 'granted',
+        }); gtag('consent', 'update', {
+          analytics_storage: 'granted'
+        }); We use cookies to run our site, improve your experience, and personalize content. Manage preferences via the settings icon. See our Privacy Notice for more information. Opt-out signals not detected Accessibility Accept powered by
