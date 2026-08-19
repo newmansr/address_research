@@ -15,6 +15,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xvfb \
     xauth \
     x11-utils \
+    libtcl8.6 \
+    libtk8.6 \
+    scrot \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome Stable from the official .deb. Installing the local .deb *via apt* lets it
