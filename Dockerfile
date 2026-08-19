@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
     x11-utils \
     libgconf-2-4 \
     libnss3 \
-    python3-xlib \
-    python3-tk \
-    scrot \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome Stable
