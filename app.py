@@ -32,14 +32,22 @@ if st.sidebar.button("Launch OSINT Scan"):
         
         status_text = st.empty()
         
-        status_text.info(f"Gathering Data Brokers: {', '.join(BROWSER_SOURCES)}...")
+        status_text.info(f"Gathering Data Brokers: {
+.join(BROWSER_SOURCES)}...")
         people = gather_people(street_up, city.upper(), state.upper(), zip_code, units, True, BROWSER_SOURCES, proxies="", delay=2.0, session_dir="")
         
         status_text.info("Querying Open Data & Context APIs...")
         people += gather_api_sources(street_up, city.upper(), state.upper(), zip_code, API_SOURCES, proxies="", fec_opts={})
         
-        status_text.success("✅ Collection complete. Correlating records...")
+        status_text.success(f"✅ Collection complete. Found {len(people)} raw records. Correlating...")
         
+        with st.expander("🛠️ Debug: Raw Scraped Records (Before Correlation)"):
+            if not people:
+                st.error("ZERO records were returned by the scrapers. SeleniumBase likely crashed.")
+            else:
+                for p in people:
+                    st.text(f"Source: {p.source} | Name: {p.name}")
+
         current, possible, former, b_only = score_candidates(people, target)
         
         tab_roster, tab_building, tab_map = st.tabs(["👥 Resident Roster", "🏢 Building Context", "🗺️ Migration Map"])
@@ -50,7 +58,8 @@ if st.sidebar.button("Launch OSINT Scan"):
             def render_person(p):
                 age_str = f" (Age {p.age})" if p.age else ""
                 with st.expander(f"{p.name}{age_str}  [Score: {p.score}]"):
-                    st.caption(f"Sources: {', '.join(p.source_list)}")
+                    st.caption(f"Sources: {
+.join(p.source_list)}")
                     if p.phones:
                         st.markdown("**Phones:** " + ", ".join(p.phones))
                     if p.prior_addresses:
@@ -95,3 +104,4 @@ if st.sidebar.button("Launch OSINT Scan"):
             with st.spinner("Geocoding addresses via OpenStreetMap (Respecting 1-req/sec limit)..."):
                 m = generate_migration_map(target_str, current, former)
                 st_folium(m, width=1200, height=600)
+

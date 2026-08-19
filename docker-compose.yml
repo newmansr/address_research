@@ -10,6 +10,7 @@ services:
     environment:
       - STREAMLIT_SERVER_HEADLESS=true
       - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
+      - PYTHONUNBUFFERED=1
     volumes:
       # Persist the SQLite history database
       - ./history.db:/app/history.db
