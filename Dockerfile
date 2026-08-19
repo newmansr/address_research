@@ -18,6 +18,9 @@ RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key
     && apt-get install -y google-chrome-stable \
     && rm -rf /var/lib/apt/lists/*
 
+# Create a non-root user specifically for Chrome
+RUN useradd -m appuser
+
 WORKDIR /app
 
 # Copy requirements and install
@@ -27,7 +30,12 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the entire project
 COPY . .
 
-# Expose the Streamlit port
+# Change ownership of the app directory so the non-root user can write to SQLite and Cache
+RUN chown -R appuser:appuser /app
+
+# Switch to the non-root user!
+USER appuser
+
 EXPOSE 8501
 
 CMD xvfb-run -a streamlit run app.py --server.address=0.0.0.0
