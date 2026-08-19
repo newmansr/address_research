@@ -66,7 +66,9 @@ def run_scan():
         ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
         fut = ex.submit(_gather_brokers)
         try:
-            people += fut.result(timeout=240)
+            # Generous ceiling: a real browser scrape of 4 sources + FPS/TPS detail crawls is many
+            # slow, challenge-clearing page loads. This only bites on a genuine hang, not a slow run.
+            people += fut.result(timeout=900)
         except concurrent.futures.TimeoutError:
             timed_out = True
         finally:
