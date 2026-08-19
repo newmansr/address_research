@@ -39,4 +39,7 @@ EXPOSE 8501
 # Xvfb gives SeleniumBase a virtual display so it can physically move the mouse to clear the
 # Cloudflare Turnstile checkbox. Chrome runs as root here (docker-compose sets user: root) together
 # with --no-sandbox (passed in sources.py), which is required for root Chrome.
-CMD xvfb-run -a streamlit run app.py --server.address=0.0.0.0
+# CORS/XSRF are disabled because Streamlit sits behind the Tailscale Serve HTTPS proxy, whose origin
+# (https://<name>.tail9128d0.ts.net) differs from the container's localhost. Without this the
+# Streamlit websocket is rejected and the UI hangs on "Connecting..." (safe: tailnet-private).
+CMD xvfb-run -a streamlit run app.py --server.address=0.0.0.0 --server.enableCORS=false --server.enableXsrfProtection=false
