@@ -2,6 +2,7 @@ services:
   osint-gui:
     build: .
     container_name: address-research
+    user: "root"
     restart: unless-stopped
     ports:
       # Bind to the Tailscale IP defined in the .env file
