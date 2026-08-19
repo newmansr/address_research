@@ -195,9 +195,7 @@ def fetch_dc_vacant(street, city, state, zip_code, unit="", proxy="", archive=Tr
         
         # Must match building, and unit (if provided) must not conflict.
         # DC Vacant list usually doesn't have units, but if it does, it must match.
-        if target.street_key == prem_addr.street_key:
-            if unit and prem_addr.has_unit() and prem_addr.unit_key != target.unit_key:
-                continue
+        if match_address(target, prem_addr) != MatchLevel.NONE:
             name = "VACANT PROPERTY"
             if name not in seen:
                 seen.add(name)
@@ -230,9 +228,7 @@ def fetch_dc_permits(street, city, state, zip_code, unit="", proxy="", archive=T
         addr_str = (a.get("FULL_ADDRESS") or "").strip()
         prem_addr = normalize_address(addr_str)
         
-        if target.street_key == prem_addr.street_key:
-            if unit and prem_addr.has_unit() and prem_addr.unit_key != target.unit_key:
-                continue
+        if match_address(target, prem_addr) != MatchLevel.NONE:
             
             p_type = a.get("PERMIT_TYPE_NAME") or "Permit"
             desc = a.get("DESC_OF_WORK") or ""
@@ -428,9 +424,7 @@ def fetch_dc_bbl(street, city, state, zip_code, unit="", proxy="", archive=True)
         addr_str = (a.get("PREMISEADDRESS") or "").strip()
         prem_addr = normalize_address(addr_str)
         
-        if target.street_key == prem_addr.street_key:
-            if unit and prem_addr.has_unit() and prem_addr.unit_key != target.unit_key:
-                continue
+        if match_address(target, prem_addr) != MatchLevel.NONE:
             
             name = (a.get("ENTITYNAME") or "BUSINESS").strip()
             activity = (a.get("BUSINESSACTIVITY") or "").strip()
@@ -468,9 +462,7 @@ def fetch_dc_311(street, city, state, zip_code, unit="", proxy="", archive=True)
         addr_str = (a.get("STREETADDRESS") or "").strip()
         prem_addr = normalize_address(addr_str)
         
-        if target.street_key == prem_addr.street_key:
-            if unit and prem_addr.has_unit() and prem_addr.unit_key != target.unit_key:
-                continue
+        if match_address(target, prem_addr) != MatchLevel.NONE:
             
             desc = a.get("SERVICETYPEDESCRIPTION") or ""
             issue_ts = a.get("SERVICEORDERDATE")

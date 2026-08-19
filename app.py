@@ -18,6 +18,11 @@ units_str = st.sidebar.text_input("Units (comma separated)", "")
 
 st.sidebar.header("OSINT Modules")
 do_enrich = st.sidebar.checkbox("Deep Web Enrichment (Court, Socials, LLCs)", value=True)
+use_browser = st.sidebar.checkbox(
+    "Browser scrapers (SeleniumBase — slow, may hang in Docker)", value=False,
+    help="FastPeopleSearch / TruePeopleSearch / USPhoneBook via headless Chrome. Off by default: "
+         "the open-data APIs always run regardless. Enable only once the SeleniumBase-in-Docker "
+         "path is confirmed working, or the scan can stall on a Chrome launch deadlock.")
 
 # Default sources matching the CLI
 BROWSER_SOURCES = ["FastPeopleSearch", "TruePeopleSearch", "USPhoneBook"]
@@ -32,11 +37,34 @@ if st.sidebar.button("Launch OSINT Scan"):
         
         status_text = st.empty()
         
-        status_text.info(f"Gathering Data Brokers: {', '.join(BROWSER_SOURCES)}...")
-        people = gather_people(street_up, city.upper(), state.upper(), zip_code, units, True, BROWSER_SOURCES, proxies="", delay=2.0, session_dir="")
-        
-        status_text.info("Querying Open Data & Context APIs...")
-        people += gather_api_sources(street_up, city.upper(), state.upper(), zip_code, API_SOURCES, proxies="", fec_opts={})
+        # Open-data APIs first: independent, browser-free, and can't be blocked by Cloudflare, so
+        # they always return something even if every people-search broker is blocked/deadlocked.
+        status_text.info("Querying open-data & context APIs (DC property, permits, crime, FEC)...")
+        people = gather_api_sources(street_up, city.upper(), state.upper(), zip_code, API_SOURCES, proxies="", fec_opts={})
+
+        # People-search brokers. ThatsThem is browser-free; the rest need SeleniumBase. The browser
+        # path can deadlock at Chrome launch inside a headless container, so when it's enabled we run
+        # it under a timeout and fall back to the open-data results instead of hanging the whole scan.
+        brokers = ["ThatsThem"] + (BROWSER_SOURCES if use_browser else [])
+        status_text.info(f"Gathering people-search brokers: {', '.join(brokers)}...")
+
+        def _gather_brokers():
+            return gather_people(street_up, city.upper(), state.upper(), zip_code, units,
+                                 use_browser, BROWSER_SOURCES, proxies="", delay=2.0, session_dir="")
+
+        if use_browser:
+            import concurrent.futures
+            ex = concurrent.futures.ThreadPoolExecutor(max_workers=1)
+            fut = ex.submit(_gather_brokers)
+            try:
+                people += fut.result(timeout=240)
+            except concurrent.futures.TimeoutError:
+                status_text.warning("Browser scrapers timed out (SeleniumBase likely deadlocked in "
+                                    "Docker) — showing open-data results only.")
+            finally:
+                ex.shutdown(wait=False)
+        else:
+            people += _gather_brokers()
         
         status_text.success(f"✅ Collection complete. Found {len(people)} raw records. Correlating...")
         
