@@ -1,7 +1,8 @@
 FROM python:3.11-slim
 
 # Install system dependencies
-RUN apt-get update && apt-get install -y \
+RUN sed -i 's/deb.debian.org/ftp.us.debian.org/g' /etc/apt/sources.list.d/debian.sources \
+    && apt-get update && apt-get install -y \
     wget \
     gnupg \
     unzip \
