@@ -1,42 +1,42 @@
 FROM python:3.11-slim
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Be resilient to flaky / rate-limited connections (this box scrapes over cellular).
+RUN echo 'Acquire::Retries "5";' > /etc/apt/apt.conf.d/80-retries
+
+# System deps for a headless Chrome + Xvfb virtual display.
+# NOTE: do NOT add libgconf-2-4 here - it was DROPPED in Debian 12 (bookworm), which the
+# python:3.11-slim tag now resolves to. Referencing it makes apt-get exit 100 ("Unable to locate
+# package"). Chrome's own .deb (installed below) pulls every runtime lib it needs (libnss3, etc.).
+RUN apt-get update && apt-get install -y --no-install-recommends \
     wget \
-    gnupg \
-    unzip \
+    ca-certificates \
     xvfb \
     x11-utils \
-    libgconf-2-4 \
-    libnss3 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Google Chrome Stable
-RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
-    && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list' \
+# Install Google Chrome Stable from the official .deb. Installing the local .deb *via apt* lets it
+# resolve Chrome's own dependencies from the standard Debian repos - no deprecated `apt-key` and no
+# custom sources.list (that legacy approach also breaks on bookworm).
+RUN wget -q -O /tmp/chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
     && apt-get update \
-    && apt-get install -y google-chrome-stable \
+    && apt-get install -y --no-install-recommends /tmp/chrome.deb \
+    && rm -f /tmp/chrome.deb \
     && rm -rf /var/lib/apt/lists/*
-
-# Create a non-root user specifically for Chrome
-RUN useradd -m appuser
 
 WORKDIR /app
 
-# Copy requirements and install
+# Install Python deps first so this layer caches across code-only changes.
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project
+# Copy the project.
 COPY . .
-
-# Change ownership of the app directory so the non-root user can write to SQLite and Cache
-RUN chown -R appuser:appuser /app
-
-# Switch to the non-root user!
-USER appuser
 
 EXPOSE 8501
 
+# Xvfb gives SeleniumBase a virtual display so it can physically move the mouse to clear the
+# Cloudflare Turnstile checkbox. Chrome runs as root here (docker-compose sets user: root) together
+# with --no-sandbox (passed in sources.py), which is required for root Chrome.
 CMD xvfb-run -a streamlit run app.py --server.address=0.0.0.0
-

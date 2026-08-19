@@ -68,7 +68,7 @@ if st.sidebar.button("Launch OSINT Scan"):
                     if do_enrich:
                         with st.spinner("Running deep-web enrichment..."):
                             edata = enrich_person(p.name, city, state)
-                            elines = format_enrichment(edata)
+                            elines = format_enrichment(p.name, edata)
                             if elines:
                                 st.markdown("---")
                                 st.markdown("**Deep Web Intel:**")
