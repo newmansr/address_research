@@ -549,8 +549,10 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
         current_proxy = proxy_list[proxy_idx] or None
         cdp_active = False
         try:
+            in_docker = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "true"
             with SB(uc=True, locale="en", incognito=(not session_dir),
-                    user_data_dir=(session_dir or None), proxy=current_proxy) as sb:
+                    user_data_dir=(session_dir or None), proxy=current_proxy,
+                    headless=in_docker, headless2=in_docker) as sb:
                 while spec_idx < len(specs):
                     spec = specs[spec_idx]
                     name, url = spec["name"], spec["url"]

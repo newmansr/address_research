@@ -16,4 +16,6 @@ services:
       - ./history.db:/app/history.db
       # Persist SeleniumBase profiles so Cloudflare cookies carry over
       - ./.chrome_profile:/app/.chrome_profile
+    # Give the container extra shared memory so Chrome doesnt crash when rendering
+    shm_size: '2gb'
 
