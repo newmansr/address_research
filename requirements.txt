@@ -25,3 +25,5 @@ duckduckgo-search
 seleniumbase
 curl_cffi
 requests
+
+phonenumbers
