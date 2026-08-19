@@ -168,6 +168,8 @@ class ScoredCandidate:
     since_year: Optional[float] = None  # comparable form of `since`, for recency tie-breaking
     relatives: list[str] = field(default_factory=list)  # for household grouping among co-residents
     moved_to: str = ""         # for a FORMER resident: where they now live (move-chain)
+    prior_addresses: list[Address] = field(default_factory=list)  # Address objs (migration map / roster)
+    current_address: Optional[Address] = None  # best concrete current address (map: former's moved-to pin)
 
 
 NICKNAMES = {
@@ -342,6 +344,20 @@ def score_candidates(people: list[Person], target: Address
                              and r.current_address.street
                              and match_address(target, r.current_address) == MatchLevel.NONE}
 
+        # Address objects for the migration map / roster: every distinct prior address across the
+        # candidate's records, plus the best concrete current address (has house# + street).
+        prior_addrs: list[Address] = []
+        _seen_pa: set = set()
+        for r in cand.records:
+            for pa in r.prior_addresses:
+                d = pa.display()
+                if d and d not in _seen_pa:
+                    _seen_pa.add(d)
+                    prior_addrs.append(pa)
+        cur_addr = next((r.current_address for r in cand.records
+                         if r.current_address and r.current_address.house_number
+                         and r.current_address.street), None)
+
         if not current_sources and not former_signal:
             if unit_search_sources:
                 n_fam = len(_families(unit_search_sources))
@@ -355,7 +371,7 @@ def score_candidates(people: list[Person], target: Address
                     evidence=[f"returned by {n_fam} source family(ies)' search for this unit, but "
                               f"their listed current address is elsewhere - a lead only (possible "
                               f"recent move-in the database hasn't updated, or a former resident)"],
-                    moved_to=lead_addr))
+                    moved_to=lead_addr, prior_addresses=prior_addrs, current_address=cur_addr))
             elif building_signal:
                 building_only += 1
             continue
@@ -444,7 +460,8 @@ def score_candidates(people: list[Person], target: Address
             sources=cand.sources, phones=cand.phones,
             age=(cand.ages[0] if cand.ages else None), evidence=evidence,
             is_former=(moved_out_by_recency or (former_signal and score <= 0)),
-            since=since_raw, since_year=since_year, relatives=cand.relatives, moved_to=moved_to)
+            since=since_raw, since_year=since_year, relatives=cand.relatives, moved_to=moved_to,
+            prior_addresses=prior_addrs, current_address=cur_addr)
 
         if sc.is_former:
             former.append(sc)

@@ -56,15 +56,24 @@ if st.sidebar.button("Launch OSINT Scan"):
             
             def render_person(p):
                 age_str = f" (Age {p.age})" if p.age else ""
-                with st.expander(f"{p.name}{age_str}  [Score: {p.score}]"):
-                    st.caption(f"Sources: {', '.join(p.source_list)}")
+                conf = f" · {p.confidence}" if getattr(p, "confidence", "") else ""
+                with st.expander(f"{p.name}{age_str}  [Score: {p.score}{conf}]"):
+                    st.caption(f"Sources: {', '.join(p.sources)}")
                     if p.phones:
                         st.markdown("**Phones:** " + ", ".join(p.phones))
+                    if getattr(p, "since", ""):
+                        st.markdown(f"**Resident since:** {p.since}")
+                    if getattr(p, "moved_to", ""):
+                        st.markdown(f"**Now listed at:** {p.moved_to}")
+                    if p.evidence:
+                        st.markdown("**Evidence:**")
+                        for ev in p.evidence:
+                            st.markdown(f"- {ev}")
                     if p.prior_addresses:
-                        st.markdown("**Prior:**")
+                        st.markdown("**Prior addresses:**")
                         for a in p.prior_addresses[:3]:
                             st.markdown(f"- {a.display()}")
-                    
+
                     if do_enrich:
                         with st.spinner("Running deep-web enrichment..."):
                             edata = enrich_person(p.name, city, state)
