@@ -30,5 +30,5 @@ COPY . .
 # Expose the Streamlit port
 EXPOSE 8501
 
-CMD streamlit run app.py --server.address=0.0.0.0
+CMD xvfb-run -a streamlit run app.py --server.address=0.0.0.0
 

@@ -22,6 +22,8 @@ import os
 import time
 import re
 import random
+import threading
+SB_LOCK = threading.Lock()
 from datetime import datetime
 
 import requests
@@ -548,11 +550,11 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
     while spec_idx < len(specs):
         current_proxy = proxy_list[proxy_idx] or None
         cdp_active = False
+        SB_LOCK.acquire()
         try:
             with SB(uc=True, locale="en", incognito=(not session_dir),
                     user_data_dir=(session_dir or None), proxy=current_proxy,
-                    chromium_arg="--no-sandbox,--disable-dev-shm-usage",
-                    xvfb=in_docker) as sb:
+                    chromium_arg="--no-sandbox,--disable-dev-shm-usage") as sb:
                 while spec_idx < len(specs):
                     spec = specs[spec_idx]
                     name, url = spec["name"], spec["url"]
@@ -617,11 +619,14 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
                         print(f"    !! {name} error: {e}")
                         spec_idx += 1
         except Exception as outer_e:
-             print(f"  !! SB init error: {outer_e}")
+             import traceback
+             print(f"  !! SB init error: {outer_e}\n{traceback.format_exc()}")
              if proxy_idx < len(proxy_list) - 1:
                  proxy_idx += 1
              else:
                  spec_idx += 1
+        finally:
+             SB_LOCK.release()
                  
     return results
 
