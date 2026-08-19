@@ -39,8 +39,13 @@ def run_scan():
     """
     units = [u.strip().upper() for u in units_str.split(",")] if units_str else []
     street_up = " ".join(street.split()).upper()
-    target_str = f"{street_up}, {city.upper()}, {state.upper()} {zip_code}"
-    target = normalize_address(target_str)
+    # Score against the SPECIFIC unit the user asked for (the CLI does this per-unit). Without the
+    # unit in the target, unit-level Current-vs-Possible classification collapses and the unit-search
+    # association path (how USPhoneBook leads surface) never fires. Multi-unit input scores against
+    # the first unit for now.
+    unit_part = f" UNIT {units[0]}" if units else ""
+    target = normalize_address(f"{street_up}{unit_part}, {city.upper()}, {state.upper()} {zip_code}")
+    map_target_str = f"{street_up}, {city.upper()}, {state.upper()} {zip_code}"  # unitless geocodes cleaner
 
     status_text = st.empty()
 
@@ -99,8 +104,12 @@ def run_scan():
     return {
         "current": current, "possible": possible, "former": former, "b_only": b_only,
         "owner_lines": owner_lines, "enrich": enrich_map,
-        "raw": [(p.source, p.name) for p in people],
-        "target_str": target_str,
+        "raw": [{"source": p.source, "name": p.name,
+                 "cur": p.current_address.display() if p.current_address else "",
+                 "searched_unit": getattr(p, "searched_unit", ""),
+                 "priors": len(p.prior_addresses)} for p in people],
+        "target_str": map_target_str,
+        "target_disp": target.display(),
         "timed_out": timed_out,
     }
 
@@ -124,12 +133,13 @@ if scan.get("timed_out"):
 current, possible, former = scan["current"], scan["possible"], scan["former"]
 enrich_lines = scan["enrich"]
 
-with st.expander("🛠️ Debug: Raw Scraped Records (Before Correlation)"):
+with st.expander(f"🛠️ Debug: Raw Scraped Records (Before Correlation) — target: {scan.get('target_disp','')}"):
     if not scan["raw"]:
         st.error("ZERO records were returned by any source (open-data APIs and brokers all empty).")
     else:
-        for src, name in scan["raw"]:
-            st.text(f"Source: {src} | Name: {name}")
+        for r in scan["raw"]:
+            extra = f" | searched_unit={r['searched_unit']}" if r["searched_unit"] else ""
+            st.text(f"{r['source']} | {r['name']} | current: {r['cur'] or '-'}{extra} | priors: {r['priors']}")
 
 tab_roster, tab_building, tab_map = st.tabs(["👥 Resident Roster", "🏢 Building Context", "🗺️ Migration Map"])
 
