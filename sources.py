@@ -549,24 +549,9 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
         current_proxy = proxy_list[proxy_idx] or None
         cdp_active = False
         try:
-            in_docker = os.environ.get("STREAMLIT_SERVER_HEADLESS") == "true"
-            
-            # Manually configure Chrome options for Docker to guarantee launch
-            from seleniumbase import Driver
-            
-            driver = None
-            try:
-                driver = Driver(
-                    uc=True, 
-                    headless=in_docker, 
-                    headless2=in_docker, 
-                    no_sandbox=True, 
-                    disable_gpu=True,
-                    disable_dev_shm_usage=True,
-                    user_data_dir=(session_dir or None),
-                    proxy=current_proxy
-                )
-                
+            with SB(uc=True, locale="en", incognito=(not session_dir),
+                    user_data_dir=(session_dir or None), proxy=current_proxy,
+                    chromium_arg="--no-sandbox,--disable-dev-shm-usage") as sb:
                 while spec_idx < len(specs):
                     spec = specs[spec_idx]
                     name, url = spec["name"], spec["url"]
@@ -574,15 +559,15 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
                     if spec_idx > 0:
                         _pace(delay)
                     try:
-                        driver.uc_open_with_reconnect(url, 4)
-                        
-                        # Fallback parsing since we bypass the sb wrapper
-                        want_html = spec.get("html", False)
-                        
-                        # Wait for cloudflare to clear naturally or wait for content
-                        time.sleep(5) 
-                        text = driver.page_source if want_html else driver.find_element("tag name", "body").text
+                        if not cdp_active:
+                            sb.activate_cdp_mode(url)
+                            cdp_active = True
+                        else:
+                            sb.cdp.open(url)
 
+                        _clear_challenge(sb)
+                        want_html = spec.get("html", False)
+                        text = _page_source(sb) if want_html else _clean_text(sb)
 
                         if archive:
                             archive_raw(name, spec.get("street", ""), spec.get("unit", ""), text,
@@ -619,7 +604,7 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
                                 print(f"    !! {name}: summary lists 0 residents (throttled stub?) - skipping detail crawl.")
                                 spec_idx += 1
                                 continue
-                            for dtext in _crawl_detail_pages(driver, spec, archive, summary_text=text, delay=delay):
+                            for dtext in _crawl_detail_pages(sb, spec, archive, summary_text=text, delay=delay):
                                 results.append({"name": name, "unit": spec.get("unit", ""), "text": dtext})
                             spec_idx += 1
                             continue
@@ -630,12 +615,6 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
                     except Exception as e:
                         print(f"    !! {name} error: {e}")
                         spec_idx += 1
-            finally:
-                if driver:
-                    try:
-                        driver.quit()
-                    except:
-                        pass
         except Exception as outer_e:
              print(f"  !! SB init error: {outer_e}")
              if proxy_idx < len(proxy_list) - 1:
@@ -700,5 +679,3 @@ NAME_SOURCES = {
     "FastPeopleSearch": fps_name_url,
     "USPhoneBook": usphonebook_name_url,
 }
-
-
