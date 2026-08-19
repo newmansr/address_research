@@ -586,7 +586,7 @@ def main(argv=None) -> None:
     print(f"Researching: {street}, {city}, {state} {args.zip}")
     print(f"Units: {', '.join(units) if units else '(whole building)'}")
 
-    if args.history:      # read-only monitoring dashboard - no scraping
+    if args.history:
         print("Source: recorded run history (no scrape)")
         print("=" * 64)
         show_history(street, args.zip, units)
@@ -601,17 +601,14 @@ def main(argv=None) -> None:
         print(f"API sources (independent): {', '.join(api_sources)}")
     print("=" * 64)
 
-    session_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".chrome_profile") \
-        if args.keep_session else ""
-    if args.from_cache:
-        people = gather_from_cache(street, units)
-    else:
-        people = gather_people(street, city, state, args.zip, units, args.browser, browser_sources,
-                               proxies=args.proxies, delay=args.delay, session_dir=session_dir)
-    if args.apis:
-        people += gather_api_sources(street, city, state, args.zip, api_sources, proxies=args.proxies,
-                                     fec_opts={"api_key": args.fec_key, "zip9": args.fec_zip9,
-                                               "max_pages": args.fec_pages})
+    fec_opts = {"api_key": args.fec_key, "zip9": args.fec_zip9, "max_pages": args.fec_pages}
+    people = run_address_lookup(street, city, state, args.zip, units, 
+                                browser_sources if args.browser else [], 
+                                api_sources if args.apis else [],
+                                proxies=args.proxies, delay=args.delay, 
+                                from_cache=args.from_cache, keep_session=args.keep_session, 
+                                fec_opts=fec_opts)
+
     if not people:
         print("\nNo data collected.")
         if args.from_cache:

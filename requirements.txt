@@ -14,3 +14,9 @@ phonenumbers>=9.0.0     # validate/format phone numbers + carrier lookup (parser
 # Optional (used only by the LLM auto-heal parser + web OSINT eval in llm_parser.py):
 #   duckduckgo-search   # recent web snippets for a person (osint_evaluate)
 #   a running local Ollama at http://localhost:11434 (llama3) for LLM fallback parsing
+
+streamlit
+folium
+streamlit-folium
+streamlit-agraph
+networkx
