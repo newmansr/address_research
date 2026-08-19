@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  osint-gui:
+    build: .
+    container_name: address-research
+    restart: unless-stopped
+    ports:
+      # Bind to the Tailscale IP on the host (change 100.x.y.z to your actual Tailscale IP)
+      - "100.x.y.z:8501:8501"
+    volumes:
+      # Persist the SQLite history database
+      - ./history.db:/app/history.db
+      # Persist SeleniumBase profiles so Cloudflare cookies carry over
+      - ./.chrome_profile:/app/.chrome_profile
+
