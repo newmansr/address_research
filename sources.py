@@ -551,7 +551,8 @@ def fetch_browser_sources(specs: list[dict], archive: bool = True,
         try:
             with SB(uc=True, locale="en", incognito=(not session_dir),
                     user_data_dir=(session_dir or None), proxy=current_proxy,
-                    chromium_arg="--no-sandbox,--disable-dev-shm-usage") as sb:
+                    chromium_arg="--no-sandbox,--disable-dev-shm-usage",
+                    xvfb=in_docker) as sb:
                 while spec_idx < len(specs):
                     spec = specs[spec_idx]
                     name, url = spec["name"], spec["url"]
