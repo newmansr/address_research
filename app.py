@@ -3,6 +3,8 @@ import os
 from lookup import gather_people, gather_api_sources, score_candidates, owner_context
 from resident_core import Address, normalize_address
 from enrich import enrich_person, format_enrichment
+from map_viz import generate_migration_map
+from streamlit_folium import st_folium
 
 st.set_page_config(page_title="Address Research OSINT", page_icon="🔍", layout="wide")
 st.title("🔍 Advanced Address Research Dashboard")
@@ -25,7 +27,8 @@ if st.sidebar.button("Launch OSINT Scan"):
     with st.spinner("Executing multi-source scrape..."):
         units = [u.strip().upper() for u in units_str.split(",")] if units_str else []
         street_up = " ".join(street.split()).upper()
-        target = normalize_address(f"{street_up}, {city.upper()}, {state.upper()} {zip_code}")
+        target_str = f"{street_up}, {city.upper()}, {state.upper()} {zip_code}"
+        target = normalize_address(target_str)
         
         status_text = st.empty()
         
@@ -39,7 +42,7 @@ if st.sidebar.button("Launch OSINT Scan"):
         
         current, possible, former, b_only = score_candidates(people, target)
         
-        tab_roster, tab_building = st.tabs(["👥 Resident Roster", "🏢 Building Context"])
+        tab_roster, tab_building, tab_map = st.tabs(["👥 Resident Roster", "🏢 Building Context", "🗺️ Migration Map"])
         
         with tab_roster:
             col1, col2, col3 = st.columns(3)
@@ -84,3 +87,11 @@ if st.sidebar.button("Launch OSINT Scan"):
             st.subheader("Building Ownership & Alerts")
             for line in owner_context(people, target, do_unmask=do_enrich):
                 st.markdown(f"- {line}")
+                
+        with tab_map:
+            st.subheader("Geospatial Migration Patterns")
+            st.caption("Blue pins represent prior addresses of current residents. Green pins represent new addresses of former residents. Solid lines show migration vectors.")
+            
+            with st.spinner("Geocoding addresses via OpenStreetMap (Respecting 1-req/sec limit)..."):
+                m = generate_migration_map(target_str, current, former)
+                st_folium(m, width=1200, height=600)
