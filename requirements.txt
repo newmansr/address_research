@@ -20,3 +20,8 @@ folium
 streamlit-folium
 streamlit-agraph
 networkx
+
+duckduckgo-search
+seleniumbase
+curl_cffi
+requests
