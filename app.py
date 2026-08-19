@@ -17,7 +17,11 @@ zip_code = st.sidebar.text_input("Zip Code", "20003")
 units_str = st.sidebar.text_input("Units (comma separated)", "")
 
 st.sidebar.header("OSINT Modules")
-do_enrich = st.sidebar.checkbox("Deep Web Enrichment (Court, Socials, LLCs)", value=True)
+do_enrich = st.sidebar.checkbox(
+    "Deep Web Enrichment (Court, Socials, LLCs)", value=False,
+    help="Fires ~6 DuckDuckGo/API lookups PER person during the scan and can add minutes "
+         "(DDG rate-limits hard). Off by default so the roster shows fast; when on, only the "
+         "top current/possible leads are enriched.")
 use_browser = st.sidebar.checkbox(
     "Browser scrapers (SeleniumBase — slow, may hang in Docker)", value=False,
     help="FastPeopleSearch / TruePeopleSearch / USPhoneBook via headless Chrome. Off by default: "
@@ -90,7 +94,9 @@ def run_scan():
     # source can't crash the scan.
     enrich_map = {}
     if do_enrich:
-        candidates = current + possible + former
+        # Bound the network cost: enrich only the top current/possible leads (DDG rate-limits hard,
+        # and enriching all ~10 records blocked the roster from rendering for minutes).
+        candidates = (current + possible)[:6]
         for i, p in enumerate(candidates):
             if p.name in enrich_map:
                 continue
