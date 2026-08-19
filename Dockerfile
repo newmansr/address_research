@@ -1,6 +1,6 @@
 FROM python:3.11-slim
 
-# Install system dependencies
+# Install system dependencies + ALL PyAutoGUI Linux requirements
 RUN apt-get update && apt-get install -y \
     wget \
     gnupg \
@@ -9,6 +9,9 @@ RUN apt-get update && apt-get install -y \
     x11-utils \
     libgconf-2-4 \
     libnss3 \
+    python3-xlib \
+    python3-tk \
+    scrot \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Google Chrome Stable
@@ -30,6 +33,5 @@ COPY . .
 # Expose the Streamlit port
 EXPOSE 8501
 
-# Run Streamlit directly (SeleniumBase handles Xvfb per-browser internally)
 CMD streamlit run app.py --server.address=0.0.0.0
 
