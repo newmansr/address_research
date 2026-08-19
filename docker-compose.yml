@@ -5,8 +5,8 @@ services:
     container_name: address-research
     restart: unless-stopped
     ports:
-      # Bind to the Tailscale IP on the host (change 100.x.y.z to your actual Tailscale IP)
-      - "100.x.y.z:8501:8501"
+      # Bind to the Tailscale IP defined in the .env file
+      - "${TAILSCALE_IP:-0.0.0.0}:8501:8501"
     environment:
       - STREAMLIT_SERVER_HEADLESS=true
       - STREAMLIT_BROWSER_GATHER_USAGE_STATS=false
